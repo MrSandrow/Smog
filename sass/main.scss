@@ -1,0 +1,101 @@
+// CSS Setup
+
+$font: Montserrat, Arial, sans-serif;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:focus {
+  outline: none;
+}
+
+html {
+  font-family: $font;
+  font-size: 12px;
+  background: var(--bg);
+  color: var(--accent);
+  height: 100vh;
+  --bg: white;
+  --accent: black;
+
+  .moon::before {
+    content: url("img/light.svg");
+  }
+
+  &.dark {
+    --bg: black;
+    --accent: white;
+
+    .moon::before {
+      content: url("img/dark.svg");
+    }
+  }
+}
+
+@import "index";
+
+// CSS Components
+
+body {
+  display: grid;
+}
+
+nav {
+  margin: 1.5rem;
+
+  li {
+    margin-left: auto;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+  }
+}
+
+.moon::before {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+}
+
+section {
+  display: grid;
+  height: 100vh;
+}
+
+button {
+  padding: 1em 2em;
+  background: var(--accent);
+  color: var(--bg);
+  font-weight: 700;
+  height: fit-content;
+  border: none;
+  border-radius: 2em;
+  cursor: pointer;
+  font-family: $font;
+  margin: 0 auto;
+  transition: all ease 0.2s;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+footer {
+  align-self: flex-end;
+  font-weight: bold;
+  margin: 1.5rem auto;
+}
+
+// Media Queries
+
+@media (min-width: 992px) {
+  html {
+    font-size: 16px;
+  }
+}

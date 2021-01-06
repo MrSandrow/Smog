@@ -1,0 +1,145 @@
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:focus {
+  outline: none;
+}
+
+html {
+  font-family: Montserrat, Arial, sans-serif;
+  font-size: 12px;
+  background: var(--bg);
+  color: var(--accent);
+  height: 100vh;
+  --bg: white;
+  --accent: black;
+}
+
+html .moon::before {
+  content: url("img/light.svg");
+}
+
+html.dark {
+  --bg: black;
+  --accent: white;
+}
+
+html.dark .moon::before {
+  content: url("img/dark.svg");
+}
+
+.index .emojis {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  cursor: pointer;
+  font-size: 5rem;
+  -webkit-transition: all ease-out 0.1s;
+  transition: all ease-out 0.1s;
+}
+
+.index .emojis:hover {
+  -webkit-transform: scale(1.3);
+          transform: scale(1.3);
+}
+
+.index .second .container {
+  position: absolute;
+  overflow: hidden;
+  width: 60%;
+  height: 80%;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.index .img1 {
+  background: url("img/day.jpg");
+  left: 0;
+}
+
+.index .img2 {
+  background: url("img/night.jpg");
+  left: 50%;
+}
+
+.index .img {
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  display: -ms-grid;
+  display: grid;
+}
+
+nav {
+  margin: 1.5rem;
+}
+
+nav li {
+  margin-left: auto;
+  list-style: none;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.moon::before {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+}
+
+section {
+  display: -ms-grid;
+  display: grid;
+  height: 100vh;
+}
+
+button {
+  padding: 1em 2em;
+  background: var(--accent);
+  color: var(--bg);
+  font-weight: 700;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  border: none;
+  border-radius: 2em;
+  cursor: pointer;
+  font-family: Montserrat, Arial, sans-serif;
+  margin: 0 auto;
+  -webkit-transition: all ease 0.2s;
+  transition: all ease 0.2s;
+}
+
+button:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+footer {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  font-weight: bold;
+  margin: 1.5rem auto;
+}
+
+@media (min-width: 992px) {
+  html {
+    font-size: 16px;
+  }
+}
