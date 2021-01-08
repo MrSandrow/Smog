@@ -8,9 +8,6 @@ $font: Montserrat, Arial, sans-serif;
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-}
-
-:focus {
   outline: none;
 }
 
@@ -19,31 +16,18 @@ html {
   font-size: 12px;
   background: var(--bg);
   color: var(--accent);
-  height: 100vh;
   --bg: white;
   --accent: black;
-
-  .moon::before {
-    content: url("img/light.svg");
-  }
 
   &.dark {
     --bg: black;
     --accent: white;
-
-    .moon::before {
-      content: url("img/dark.svg");
-    }
   }
 }
 
 @import "index";
 
-// CSS Components
-
-body {
-  display: grid;
-}
+// CSS Sections
 
 nav {
   margin: 1.5rem;
@@ -57,39 +41,48 @@ nav {
   }
 }
 
-.moon::before {
-    width: 20px;
-    height: 20px;
-    position: absolute;
-}
-
 section {
   display: grid;
   height: 100vh;
 }
 
+footer {
+  font-weight: bold;
+  text-align: center;
+  margin: 1.5rem auto;
+}
+
+// CSS Components
+
 button {
-  padding: 1em 2em;
+  cursor: pointer;
   background: var(--accent);
   color: var(--bg);
+  font-family: $font;
   font-weight: 700;
   height: fit-content;
   border: none;
   border-radius: 2em;
-  cursor: pointer;
-  font-family: $font;
+  padding: 1em 2em;
   margin: 0 auto;
   transition: all ease 0.2s;
 
   &:hover {
-    transform: scale(1.05);
+    transform: scale(1.1);
   }
 }
 
-footer {
-  align-self: flex-end;
-  font-weight: bold;
-  margin: 1.5rem auto;
+img {
+  width: 100%;
+}
+
+svg {
+  fill: var(--accent);
+  display: none;
+
+  &.use {
+    display: inline;
+  }
 }
 
 // Media Queries
