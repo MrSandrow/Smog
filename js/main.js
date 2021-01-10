@@ -23,7 +23,9 @@ function switchTheme() {
 // Random Emojis
 
 const emojis = document.querySelector(".emojis");
+
 emojis.addEventListener("mouseover", randomEmoji);
+emojis.addEventListener("click", randomEmoji);
 
 function randomEmoji() {
   const characters = [

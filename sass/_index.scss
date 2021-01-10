@@ -7,9 +7,9 @@
     }
 
     .emojis {
-      cursor: pointer;
-      margin: auto;
       font-size: 5rem;
+      margin: auto;
+      user-select: none;
       transition: all ease-out 0.1s;
     }
   }
@@ -43,12 +43,13 @@
   .third {
     .container {
       display: grid;
-      text-align: center;
       grid-row-gap: 3rem;
       row-gap: 3rem;
     }
 
     strong {
+      width: fit-content;
+      margin: 0 auto;
       font-size: 5rem;
       padding: 0.25em;
       align-self: flex-end;
