@@ -75,13 +75,13 @@ const counter = document.querySelector(".counter");
 counter.addEventListener("click", count);
 
 function count() {
-  const span = document.querySelector(".third span");
+  const strong = document.querySelector(".third strong");
   number = number + 1;
 
   if (number === 1) {
-    span.innerText = `${number} Clic`;
+    strong.innerText = `${number} Clic`;
   } else {
-    span.innerText = `${number} Clics`;
+    strong.innerText = `${number} Clics`;
   }
 }
 

@@ -28,6 +28,8 @@ html {
   }
 }
 
+// Specific Styles
+
 @import "index";
 @import "slider";
 
@@ -55,7 +57,6 @@ section {
 }
 
 footer {
-  font-weight: bold;
   margin: 1.5rem auto;
   align-self: end;
 }
@@ -74,10 +75,6 @@ button {
   padding: 1em 2em;
   margin: 0 auto;
   transition: all ease 0.2s;
-
-  &:hover {
-    transform: scale(1.1);
-  }
 }
 
 img {
@@ -98,9 +95,27 @@ svg {
 // Media Queries
 
 @media (hover: hover) {
-  .index  {
+  button:hover {
+    transform: scale(1.1);
+  }
+
+  .index {
+    .emojis:hover {
+      transform: scale(1.3);
+    }
+
     .fourth svg {
       width: 1rem;
+    }
+  }
+
+  .slider {
+    .prev:active {
+      transform: translateY(8px);
+    }
+
+    .next:active {
+      transform: scaleY(-1) translateY(8px);
     }
   }
 }

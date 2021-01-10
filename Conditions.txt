@@ -1,3 +1,7 @@
+fixer media query hover
+preload images Slider
+regarder main.css
+
 Nettoyer mon Code
 Optimiser mon site pour mobile
 Débugguer mon Code

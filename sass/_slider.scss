@@ -25,14 +25,6 @@
 
   .next {
     transform: scaleY(-1);
-
-    &:active {
-      transform: scaleY(-1) translateY(8px);
-    }
-  }
-
-  .prev:active {
-    transform: translateY(8px);
   }
 
   .part {
