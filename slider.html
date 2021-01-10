@@ -5,29 +5,38 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Slider</title>
-  <link rel="stylesheet" href="slider.css">
   <link rel="icon" href="img/icon.png">
+  <link rel="stylesheet" href="main.css">
 </head>
 
-<body>
+<body class="slider">
 
   <div id="sliderWrapper">
     <div class="buttons">
       <button class="next">
-        <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
-          <path d="M11 21.883l-6.235-7.527-.765.644 7.521 9 7.479-9-.764-.645-6.236 7.529v-21.884h-1v21.883z" />
+        <svg viewBox='0 0 448 512'>
+          <use xlink:href='#arrow'></use>
         </svg>
       </button>
       <button class="prev">
-        <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
-          <path d="M11 21.883l-6.235-7.527-.765.644 7.521 9 7.479-9-.764-.645-6.236 7.529v-21.884h-1v21.883z" />
+        <svg viewBox='0 0 448 512'>
+          <use xlink:href='#arrow'></use>
         </svg>
       </button>
     </div>
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.1.0/anime.min.js"></script>
-  <script src="slider.js"></script>
+  <script src="js/slider.js"></script>
 </body>
 
 </html>
+
+<!-- SVG Icons -->
+
+<svg class='hidden'>
+  <g id='arrow'>
+    <path
+      d='M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z' />
+  </g>
+</svg>

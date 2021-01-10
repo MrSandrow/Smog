@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr" class="no-js dark">
+<html lang="fr" class="no-js">
 
 <head>
   <meta charset="UTF-8">
@@ -13,53 +13,51 @@
 </head>
 
 <body class="index">
-  <header>
-    <nav>
-      <ul>
-        <li class="moon">
-          <svg class="use" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-            <use xlink:href="#moon"></use>
+  <section class="first">
+    <header>
+      <nav>
+        <div class="moon">
+          <svg viewBox='0 0 512 512'>
+            <use xlink:href='#moon'></use>
           </svg>
-        </li>
-      </ul>
-    </nav>
-  </header>
-  <main>
-    <section class="first">
+        </div>
+      </nav>
+    </header>
+    <div class="container">
       <div class="emojis">😂</div>
-    </section>
-    <section class="second">
-      <div class="container">
-        <div class="img img1"></div>
-        <div class="img img2"></div>
-      </div>
-    </section>
-    <section class="third">
-      <div class="container">
+    </div>
+  </section>
+  <section class="second">
+    <div class="container">
+      <div class="img img1"></div>
+      <div class="img img2"></div>
+    </div>
+  </section>
+  <section class="third">
+    <div class="container">
+      <div class="content">
         <span>0 Clics</span>
         <button class="counter">Clique !</button>
       </div>
-    </section>
-    <section class="fourth">
-      <div class="container">
-        <svg class="use arrow prev" viewBox="0 0 250 512" xmlns="http://www.w3.org/2000/svg">
-          <use xlink:href="#arrow"></use>
-        </svg>
-        <div class="part">
-        </div>
-        <svg class="use arrow next" viewBox="0 0 250 512" xmlns="http://www.w3.org/2000/svg">
-          <use xlink:href="#arrow"></use>
-        </svg>
-      </div>
-    </section>
-    <section class="fifth"></section>
-  </main>
-  <footer>
-    <span class="footer">Copyright - ©
-      <script>document.write(new Date().getFullYear());</script>
-    </span>
-  </footer>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.1.0/anime.min.js"></script>
+    </div>
+  </section>
+  <section class="fourth">
+    <svg viewBox='0 0 170 512' class="prev">
+      <use xlink:href='#arrow'></use>
+    </svg>
+    <div class="container"></div>
+    <svg viewBox='0 0 170 512' class="next">
+      <use xlink:href='#arrow'></use>
+    </svg>
+  </section>
+  <section class="fifth"></section>
+  <section class="last">
+    <footer>
+      <span>Copyright - ©
+        <script>document.write(new Date().getFullYear());</script>
+      </span>
+    </footer>
+  </section>
   <script src="js/main.js"></script>
 </body>
 
@@ -67,16 +65,16 @@
 
 <!-- SVG Icons -->
 
-<svg>
-  <g id="moon">
+<svg class='hidden'>
+  <g id='moon'>
     <path
-      d="M283.211 512c78.962 0 151.079-35.925 198.857-94.792 7.068-8.708-.639-21.43-11.562-19.35-124.203 23.654-238.262-71.576-238.262-196.954 0-72.222 38.662-138.635 101.498-174.394 9.686-5.512 7.25-20.197-3.756-22.23A258.156 258.156 0 0 0 283.211 0c-141.309 0-256 114.511-256 256 0 141.309 114.511 256 256 256z" />
+      d='M283.211 512c78.962 0 151.079-35.925 198.857-94.792 7.068-8.708-.639-21.43-11.562-19.35-124.203 23.654-238.262-71.576-238.262-196.954 0-72.222 38.662-138.635 101.498-174.394 9.686-5.512 7.25-20.197-3.756-22.23A258.156 258.156 0 0 0 283.211 0c-141.309 0-256 114.511-256 256 0 141.309 114.511 256 256 256z' />
   </g>
 </svg>
 
-<svg>
-  <g id="arrow">
+<svg class='hidden'>
+  <g id='arrow'>
     <path
-      d="M0 384.662V127.338c0-17.818 21.543-26.741 34.142-14.142l128.662 128.662c7.81 7.81 7.81 20.474 0 28.284L34.142 398.804C21.543 411.404 0 402.48 0 384.662z" />
+      d='M0 384.662V127.338c0-17.818 21.543-26.741 34.142-14.142l128.662 128.662c7.81 7.81 7.81 20.474 0 28.284L34.142 398.804C21.543 411.404 0 402.48 0 384.662z' />
   </g>
 </svg>

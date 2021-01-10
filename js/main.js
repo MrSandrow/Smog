@@ -1,27 +1,29 @@
-// Variables
+// Dark Theme
 
+const html = document.documentElement;
 const moon = document.querySelector(".moon");
-const emojis = document.querySelector(".emojis");
-const second = document.querySelector(".second");
-const counter = document.querySelector(".counter");
-let number = 0;
-const next = document.querySelector(".next");
-const prev = document.querySelector(".prev");
+const theme = localStorage.getItem("theme");
 
-// Event Listeners
+moon.addEventListener("click", switchTheme);
 
-moon.addEventListener("click", theme);
-emojis.addEventListener("mouseover", randomEmoji);
-second.addEventListener("mousemove", slider);
-counter.addEventListener("click", count);
-next.addEventListener("click", () => slide(-1));
-prev.addEventListener("click", () => slide(1));
-
-// Functions
-
-function theme() {
-  document.documentElement.classList.toggle("dark");
+if (theme === "dark") {
+  html.classList.add("dark");
 }
+
+function switchTheme() {
+  if (html.classList.contains("dark")) {
+    localStorage.removeItem("theme");
+  } else {
+    localStorage.setItem("theme", "dark");
+  }
+
+  html.classList.toggle("dark");
+}
+
+// Random Emojis
+
+const emojis = document.querySelector(".emojis");
+emojis.addEventListener("mouseover", randomEmoji);
 
 function randomEmoji() {
   const characters = [
@@ -47,11 +49,16 @@ function randomEmoji() {
   emojis.innerText = characters[Math.floor(Math.random() * characters.length)];
 }
 
+// Image Slider
+
+const second = document.querySelector(".second");
+second.addEventListener("mousemove", slider);
+
 function slider(e) {
   const body = document.querySelector("body");
   const container = document.querySelector(".second .container");
-  const width = (body.offsetWidth - container.offsetWidth) / 2;
   const img2 = document.querySelector(".img2");
+  const width = (body.offsetWidth - container.offsetWidth) / 2;
   let x = e.clientX - width;
 
   if (x < 0) {
@@ -60,6 +67,12 @@ function slider(e) {
 
   img2.style.left = x + "px";
 }
+
+// Counter
+
+let number = 0;
+const counter = document.querySelector(".counter");
+counter.addEventListener("click", count);
 
 function count() {
   const span = document.querySelector(".third span");
@@ -72,86 +85,40 @@ function count() {
   }
 }
 
-// Slider
+// Carrousel
 
-const sliderWrapper = document.querySelector(".fourth .container");
-let parts = [];
-let images = ["img/day.jpg", "img/night.jpg"];
-let current = 0;
+let src = 0;
+const prev = document.querySelector(".prev");
+const next = document.querySelector(".next");
+const images = [
+  "img/day.jpg",
+  "img/night.jpg",
+  "img/cactus.jpg",
+  "img/city.jpg",
+  "img/mountains.jpg",
+];
 
-let part = document.querySelector(".part");
+prev.addEventListener("click", prevo);
+next.addEventListener("click", nexto);
 
-let section = document.createElement("div");
-section.className = "section";
+function prevo() {
+  const container = document.querySelector(".fourth .container");
 
-let img = document.createElement("img");
-img.src = images[current];
-
-section.appendChild(img);
-part.appendChild(section);
-
-parts.push(part);
-
-// Slide handler
-console.log(part.childNodes);
-let playing = false;
-
-const slide = (dir) => {
-  if (!playing) {
-    playing = true;
-
-    if (current + dir < 0) {
-      current = images.length - 1;
-    } else if (current + dir >= images.length) {
-      current = 0;
-    } else {
-      current += dir;
-    }
-
-    const up = (part, next) => {
-      part.appendChild(next);
-      anime({
-        targets: part,
-        duration: 1000,
-        easing: "easeOutSine",
-        translateY: [0, -window.innerHeight],
-        complete: () => {
-          part.removeChild(part.childNodes[0]);
-          playing = false;
-          part.style.transform = "translateY(0)";
-        },
-      });
-    };
-
-    const down = (part, next) => {
-      part.insertBefore(next, part.firstChild);
-      anime({
-        targets: part,
-        duration: 1000,
-        easing: "easeOutSine",
-        translateY: [-window.innerHeight, 0],
-        complete: () => {
-          part.removeChild(part.childNodes[1]);
-          playing = false;
-        },
-      });
-    };
-
-    for (let p in parts) {
-      let part = parts[p];
-      let next = document.createElement("div");
-      next.className = "section";
-
-      let img = document.createElement("img");
-      img.src = images[current];
-
-      next.appendChild(img);
-
-      if ((p - Math.max(0, dir)) % 2 === 0) {
-        down(part, next);
-      } else {
-        up(part, next);
-      }
-    }
+  if (src === 0) {
+    src = images.length - 1;
+  } else {
+    src--;
   }
-};
+  container.style.background = `url(${images[src]}) center/cover`;
+}
+
+function nexto() {
+  const container = document.querySelector(".fourth .container");
+
+  if (src >= images.length - 1) {
+    src = 0;
+  } else {
+    src++;
+  }
+  container.style.background = `url(${images[src]}) center/cover`;
+}

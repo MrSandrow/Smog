@@ -19,8 +19,14 @@ function defile(event) {
 
 const sliderWrapper = document.getElementById("sliderWrapper");
 let parts = [];
-let images = ["img/day.jpg", "img/night.jpg"];
 let current = 0;
+let images = [
+  "img/day.jpg",
+  "img/night.jpg",
+  "img/cactus.jpg",
+  "img/city.jpg",
+  "img/mountains.jpg",
+];
 
 let part = document.createElement("div");
 part.className = "part";
@@ -38,6 +44,7 @@ sliderWrapper.appendChild(part);
 parts.push(part);
 
 // Slide handler
+
 let playing = false;
 
 const slide = (dir) => {

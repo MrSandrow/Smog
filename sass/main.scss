@@ -16,29 +16,30 @@ html {
   font-size: 12px;
   background: var(--bg);
   color: var(--accent);
+
   --bg: white;
   --accent: black;
+  --button: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%);
 
   &.dark {
     --bg: black;
     --accent: white;
+    --button: var(--accent);
   }
 }
 
 @import "index";
+@import "slider";
 
 // CSS Sections
 
 nav {
-  margin: 1.5rem;
+  margin: 2rem;
+}
 
-  li {
-    margin-left: auto;
-    list-style: none;
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
-  }
+.moon {
+  width: fit-content;
+  margin-left: auto;
 }
 
 section {
@@ -46,17 +47,24 @@ section {
   height: 100vh;
 }
 
+.container {
+  width: 80vw;
+  height: 80vh;
+  align-self: center;
+  justify-self: center;
+}
+
 footer {
   font-weight: bold;
-  text-align: center;
   margin: 1.5rem auto;
+  align-self: end;
 }
 
 // CSS Components
 
 button {
   cursor: pointer;
-  background: var(--accent);
+  background: var(--button);
   color: var(--bg);
   font-family: $font;
   font-weight: 700;
@@ -74,18 +82,34 @@ button {
 
 img {
   width: 100%;
+  display: block;
 }
 
 svg {
+  width: 1.75rem;
   fill: var(--accent);
-  display: none;
+  cursor: pointer;
+}
 
-  &.use {
-    display: inline;
-  }
+.hidden {
+  display: none;
 }
 
 // Media Queries
+
+@media (hover: hover) {
+  .index  {
+    .fourth svg {
+      width: 1rem;
+    }
+  }
+}
+
+@media (min-width: 600px) {
+  .container {
+    width: 60vw;
+  }
+}
 
 @media (min-width: 992px) {
   html {
