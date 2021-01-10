@@ -22,18 +22,18 @@
     }
 
     .img1 {
-      background: url("img/day.jpg");
+      background: url("img/day.jpg") center / cover fixed;
     }
 
     .img2 {
-      background: url("img/night.jpg");
+      background: url("img/night.jpg") center / cover fixed;
       left: 50%;
     }
 
     .img {
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
+      // background-size: cover;
+      // background-position: center;
+      // background-attachment: fixed;
       position: absolute;
       width: 100%;
       height: 100%;
@@ -50,7 +50,8 @@
     strong {
       width: fit-content;
       margin: 0 auto;
-      font-size: 5rem;
+      text-align: center;
+      font-size: 4.5rem;
       padding: 0.25em;
       align-self: flex-end;
       border-radius: 10px;
