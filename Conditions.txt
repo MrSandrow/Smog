@@ -1,3 +1,5 @@
+Éviter qu'il y ait 2 fois le même emoji
+
 Optimiser mon site pour mobile
 Tester mon Code
 Faire un Counter Up - https://youtu.be/zs3RlE-sAhE?list=PL2kZlR1Jp7zO_SmxNCNrVq5m8e-HAGgzU

@@ -1,3 +1,7 @@
+// Main Variables
+
+const hover = window.matchMedia("(hover: hover)").matches;
+
 // Dark Theme
 
 const html = document.documentElement;
@@ -23,7 +27,6 @@ function switchTheme() {
 // Random Emojis
 
 const emojis = document.querySelector(".emojis");
-const hover = window.matchMedia("(hover: hover)").matches;
 
 if (hover) {
   emojis.addEventListener("mouseover", randomEmoji);
@@ -58,20 +61,26 @@ function randomEmoji() {
 // Image Slider
 
 const second = document.querySelector(".second");
-second.addEventListener("mousemove", slider);
+
+if (hover) {
+  second.addEventListener("mousemove", slider);
+} else {
+  second.addEventListener("touchmove", slider);
+}
 
 function slider(e) {
   const body = document.querySelector("body");
   const container = document.querySelector(".second .container");
   const img2 = document.querySelector(".img2");
   const width = (body.offsetWidth - container.offsetWidth) / 2;
-  let x = e.clientX - width;
 
-  if (x < 0) {
-    x = 0;
+  if (hover) {
+    let x = Math.max(0, e.clientX - width);
+    img2.style.left = x + "px";
+  } else {
+    let x = Math.max(0, e.touches[0].clientX - width);
+    img2.style.left = x + "px";
   }
-
-  img2.style.left = x + "px";
 }
 
 // Counter

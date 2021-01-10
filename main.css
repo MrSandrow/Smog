@@ -117,15 +117,18 @@ svg {
 }
 
 .index .second .img1 {
-  background: url("img/day.jpg") center/cover fixed;
+  background: url("img/day.jpg");
 }
 
 .index .second .img2 {
-  background: url("img/night.jpg") center/cover fixed;
+  background: url("img/night.jpg");
   left: 50%;
 }
 
 .index .second .img {
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   position: absolute;
   width: 100%;
   height: 100%;
