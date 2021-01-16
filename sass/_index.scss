@@ -15,6 +15,8 @@
   }
 
   .second {
+    display: none;
+
     .container {
       position: relative;
       overflow: hidden;
@@ -48,11 +50,12 @@
       row-gap: 3rem;
     }
 
-    strong {
+    span {
       width: fit-content;
       margin: 0 auto;
       text-align: center;
       font-size: 4.5rem;
+      font-weight: bold;
       padding: 0.25em;
       align-self: flex-end;
       border-radius: 10px;

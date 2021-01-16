@@ -1,7 +1,4 @@
-Éviter qu'il y ait 2 fois le même emoji
-
-Optimiser mon site pour mobile
-Tester mon Code
+Nettoyer mon Code
 Faire un Counter Up - https://youtu.be/zs3RlE-sAhE?list=PL2kZlR1Jp7zO_SmxNCNrVq5m8e-HAGgzU
 Effet Glassmorphique - https://www.youtube.com/watch?v=hv0rNxr1XXk&list=PL5e68lK9hEzdn0O-OkMNNKHmP1iU6e6Dj
 Faire un texte qui s'écrit tout seul (avec un crayon)
@@ -33,3 +30,9 @@ Récupérer les informations d'une icône FontAwesome
 Ajouter une App Pomodoro - https://www.frontendmentor.io/challenges/pomodoro-app-KBFnycJ6G
 Créer un Breakout Game - https://www.webtips.dev/building-the-game-breakout-using-javascript
 Trouver des Objets & des Librairies cools - https://www.youtube.com/watch?v=PsL3iI61wl8&list=PLbu98QxRH81LNY0PYN7s-71u8aYi6ozXs
+
+
+
+background-size: 1000%;
+background-position: center top;
+background-attachment: inherit;

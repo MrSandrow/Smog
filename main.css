@@ -56,6 +56,7 @@ footer {
   -ms-flex-item-align: end;
       -ms-grid-row-align: end;
       align-self: end;
+  font-weight: bold;
 }
 
 button {
@@ -110,6 +111,10 @@ svg {
   transition: all ease-out 0.1s;
 }
 
+.index .second {
+  display: none;
+}
+
 .index .second .container {
   position: relative;
   overflow: hidden;
@@ -145,13 +150,14 @@ svg {
   row-gap: 3rem;
 }
 
-.index .third strong {
+.index .third span {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   margin: 0 auto;
   text-align: center;
   font-size: 4.5rem;
+  font-weight: bold;
   padding: 0.25em;
   -ms-flex-item-align: end;
       align-self: flex-end;
@@ -256,6 +262,10 @@ svg {
   .index .emojis:hover {
     -webkit-transform: scale(1.3);
             transform: scale(1.3);
+  }
+  .index .second {
+    display: -ms-grid;
+    display: grid;
   }
   .index .fourth svg {
     width: 1rem;

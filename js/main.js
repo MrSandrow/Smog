@@ -55,7 +55,21 @@ function randomEmoji() {
     "😬",
     "🥳",
   ];
-  emojis.innerText = characters[Math.floor(Math.random() * characters.length)];
+
+  let oldEmoji = emojis.innerText;
+  let random = characters[Math.floor(Math.random() * characters.length)];
+
+  if (random === oldEmoji) {
+    let x = characters.indexOf(random) + 1;
+
+    if (x === characters.length) {
+      x = 0;
+    }
+
+    random = characters[x];
+  }
+
+  emojis.innerText = random;
 }
 
 // Image Slider
@@ -90,13 +104,13 @@ const counter = document.querySelector(".counter");
 counter.addEventListener("click", count);
 
 function count() {
-  const strong = document.querySelector(".third strong");
+  const span = document.querySelector(".third span");
   number = number + 1;
 
   if (number === 1) {
-    strong.innerText = `${number} Clic`;
+    span.innerText = `${number} Clic`;
   } else {
-    strong.innerText = `${number} Clics`;
+    span.innerText = `${number} Clics`;
   }
 }
 

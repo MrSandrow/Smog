@@ -54,6 +54,7 @@ section {
 footer {
   margin: 1.5rem auto;
   align-self: end;
+  font-weight: bold;
 }
 
 // CSS Components
@@ -112,6 +113,10 @@ svg {
       &:hover {
         transform: scale(1.3);
       }
+    }
+
+    .second {
+      display: grid;
     }
 
     .fourth svg {
