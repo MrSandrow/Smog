@@ -75,12 +75,7 @@ function randomEmoji() {
 // Image Slider
 
 const second = document.querySelector(".second");
-
-if (hover) {
-  second.addEventListener("mousemove", slider);
-} else {
-  second.addEventListener("touchmove", slider);
-}
+second.addEventListener("mousemove", slider);
 
 function slider(e) {
   const body = document.querySelector("body");
@@ -88,13 +83,8 @@ function slider(e) {
   const img2 = document.querySelector(".img2");
   const width = (body.offsetWidth - container.offsetWidth) / 2;
 
-  if (hover) {
-    let x = Math.max(0, e.clientX - width);
-    img2.style.left = x + "px";
-  } else {
-    let x = Math.max(0, e.touches[0].clientX - width);
-    img2.style.left = x + "px";
-  }
+  let x = Math.max(0, e.clientX - width);
+  img2.style.left = x + "px";
 }
 
 // Counter

@@ -30,9 +30,3 @@ Récupérer les informations d'une icône FontAwesome
 Ajouter une App Pomodoro - https://www.frontendmentor.io/challenges/pomodoro-app-KBFnycJ6G
 Créer un Breakout Game - https://www.webtips.dev/building-the-game-breakout-using-javascript
 Trouver des Objets & des Librairies cools - https://www.youtube.com/watch?v=PsL3iI61wl8&list=PLbu98QxRH81LNY0PYN7s-71u8aYi6ozXs
-
-
-
-background-size: 1000%;
-background-position: center top;
-background-attachment: inherit;
