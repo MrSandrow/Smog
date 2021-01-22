@@ -15,13 +15,13 @@ html {
   color: var(--accent);
   --bg: white;
   --accent: black;
-  --button: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%);
+  --gradient: var(--accent);
 }
 
 html.dark {
   --bg: black;
   --accent: white;
-  --button: var(--accent);
+  --gradient: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%);
 }
 
 nav {
@@ -60,7 +60,7 @@ footer {
 }
 
 button {
-  background: var(--button);
+  background: var(--accent);
   color: var(--bg);
   font-family: Montserrat, Arial, sans-serif;
   font-weight: 700;
@@ -70,7 +70,7 @@ button {
   border: none;
   border-radius: 2em;
   padding: 1em 2em;
-  margin: 0 auto;
+  margin: 0.5rem auto 0;
   -webkit-transition: all ease 0.2s;
   transition: all ease 0.2s;
 }
@@ -82,6 +82,7 @@ img {
 
 svg {
   width: 1.75rem;
+  height: 100%;
   fill: var(--accent);
 }
 
@@ -98,6 +99,7 @@ svg {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  height: auto;
 }
 
 .index .first .emojis {
@@ -146,8 +148,18 @@ svg {
 .index .third .container {
   display: -ms-grid;
   display: grid;
-  grid-row-gap: 3rem;
-  row-gap: 3rem;
+  -ms-flex-line-pack: space-evenly;
+      align-content: space-evenly;
+  height: auto;
+  min-height: 80vh;
+}
+
+.index .third .content {
+  display: -ms-grid;
+  display: grid;
+  grid-row-gap: 0.5rem;
+  row-gap: 0.5rem;
+  text-align: center;
 }
 
 .index .third span {
@@ -155,19 +167,20 @@ svg {
   width: -moz-fit-content;
   width: fit-content;
   margin: 0 auto;
-  text-align: center;
-  font-size: 4.5rem;
+  font-size: 4.25rem;
   font-weight: bold;
-  padding: 0.25em;
-  -ms-flex-item-align: end;
-      align-self: flex-end;
+  padding: 0 0.25em;
   border-radius: 10px;
-  background: -webkit-gradient(linear, left top, right top, from(#00d2ff), to(#3a47d5));
-  background: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%);
+  background: var(--gradient);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   color: white;
+}
+
+.index .third p {
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 .index .fourth {
@@ -177,9 +190,6 @@ svg {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 .index .fourth .prev {
@@ -195,6 +205,32 @@ svg {
 .index .fourth .container {
   border-radius: 20px;
   background: url(img/day.jpg) center/cover;
+}
+
+.index .fifth .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.index .fifth svg {
+  max-width: 100%;
+  width: 35rem;
+  cursor: default;
+  -webkit-filter: drop-shadow(0px 4px 8px #ff9100);
+          filter: drop-shadow(0px 4px 8px #ff9100);
+}
+
+#smog path {
+  fill: none;
+  stroke: #ff9100;
+  stroke-width: 1px;
 }
 
 .slider {

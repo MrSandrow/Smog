@@ -1,6 +1,16 @@
-// Main Variables
+// Main Elements
 
 const hover = window.matchMedia("(hover: hover)").matches;
+
+function runOnce(fn, context) {
+  let executed = false;
+  return function () {
+    if (!executed) {
+      executed = true;
+      fn(context);
+    }
+  };
+}
 
 // Dark Theme
 
@@ -87,7 +97,7 @@ function slider(e) {
   img2.style.left = x + "px";
 }
 
-// Counter
+// Clicks Counter
 
 let number = 0;
 const counter = document.querySelector(".counter");
@@ -103,6 +113,24 @@ function count() {
     span.innerText = `${number} Clics`;
   }
 }
+
+// Counter Up
+
+import { CountUp } from "./counter.js";
+const third = document.querySelector(".third");
+
+function counterUp() {
+  const target = document.querySelector(".counter-up");
+  const options = { separator: " " };
+  const countUp = new CountUp(target, 500000, options);
+  countUp.start();
+}
+
+new Waypoint({
+  element: third,
+  offset: "25%",
+  handler: runOnce(counterUp),
+});
 
 // Carrousel
 
@@ -141,3 +169,26 @@ function nexto() {
   }
   container.style.background = `url(${images[src]}) center/cover`;
 }
+
+// Line Drawing
+
+const fifth = document.querySelector(".fifth");
+
+const smog = anime({
+  targets: "#smog path",
+  strokeDashoffset: [anime.setDashoffset, 0],
+  easing: "easeInOutSine",
+  duration: 3000,
+  delay: (el, i) => i * 450,
+  autoplay: false,
+});
+
+function lineDraw() {
+  smog.play();
+}
+
+new Waypoint({
+  element: fifth,
+  offset: "30%",
+  handler: runOnce(lineDraw),
+});

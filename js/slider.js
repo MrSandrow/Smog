@@ -1,20 +1,3 @@
-// Event Listeners
-
-const next = document.querySelector(".next");
-const prev = document.querySelector(".prev");
-
-next.addEventListener("click", () => slide(-1));
-prev.addEventListener("click", () => slide(1));
-window.addEventListener("wheel", defile);
-
-function defile(event) {
-  if (event.deltaY < 0) {
-    slide(-1);
-  } else {
-    slide(1);
-  }
-}
-
 // Add images to the HTML-markup
 
 const sliderWrapper = document.getElementById("sliderWrapper");
@@ -106,3 +89,42 @@ const slide = (dir) => {
     }
   }
 };
+
+// Event Listeners
+
+const hover = window.matchMedia("(hover: hover)").matches;
+const next = document.querySelector(".next");
+const prev = document.querySelector(".prev");
+
+next.addEventListener("click", () => slide(-1));
+prev.addEventListener("click", () => slide(1));
+
+if (hover) {
+  window.addEventListener("wheel", desktop);
+} else {
+  part.addEventListener("touchstart", (event) => {
+    start = event.changedTouches[0].screenY;
+  });
+  part.addEventListener("touchend", (event) => {
+    end = event.changedTouches[0].screenY;
+    mobile(start, end);
+  });
+}
+
+function desktop(event) {
+  if (event.deltaY < 0) {
+    slide(-1);
+  } else {
+    slide(1);
+  }
+}
+
+function mobile(a, b) {
+  deltaY = b - a;
+
+  if (deltaY > 0) {
+    slide(-1);
+  } else if (deltaY < 0) {
+    slide(1);
+  }
+}

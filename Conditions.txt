@@ -1,7 +1,4 @@
-Nettoyer mon Code
-Faire un Counter Up - https://youtu.be/zs3RlE-sAhE?list=PL2kZlR1Jp7zO_SmxNCNrVq5m8e-HAGgzU
 Effet Glassmorphique - https://www.youtube.com/watch?v=hv0rNxr1XXk&list=PL5e68lK9hEzdn0O-OkMNNKHmP1iU6e6Dj
-Faire un texte qui s'écrit tout seul (avec un crayon)
 
 Ajouter une Transition sur le Slider
 Ajouter une Transition sur le Compteur de Clics
@@ -12,9 +9,9 @@ Intégrer une API & Fetch des données en JSON (AJAX) + Créer une Search Bar (C
 
 
 
-Installer ESLint & Babel
+Installer ESLint
 Supprimer le préfixe -ms de Live Sass Compiler
-Afficher une page d'Erreur sur Internet Explorer / JS Désactivé
+Afficher une page d'Erreur sur Internet Explorer / JS Désactivé / Page 404
 Ajouter un Burger Menu
 Ajouter un Loader
 Utiliser GSAP & AnimeJS - https://youtu.be/lUUOMdnLBqY?t=327
@@ -23,6 +20,7 @@ Changer la couleur du background en scrollant (Heetch) + Background Radial Gradi
 Faire un Slide Horizontall au début du scroll
 Faire Apparaître / Slider le texte quand je scroll
 Faire "Rebondir" un texte ou une image
+Créer un feu d'artifice quand on clique - https://codepen.io/juliangarnier/pen/xOgyjB?editors=0010
 Créer un Overlay (100% de l'écran) visible en cliquant sur un Bouton. L'overlay part du bouton et se propage en cercle.
 Créer un menu comme celui de Stripe (Page des projets)
 Injecter un élément HTML en cliquant sur un bouton - https://www.youtube.com/watch?v=HnXmI2UVZlU

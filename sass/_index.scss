@@ -4,6 +4,7 @@
 
     .container {
       display: flex;
+      height: auto;
     }
 
     .emojis {
@@ -46,31 +47,41 @@
   .third {
     .container {
       display: grid;
-      grid-row-gap: 3rem;
-      row-gap: 3rem;
+      align-content: space-evenly;
+      height: auto;
+      min-height: 80vh;
+    }
+
+    .content {
+      display: grid;
+      grid-row-gap: 0.5rem;
+      row-gap: 0.5rem;
+      text-align: center;
     }
 
     span {
       width: fit-content;
       margin: 0 auto;
-      text-align: center;
-      font-size: 4.5rem;
+      font-size: 4.25rem;
       font-weight: bold;
-      padding: 0.25em;
-      align-self: flex-end;
+      padding: 0 0.25em;
       border-radius: 10px;
-      background: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%);
+      background: var(--gradient);
       background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       color: white;
+    }
+
+    p {
+      font-size: 1.5rem;
+      font-weight: bold;
     }
   }
 
   .fourth {
     display: flex;
     justify-content: center;
-    align-items: center;
 
     .prev {
       margin: 0 1.5rem;
@@ -86,4 +97,25 @@
       background: url(img/day.jpg) center/cover;
     }
   }
+
+  .fifth {
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    svg {
+      max-width: 100%;
+      width: 35rem;
+      cursor: default;
+      filter: drop-shadow(0px 4px 8px rgb(255, 145, 0));
+    }
+  }
+}
+
+#smog path {
+  fill: none;
+  stroke: rgb(255, 145, 0);
+  stroke-width: 1px;
 }

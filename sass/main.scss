@@ -19,12 +19,12 @@ html {
 
   --bg: white;
   --accent: black;
-  --button: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%);
+  --gradient: var(--accent);
 
   &.dark {
     --bg: black;
     --accent: white;
-    --button: var(--accent);
+    --gradient: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%);
   }
 }
 
@@ -60,7 +60,7 @@ footer {
 // CSS Components
 
 button {
-  background: var(--button);
+  background: var(--accent);
   color: var(--bg);
   font-family: $font;
   font-weight: 700;
@@ -68,7 +68,7 @@ button {
   border: none;
   border-radius: 2em;
   padding: 1em 2em;
-  margin: 0 auto;
+  margin: 0.5rem auto 0;
   transition: all ease 0.2s;
 }
 
@@ -79,6 +79,7 @@ img {
 
 svg {
   width: 1.75rem;
+  height: 100%;
   fill: var(--accent);
 }
 
