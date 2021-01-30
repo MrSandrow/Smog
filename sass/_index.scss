@@ -123,6 +123,7 @@
       height: 100%;
       background: linear-gradient(225deg, rgb(221, 8, 8), rgb(252, 237, 31));
       clip-path: circle(20% at 10% 40%);
+      z-index: 1;
     }
 
     &::after {
@@ -132,13 +133,14 @@
       height: 100%;
       background: linear-gradient(25deg, rgb(8, 136, 221), rgb(247, 2, 255));
       clip-path: circle(30% at right 70%);
+      z-index: 1;
     }
 
     .container {
       display: flex;
       align-items: center;
       justify-content: center;
-      z-index: 1;
+      z-index: 2;
     }
 
     .card {

@@ -1,6 +1,5 @@
-Tester mon code
-Désactiver le tilt sur mobile si nécessaire
-
+Bavure du blur derrière le content sur iOS
+Rond qui est recouvert par le footer sur iPad et Android (en Paysage)
 Ne pas animer stroke-dahsoffset (0px) sur Safari iOS
 
 Effet Glassmorphique - https://www.youtube.com/watch?v=hv0rNxr1XXk&list=PL5e68lK9hEzdn0O-OkMNNKHmP1iU6e6Dj
@@ -15,7 +14,6 @@ Intégrer une API & Fetch des données en JSON (AJAX) + Créer une Search Bar (C
 
 
 Installer ESLint
-Supprimer le préfixe -ms de Live Sass Compiler
 Afficher une page d'Erreur sur Internet Explorer / JS Désactivé / Page 404
 Ajouter un Burger Menu
 Ajouter un Loader
