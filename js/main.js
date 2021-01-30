@@ -192,3 +192,43 @@ new Waypoint({
   offset: "30%",
   handler: runOnce(lineDraw),
 });
+
+// Glasmorphism
+
+window.addEventListener("load", resize);
+window.addEventListener("resize", resize);
+
+const cards = document.querySelectorAll(".last .card");
+
+function resize() {
+  const container = document.querySelector(".last .container");
+  const realWidth = Math.max(0, (container.offsetWidth - 375) / (375 + 48));
+  const width = Math.min(realWidth, cards.length);
+  let i;
+
+  for (i = 0; i < width; i++) {
+    cards[i].classList.remove("hidden");
+  }
+
+  for (i = cards.length - 1; i > width; i--) {
+    cards[i].classList.add("hidden");
+  }
+
+  const glare = document.querySelectorAll(".js-tilt-glare-inner");
+  const content = document.querySelector(".last .content");
+  const height = content.offsetHeight;
+
+  for (i = 0; i < cards.length; i++) {
+    cards[i].style.height = `calc(${height}px + 8rem)`;
+    glare[i].style.width = `${cards[i].offsetWidth * 2}px`;
+    glare[i].style.height = `${cards[i].offsetWidth * 2}px`;
+  }
+}
+
+VanillaTilt.init(cards, {
+  max: 15,
+  speed: 750,
+  scale: 1.075,
+  glare: true,
+  "max-glare": 0.5,
+});

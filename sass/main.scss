@@ -28,6 +28,11 @@ html {
   }
 }
 
+// Imported Styles
+
+@import "index";
+@import "slider";
+
 // CSS Sections
 
 nav {
@@ -52,7 +57,7 @@ section {
 }
 
 footer {
-  margin: 1.5rem auto;
+  margin: 0 auto 1.5rem;
   align-self: end;
   font-weight: bold;
 }
@@ -84,13 +89,8 @@ svg {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
-
-// Imported Styles
-
-@import "index";
-@import "slider";
 
 // Media Queries
 
@@ -122,6 +122,19 @@ svg {
 
     .fourth svg {
       width: 1rem;
+    }
+
+    .last {
+      .content {
+        transform: translateY(7rem);
+        opacity: 0;
+        transition: all ease 0.8s;
+      }
+
+      .card:hover .content {
+        transform: translateY(0rem);
+        opacity: 1;
+      }
     }
   }
 

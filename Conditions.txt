@@ -1,3 +1,8 @@
+Tester mon code
+Désactiver le tilt sur mobile si nécessaire
+
+Ne pas animer stroke-dahsoffset (0px) sur Safari iOS
+
 Effet Glassmorphique - https://www.youtube.com/watch?v=hv0rNxr1XXk&list=PL5e68lK9hEzdn0O-OkMNNKHmP1iU6e6Dj
 
 Ajouter une Transition sur le Slider
@@ -14,11 +19,12 @@ Supprimer le préfixe -ms de Live Sass Compiler
 Afficher une page d'Erreur sur Internet Explorer / JS Désactivé / Page 404
 Ajouter un Burger Menu
 Ajouter un Loader
-Utiliser GSAP & AnimeJS - https://youtu.be/lUUOMdnLBqY?t=327
+Utiliser AnimeJS - https://www.youtube.com/watch?v=lj37QZ047f8 & https://www.youtube.com/watch?v=YqOhQWbouCE
 Scroll 100 VH - https://www.youtube.com/watch?v=LVFkJJsug50 & https://www.youtube.com/watch?v=towxNtiSyXE
 Changer la couleur du background en scrollant (Heetch) + Background Radial Gradient
 Faire un Slide Horizontall au début du scroll
 Faire Apparaître / Slider le texte quand je scroll
+Ajouter une barre de progression sur la page (pourcentage scrollé)
 Faire "Rebondir" un texte ou une image
 Créer un feu d'artifice quand on clique - https://codepen.io/juliangarnier/pen/xOgyjB?editors=0010
 Créer un Overlay (100% de l'écran) visible en cliquant sur un Bouton. L'overlay part du bouton et se propage en cercle.
