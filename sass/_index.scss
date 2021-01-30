@@ -114,7 +114,7 @@
   }
 
   .last {
-    grid-template-rows: 1fr;
+    grid-template-rows: 1fr auto;
 
     &::before {
       content: "";
@@ -131,8 +131,7 @@
       width: 100%;
       height: 100%;
       background: linear-gradient(25deg, rgb(8, 136, 221), rgb(247, 2, 255));
-      // clip-path: circle(30% at right 70%);
-      // overflow: visible;
+      clip-path: circle(25% at right 50%);
     }
 
     .container {
