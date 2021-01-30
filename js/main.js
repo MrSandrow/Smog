@@ -195,10 +195,20 @@ new Waypoint({
 
 // Glasmorphism
 
+const cards = document.querySelectorAll(".last .card");
+
+if (hover) {
+  VanillaTilt.init(cards, {
+    max: 15,
+    speed: 750,
+    scale: 1.075,
+    glare: true,
+    "max-glare": 0.5,
+  });
+}
+
 window.addEventListener("load", resize);
 window.addEventListener("resize", resize);
-
-const cards = document.querySelectorAll(".last .card");
 
 function resize() {
   const container = document.querySelector(".last .container");
@@ -226,14 +236,4 @@ function resize() {
       glare[i].style.height = `${cards[i].offsetWidth * 2}px`;
     }
   }
-}
-
-if (hover) {
-  VanillaTilt.init(cards, {
-    max: 15,
-    speed: 750,
-    scale: 1.075,
-    glare: true,
-    "max-glare": 0.5,
-  });
 }
