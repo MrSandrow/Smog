@@ -164,6 +164,7 @@ html.dark {
 .index .last {
   -ms-grid-rows: 1fr auto;
       grid-template-rows: 1fr auto;
+  overflow: visible;
 }
 
 .index .last::before {
@@ -184,6 +185,7 @@ html.dark {
   background: linear-gradient(25deg, #0888dd, #f702ff);
   -webkit-clip-path: circle(30% at right 70%);
           clip-path: circle(30% at right 70%);
+  overflow: visible;
 }
 
 .index .last .container {
@@ -336,6 +338,7 @@ section {
 }
 
 footer {
+  margin: 0 auto 1.5rem;
   -ms-flex-item-align: end;
       -ms-grid-row-align: end;
       align-self: end;

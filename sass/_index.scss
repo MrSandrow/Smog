@@ -115,6 +115,7 @@
 
   .last {
     grid-template-rows: 1fr auto;
+    overflow: visible;
 
     &::before {
       content: "";
@@ -132,6 +133,7 @@
       height: 100%;
       background: linear-gradient(25deg, rgb(8, 136, 221), rgb(247, 2, 255));
       clip-path: circle(30% at right 70%);
+      overflow: visible;
     }
 
     .container {
