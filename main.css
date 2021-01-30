@@ -186,7 +186,7 @@ html.dark {
   content: "";
   position: absolute;
   width: 100%;
-  height: 110%;
+  height: 100vh;
   background: linear-gradient(25deg, #0888dd, #f702ff);
   -webkit-clip-path: circle(30% at right 70%);
           clip-path: circle(30% at right 70%);
