@@ -1,5 +1,4 @@
-Bavure du blur derrière le content sur iOS
-Ne pas animer stroke-dahsoffset (0px) sur Safari iOS
+Ne pas animer stroke-dahsoffset (0px) & Désactiver le backdrop blur sur Safari iOS
 
 Effet Glassmorphique - https://www.youtube.com/watch?v=hv0rNxr1XXk&list=PL5e68lK9hEzdn0O-OkMNNKHmP1iU6e6Dj
 
