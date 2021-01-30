@@ -166,7 +166,13 @@ html.dark {
       grid-template-rows: 1fr auto;
 }
 
-.index .last::before {
+.index .last .bubbles {
+  display: -ms-grid;
+  display: grid;
+  position: relative;
+}
+
+.index .last .bubbles::before {
   content: "";
   position: absolute;
   width: 100%;
@@ -176,14 +182,14 @@ html.dark {
           clip-path: circle(20% at 10% 40%);
 }
 
-.index .last::after {
+.index .last .bubbles::after {
   content: "";
   position: absolute;
   width: 100%;
   height: 100%;
   background: linear-gradient(25deg, #0888dd, #f702ff);
-  -webkit-clip-path: circle(25% at right 50%);
-          clip-path: circle(25% at right 50%);
+  -webkit-clip-path: circle(30% at right 70%);
+          clip-path: circle(30% at right 70%);
 }
 
 .index .last .container {
