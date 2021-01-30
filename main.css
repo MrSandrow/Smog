@@ -339,6 +339,7 @@ footer {
       -ms-grid-row-align: end;
       align-self: end;
   font-weight: bold;
+  position: relative;
 }
 
 button {
