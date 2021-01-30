@@ -162,8 +162,8 @@ html.dark {
 }
 
 .index .last {
-  -ms-grid-rows: 1fr auto;
-      grid-template-rows: 1fr auto;
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
 }
 
 .index .last::before {
