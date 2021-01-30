@@ -336,7 +336,6 @@ section {
 }
 
 footer {
-  margin: 0 auto 1.5rem;
   -ms-flex-item-align: end;
       -ms-grid-row-align: end;
       align-self: end;
