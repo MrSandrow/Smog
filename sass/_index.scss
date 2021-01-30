@@ -118,7 +118,7 @@
 
     .bubbles {
       display: grid;
-      position: relative;
+      position: static;
 
       &::before {
         content: "";

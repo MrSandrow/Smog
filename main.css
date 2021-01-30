@@ -169,7 +169,7 @@ html.dark {
 .index .last .bubbles {
   display: -ms-grid;
   display: grid;
-  position: relative;
+  position: static;
 }
 
 .index .last .bubbles::before {
