@@ -197,23 +197,15 @@ new Waypoint({
 
 const cards = document.querySelectorAll(".last .card");
 
-VanillaTilt.init(cards, {
-  max: 15,
-  speed: 750,
-  scale: 1.075,
-  glare: true,
-  "max-glare": 0.5,
-});
-
-// if (hover) {
-//   VanillaTilt.init(cards, {
-//     max: 15,
-//     speed: 750,
-//     scale: 1.075,
-//     glare: true,
-//     "max-glare": 0.5,
-//   });
-// }
+if (hover) {
+  VanillaTilt.init(cards, {
+    max: 15,
+    speed: 750,
+    scale: 1.075,
+    glare: true,
+    "max-glare": 0.5,
+  });
+}
 
 window.addEventListener("load", resize);
 window.addEventListener("resize", resize);
@@ -239,12 +231,9 @@ function resize() {
   for (i = 0; i < cards.length; i++) {
     cards[i].style.height = `calc(${height}px + 8rem)`;
 
-    glare[i].style.width = `${cards[i].offsetWidth * 2}px`;
-    glare[i].style.height = `${cards[i].offsetWidth * 2}px`;
-
-    // if (hover) {
-    //   glare[i].style.width = `${cards[i].offsetWidth * 2}px`;
-    //   glare[i].style.height = `${cards[i].offsetWidth * 2}px`;
-    // }
+    if (hover) {
+      glare[i].style.width = `${cards[i].offsetWidth * 2}px`;
+      glare[i].style.height = `${cards[i].offsetWidth * 2}px`;
+    }
   }
 }
