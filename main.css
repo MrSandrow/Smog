@@ -231,11 +231,6 @@ html.dark {
   margin-left: 48px;
 }
 
-.index .last .backdropfilter .card {
-  -webkit-backdrop-filter: blur(5px);
-          backdrop-filter: blur(5px);
-}
-
 .index .last .content {
   display: -ms-grid;
   display: grid;
@@ -267,6 +262,11 @@ html.dark {
   fill: none;
   stroke: #ff9100;
   stroke-width: 2px;
+}
+
+.backdropfilter .card {
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
 }
 
 .slider {
