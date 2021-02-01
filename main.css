@@ -227,6 +227,11 @@ html.dark {
   overflow: hidden;
 }
 
+.index .last .card.backdropfilter {
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+}
+
 .index .last .card:not(:first-child) {
   margin-left: 48px;
 }
