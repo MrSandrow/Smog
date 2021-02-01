@@ -1,5 +1,7 @@
 // Main Elements
 
+let i;
+
 const hover = window.matchMedia("(hover: hover)").matches;
 
 function runOnce(fn, context) {
@@ -11,6 +13,27 @@ function runOnce(fn, context) {
     }
   };
 }
+
+const browser = (function (agent) {
+  switch (true) {
+    case agent.indexOf("edge") > -1:
+      return "edge";
+    case agent.indexOf("edg") > -1:
+      return "chromium based edge (dev or canary)";
+    case agent.indexOf("opr") > -1 && !!window.opr:
+      return "opera";
+    case agent.indexOf("chrome") > -1 && !!window.chrome:
+      return "chrome";
+    case agent.indexOf("trident") > -1:
+      return "ie";
+    case agent.indexOf("firefox") > -1:
+      return "firefox";
+    case agent.indexOf("safari") > -1:
+      return "safari";
+    default:
+      return "other";
+  }
+})(window.navigator.userAgent.toLowerCase());
 
 // Dark Theme
 
@@ -184,7 +207,9 @@ const smog = anime({
 });
 
 function lineDraw() {
-  smog.play();
+  if (browser != "safari") {
+    smog.play();
+  }
 }
 
 new Waypoint({
@@ -193,11 +218,19 @@ new Waypoint({
   handler: runOnce(lineDraw),
 });
 
+if (browser === "safari") {
+  const path = document.querySelectorAll("#smog path");
+
+  for (i = 0; i < path.length; i++) {
+    path[i].style.strokeDashoffset = "0px";
+  }
+}
+
 // Glasmorphism
 
 const cards = document.querySelectorAll(".last .card");
 
-if (hover) {
+if (hover && browser != "safari") {
   VanillaTilt.init(cards, {
     max: 15,
     speed: 750,
@@ -214,7 +247,6 @@ function resize() {
   const container = document.querySelector(".last .container");
   const realWidth = Math.max(0, (container.offsetWidth - 375) / (375 + 48));
   const width = Math.min(realWidth, cards.length);
-  let i;
 
   for (i = 0; i < width; i++) {
     cards[i].classList.remove("hidden");
@@ -231,53 +263,22 @@ function resize() {
   for (i = 0; i < cards.length; i++) {
     cards[i].style.height = `calc(${height}px + 8rem)`;
 
-    if (hover) {
+    if (hover && browser != "safari") {
       glare[i].style.width = `${cards[i].offsetWidth * 2}px`;
       glare[i].style.height = `${cards[i].offsetWidth * 2}px`;
     }
   }
 }
 
-// Suite
-
-const opera = () => {
-  if (userAgent.match(/(?:^opera.+?version|opr)\/(\d+)/)) {
-    console.log("opera");
+if (browser === "safari") {
+  for (i = 0; i < cards.length; i++) {
+    cards[i].style.backdropFilter = "none";
   }
-};
 
-const chrome = () => {
-  if (
-    /google inc/.test(vendor)
-      ? userAgent.match(/(?:chrome|crios)\/(\d+)/)
-      : null
-  ) {
-    console.log("chrome");
-  }
-};
-
-const browser = (function (agent) {
-  switch (true) {
-    case agent.indexOf("edge") > -1:
-      return "edge";
-    case agent.indexOf("edg") > -1:
-      return "chromium based edge (dev or canary)";
-    case agent.indexOf("opr") > -1 && !!window.opr:
-      return "opera";
-    case agent.indexOf("chrome") > -1 && !!window.chrome:
-      return "chrome";
-    case agent.indexOf("trident") > -1:
-      return "ie";
-    case agent.indexOf("firefox") > -1:
-      return "firefox";
-    case agent.indexOf("safari") > -1:
-      return "safari";
-    default:
-      return "other";
-  }
-})(window.navigator.userAgent.toLowerCase());
-console.log(browser);
-
-if (browser === chrome) {
-  console.log("bgb");
+  VanillaTilt.init(cards, {
+    max: 15,
+    speed: 750,
+    scale: 1.075,
+    glare: false,
+  });
 }

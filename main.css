@@ -263,7 +263,7 @@ html.dark {
 #smog path {
   fill: none;
   stroke: #ff9100;
-  stroke-width: 1px;
+  stroke-width: 2px;
 }
 
 .slider {
