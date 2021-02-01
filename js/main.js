@@ -238,6 +238,13 @@ if (hover && browser != "safari") {
     glare: true,
     "max-glare": 0.5,
   });
+} else if (hover && browser === "safari") {
+  VanillaTilt.init(cards, {
+    max: 15,
+    speed: 750,
+    scale: 1.075,
+    glare: false,
+  });
 }
 
 window.addEventListener("load", resize);
@@ -268,18 +275,4 @@ function resize() {
       glare[i].style.height = `${cards[i].offsetWidth * 2}px`;
     }
   }
-}
-
-if (browser === "safari") {
-  for (i = 0; i < cards.length; i++) {
-    cards[i].style.backdropFilter = "none !important";
-    
-  }
-
-  VanillaTilt.init(cards, {
-    max: 15,
-    speed: 750,
-    scale: 1.075,
-    glare: false,
-  });
 }
