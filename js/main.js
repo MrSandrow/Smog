@@ -230,6 +230,12 @@ if (browser === "safari") {
 
 const cards = document.querySelectorAll(".last .card");
 
+if (browser != "safari") {
+  for (i = 0; i < cards.length; i++) {
+    cards[i].classList.add("backdropfilter");
+  }
+}
+
 if (hover && browser != "safari") {
   VanillaTilt.init(cards, {
     max: 15,

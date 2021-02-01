@@ -160,6 +160,10 @@
       border-radius: 1rem;
       overflow: hidden;
 
+      &.backdropfilter {
+        backdrop-filter: blur(5px);
+      }
+
       &:not(:first-child) {
         margin-left: 48px;
       }
