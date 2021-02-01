@@ -1,4 +1,4 @@
-Ne pas animer stroke-dahsoffset (0px) & Désactiver le backdrop blur et le glare sur Safari
+Désactiver le backdrop blur et le glare sur Safari
 
 Effet Glassmorphique - https://www.youtube.com/watch?v=hv0rNxr1XXk&list=PL5e68lK9hEzdn0O-OkMNNKHmP1iU6e6Dj
 

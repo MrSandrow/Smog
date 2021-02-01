@@ -273,6 +273,7 @@ function resize() {
 if (browser === "safari") {
   for (i = 0; i < cards.length; i++) {
     cards[i].style.backdropFilter = "none !important";
+    
   }
 
   VanillaTilt.init(cards, {
