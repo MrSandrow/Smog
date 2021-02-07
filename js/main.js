@@ -35,26 +35,35 @@ const browser = (function (agent) {
   }
 })(window.navigator.userAgent.toLowerCase());
 
+// Loader
+
+const loader = document.querySelector(".loader");
+
+window.addEventListener("load", loaded);
+
+function loaded() {
+  loader.classList.add("hidden");
+}
+
 // Dark Theme
 
 const html = document.documentElement;
 const moon = document.querySelector(".moon");
-const theme = localStorage.getItem("theme");
 
 moon.addEventListener("click", switchTheme);
 
-if (theme === "dark") {
-  html.classList.add("dark");
-}
-
 function switchTheme() {
-  if (html.classList.contains("dark")) {
-    localStorage.removeItem("theme");
-  } else {
-    localStorage.setItem("theme", "dark");
+  const dataTheme = html.getAttribute("data-theme");
+  let targetTheme;
+
+  if (dataTheme === "light") {
+    targetTheme = "dark";
+  } else if (dataTheme === "dark") {
+    targetTheme = "light";
   }
 
-  html.classList.toggle("dark");
+  html.setAttribute("data-theme", targetTheme);
+  localStorage.setItem("storedTheme", targetTheme);
 }
 
 // Random Emojis

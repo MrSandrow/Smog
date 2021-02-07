@@ -1,28 +1,45 @@
+Ajouter des Conditions sur un Formulaire - https://youtu.be/lUUOMdnLBqY?t=24 (Ex : Mot de passe avec Majuscules & Caractères Spéciaux)
+Intégrer une API & Fetch des données en JSON (AJAX) + Créer une Search Bar (Connectée à une API)
+Créer un Login & Register Form
+Scroll 100 VH - https://www.youtube.com/watch?v=LVFkJJsug50 & https://www.youtube.com/watch?v=towxNtiSyXE
+Récupérer les informations d'une icône FontAwesome
+Ajouter une App Pomodoro - https://www.frontendmentor.io/challenges/pomodoro-app-KBFnycJ6G
+Créer un Breakout Game - https://www.webtips.dev/building-the-game-breakout-using-javascript
+Créer un site comme Zillow - https://youtu.be/lUUOMdnLBqY?t=112
+Intégrer Three.js
+
+Regarder https://javascript.info
+
+
+
+
+
+
+
+
+Demander le prénom de l'utilisateur, l'assigner à un objet / une classe, l'ajouter en local storage & Remplacer cet écran par "Bonjour {utilisateur}" & Ajouter un bouton pour changer son prénom
+Ajouter 3 produits dans des tailles différentes, déterminer au hasard s'ils sont en stock, ajouter au panier s'il y a du stock et afficher un message d'erreur s'il n'y a plus de stock, ajouter la possibilité d'ajouter plusieurs articles / vider le panier & Ajouter une page de checkout & Ouvrir le panier quand un article est ajouté
+Intégrer une deuxième API Cool
+https://tympanus.net/codrops/2021/01/05/creating-an-infinite-auto-scrolling-gallery-using-webgl-with-ogl-and-glsl-shaders/
+https://tympanus.net/codrops/2020/12/01/crafting-a-scrollable-and-draggable-parallax-slider/
+https://tympanus.net/codrops/2020/06/10/how-to-create-a-motion-hover-effect-for-a-background-image-grid/
+https://tympanus.net/codrops/2020/03/17/create-a-wave-motion-effect-on-an-image-with-three-js/
+https://tympanus.net/codrops/2019/12/20/how-to-create-the-apple-fifth-avenue-cube-in-webgl/
+https://tympanus.net/codrops/2019/11/13/high-speed-light-trails-in-three-js/
+
 Ajouter une Transition sur le Slider
 Ajouter une Transition sur le Compteur de Clics
-Ajouter des Conditions sur un Formulaire - https://youtu.be/lUUOMdnLBqY?t=24
-Ajouter un Effet Parallax - https://www.youtube.com/watch?v=Dxm6EwvQIl8 & https://youtu.be/P5zGTEGPpu4?t=117 & https://www.youtube.com/watch?v=XK7T3mY1V-w
-Intégrer une API & Fetch des données en JSON (AJAX) + Créer une Search Bar (Connectée à une API)
+Ajouter un effet de propagation quand on clique sur un bouton
+Créer un feu d'artifice quand on clique - https://codepen.io/juliangarnier/pen/xOgyjB?editors=0010
+Créer un Overlay (100% de l'écran) visible en cliquant sur un Bouton. L'overlay part du bouton et se propage en cercle.
 
-
-
-
-Installer ESLint
-Afficher une page d'Erreur sur Internet Explorer / JS Désactivé / Page 404
 Ajouter un Burger Menu
-Ajouter un Loader
 Utiliser AnimeJS - https://www.youtube.com/watch?v=lj37QZ047f8 & https://www.youtube.com/watch?v=YqOhQWbouCE
-Scroll 100 VH - https://www.youtube.com/watch?v=LVFkJJsug50 & https://www.youtube.com/watch?v=towxNtiSyXE
+Ajouter un Effet Parallax - https://www.youtube.com/watch?v=Dxm6EwvQIl8 & https://youtu.be/P5zGTEGPpu4?t=117 & https://www.youtube.com/watch?v=XK7T3mY1V-w
+Afficher une page d'Erreur sur Internet Explorer / JS Désactivé / Page 404
 Changer la couleur du background en scrollant (Heetch) + Background Radial Gradient
 Faire un Slide Horizontall au début du scroll
 Faire Apparaître / Slider le texte quand je scroll
 Ajouter une barre de progression sur la page (pourcentage scrollé)
 Faire "Rebondir" un texte ou une image
-Créer un feu d'artifice quand on clique - https://codepen.io/juliangarnier/pen/xOgyjB?editors=0010
-Créer un Overlay (100% de l'écran) visible en cliquant sur un Bouton. L'overlay part du bouton et se propage en cercle.
 Créer un menu comme celui de Stripe (Page des projets)
-Injecter un élément HTML en cliquant sur un bouton - https://www.youtube.com/watch?v=HnXmI2UVZlU
-Récupérer les informations d'une icône FontAwesome
-Ajouter une App Pomodoro - https://www.frontendmentor.io/challenges/pomodoro-app-KBFnycJ6G
-Créer un Breakout Game - https://www.webtips.dev/building-the-game-breakout-using-javascript
-Trouver des Objets & des Librairies cools - https://www.youtube.com/watch?v=PsL3iI61wl8&list=PLbu98QxRH81LNY0PYN7s-71u8aYi6ozXs
