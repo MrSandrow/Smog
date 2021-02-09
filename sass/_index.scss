@@ -83,6 +83,11 @@
     display: flex;
     justify-content: center;
 
+    svg {
+      height: fit-content;
+      align-self: center;
+    }
+
     .prev {
       margin: 0 1.5rem;
       transform: scaleX(-1);
@@ -110,6 +115,86 @@
       width: 35rem;
       cursor: default;
       filter: drop-shadow(0px 4px 8px rgb(255, 145, 0));
+    }
+  }
+
+  .sixth {
+    .container {
+      display: grid;
+    }
+
+    .controls {
+      display: flex;
+      justify-content: center;
+
+      button {
+        margin: 0;
+
+        &:not(:first-child) {
+          margin-left: 1rem;
+        }
+
+        &.inactive {
+          background: var(--bg);
+          color: var(--accent);
+        }
+      }
+    }
+
+    form {
+      justify-items: center;
+      gap: 1.5rem;
+      display: grid;
+
+      .email {
+        display: grid;
+        gap: 0.5rem;
+        width: 100%;
+        text-align: center;
+
+        span {
+          color: rgb(255, 123, 0);
+          font-size: 1.2rem;
+        }
+      }
+    }
+
+    input {
+      width: 100%;
+      padding: 0.5rem 1rem;
+      font-size: 1.25rem;
+      border-radius: 1em;
+      border: 3px solid var(--accent);
+      min-height: 4rem;
+      background: var(--bg);
+      color: var(--accent);
+    }
+
+    .validation {
+      display: grid;
+      font-size: 1.1rem;
+      justify-self: start;
+      margin-left: 1rem;
+    }
+
+    .condition {
+      display: flex;
+    }
+
+    svg {
+      width: 1rem;
+      height: 1rem;
+      margin-right: 0.5rem;
+      align-self: center;
+      fill: rgb(168, 168, 168);
+    }
+
+    .complete {
+      fill: rgb(6, 143, 17);
+    }
+
+    .transparent {
+      visibility: hidden;
     }
   }
 

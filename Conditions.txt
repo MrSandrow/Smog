@@ -1,3 +1,14 @@
+Ajouter les Options au Sign Up [Nom, Email & Mot de passe (Validation)]
+  Email : @ + . + utiliser une api de vérification
+  MDP : 8 caractètes + 1 Lettre Majuscule + 1 Chiffre
+Ajouter un Bouton de Connexion qui crée le compte & remplace le contenu de la section par "Bonjour {nom}"
+Ajouter des boutons pour Changer de nom & Se déconnecter & Supprimer son compte
+Créer un menu de changement de nom avec un bouton de confirmation
+Créer un écran de confirmation pour les comptes supprimés
+Ajouter les Options au Login (Email & Mot de passe) & Bouton de Connexion
+Créer les messages d'erreurs en cas de mauvais identifiants
+Ajouter des animations
+
 Ajouter des Conditions sur un Formulaire - https://youtu.be/lUUOMdnLBqY?t=24 (Ex : Mot de passe avec Majuscules & Caractères Spéciaux)
 Intégrer une API & Fetch des données en JSON (AJAX) + Créer une Search Bar (Connectée à une API)
 Créer un Login & Register Form
@@ -27,6 +38,8 @@ https://tympanus.net/codrops/2020/03/17/create-a-wave-motion-effect-on-an-image-
 https://tympanus.net/codrops/2019/12/20/how-to-create-the-apple-fifth-avenue-cube-in-webgl/
 https://tympanus.net/codrops/2019/11/13/high-speed-light-trails-in-three-js/
 
+Corriger le bug du Line Drawing (ne fonctionne pas si on change de thème avant qu'il soit terminé)
+Désactiver le scroll du Loader
 Ajouter une Transition sur le Slider
 Ajouter une Transition sur le Compteur de Clics
 Ajouter un effet de propagation quand on clique sur un bouton
@@ -36,7 +49,7 @@ Créer un Overlay (100% de l'écran) visible en cliquant sur un Bouton. L'overla
 Ajouter un Burger Menu
 Utiliser AnimeJS - https://www.youtube.com/watch?v=lj37QZ047f8 & https://www.youtube.com/watch?v=YqOhQWbouCE
 Ajouter un Effet Parallax - https://www.youtube.com/watch?v=Dxm6EwvQIl8 & https://youtu.be/P5zGTEGPpu4?t=117 & https://www.youtube.com/watch?v=XK7T3mY1V-w
-Afficher une page d'Erreur sur Internet Explorer / JS Désactivé / Page 404
+Afficher une page d'Erreur sur Internet Explorer / Page 404
 Changer la couleur du background en scrollant (Heetch) + Background Radial Gradient
 Faire un Slide Horizontall au début du scroll
 Faire Apparaître / Slider le texte quand je scroll

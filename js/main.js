@@ -235,6 +235,99 @@ if (browser === "safari") {
   }
 }
 
+// Form Validation
+
+const bLogin = document.querySelector(".sixth .b-login");
+const bSignup = document.querySelector(".sixth .b-signup");
+const fLogin = document.querySelector(".sixth .f-login");
+const fSignup = document.querySelector(".sixth .f-signup");
+const sEmail = document.getElementById("s-email");
+const sPassword = document.getElementById("s-password");
+const sName = document.getElementById("s-name");
+const sSubmit = document.querySelector(".s-submit");
+const svg = document.querySelectorAll(".sixth svg");
+
+bLogin.addEventListener("click", toggleForms);
+bSignup.addEventListener("click", toggleForms);
+sPassword.addEventListener("input", validateForm);
+sPassword.addEventListener("input", validation);
+fSignup.addEventListener("submit", validateEmail)
+
+
+function toggleForms() {
+  bSignup.classList.toggle("inactive");
+  bLogin.classList.toggle("inactive");
+  fSignup.classList.toggle("hidden");
+  fLogin.classList.toggle("hidden");
+}
+
+function validation() {
+  if (
+    checkLength() === false ||
+    checkCapital() === false ||
+    checkNumber() === false
+  ) {
+    // Empecher de submit
+    // fill le SVG correspondant en rouge
+  }
+}
+
+function validateForm() {
+  checkLength();
+  checkCapital();
+  checkNumber();
+}
+
+function checkLength() {
+  if (sPassword.value.length < 8) {
+    svg[0].classList.remove("complete");
+    return false;
+  } else {
+    svg[0].classList.add("complete");
+  }
+}
+
+function checkCapital() {
+  const hasCapital = /[A-Z]/;
+  const testCapital = hasCapital.test(sPassword.value);
+
+  if (testCapital === false) {
+    svg[1].classList.remove("complete");
+    return false;
+  } else {
+    svg[1].classList.add("complete");
+  }
+}
+
+function checkNumber() {
+  const hasNumber = /[0-9]/;
+  const testNumber = hasNumber.test(sPassword.value);
+
+  if (testNumber === false) {
+    svg[2].classList.remove("complete");
+    return false;
+  } else {
+    svg[2].classList.add("complete");
+  }
+}
+
+const checkAt = sEmail.value.includes("@");
+const checkDot = sEmail.value.includes(".");
+const checkBlank = sEmail.value != ""
+
+function checkEmail() {
+  if (checkAt === false || checkDot === false || checkBlank === false) {
+    const span = document.querySelector(".sixth .email span");
+    span.classList.remove("transparent");
+    return false
+  }
+}
+
+function validateEmail() {
+  return checkEmail()
+}
+console.log(validateEmail());
+
 // Glasmorphism
 
 const cards = document.querySelectorAll(".last .card");

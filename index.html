@@ -18,7 +18,7 @@
     <header>
       <nav>
         <div class="moon">
-          <svg viewBox='0 0 512 512'>
+          <svg viewBox='0 0 512 512' class="pointer">
             <use xlink:href='#moon'></use>
           </svg>
         </div>
@@ -38,7 +38,7 @@
     <div class="container">
       <div class="content">
         <span>0 Clics</span>
-        <button class="counter">Clique !</button>
+        <button class="counter hover">Clique !</button>
       </div>
       <div class="content">
         <span class="counter-up">0</span>
@@ -47,11 +47,11 @@
     </div>
   </section>
   <section class="fourth">
-    <svg viewBox='0 0 170 512' class="prev">
+    <svg viewBox='0 0 170 512' class="prev pointer">
       <use xlink:href='#arrow'></use>
     </svg>
     <div class="container"></div>
-    <svg viewBox='0 0 170 512' class="next">
+    <svg viewBox='0 0 170 512' class="next pointer">
       <use xlink:href='#arrow'></use>
     </svg>
   </section>
@@ -60,6 +60,50 @@
       <svg viewBox='0 0 273 97'>
         <use xlink:href='#smog'></use>
       </svg>
+    </div>
+  </section>
+  <section class="sixth">
+    <div class="container">
+      <div class="controls">
+        <button class="b-login inactive">Login</button>
+        <button class="b-signup">Signup</button>
+      </div>
+      <div class="forms">
+        <form class="f-login hidden">
+          <input type="email" id="l-email" name="email" placeholder="Email">
+          <input type="password" id="l-password" name="password" placeholder="Mot de passe">
+          <button type="submit" class="l-submit">Se connecter</button>
+        </form>
+        <form class="f-signup">
+          <div class="email">
+            <input type="email" id="s-email" name="email" placeholder="Email">
+            <span class="transparent error-email">Veuillez saisir un email valide.</span>
+          </div>
+          <input type="text" id="s-password" name="password" placeholder="Mot de passe">
+          <div class="validation">
+            <div class="condition">
+              <svg viewBox='0 0 512 512'>
+                <use xlink:href='#check'></use>
+              </svg>
+              <span>8 caractères minimum</span>
+            </div>
+            <div class="condition">
+              <svg viewBox='0 0 512 512'>
+                <use xlink:href='#check'></use>
+              </svg>
+              <span>Une majusucle minimum</span>
+            </div>
+            <div class="condition">
+              <svg viewBox='0 0 512 512'>
+                <use xlink:href='#check'></use>
+              </svg>
+              <span>Un chiffre minimum</span>
+            </div>
+          </div>
+          <input type="text" id="s-nom" name="nom" placeholder="Nom">
+          <button type="submit" class="s-submit">Créer un compte</button>
+        </form>
+      </div>
     </div>
   </section>
   <section class="last">
@@ -72,7 +116,7 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita odit aliquid ipsum deserunt cum
               voluptates, commodi tempora numquam voluptatum optio vel nemo iste, odio harum dolor molestias enim eaque
               fugiat!</p>
-            <button>Lire la Suite</button>
+            <button class="hover">Lire la Suite</button>
           </div>
         </div>
         <div class="card hidden">
@@ -82,7 +126,7 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita odit aliquid ipsum deserunt cum
               voluptates, commodi tempora numquam voluptatum optio vel nemo iste, odio harum dolor molestias enim eaque
               fugiat!</p>
-            <button>Lire la Suite</button>
+            <button class="hover">Lire la Suite</button>
           </div>
         </div>
         <div class="card hidden">
@@ -92,7 +136,7 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita odit aliquid ipsum deserunt cum
               voluptates, commodi tempora numquam voluptatum optio vel nemo iste, odio harum dolor molestias enim eaque
               fugiat!</p>
-            <button>Lire la Suite</button>
+            <button class="hover">Lire la Suite</button>
           </div>
         </div>
       </div>
@@ -105,6 +149,9 @@
   </section>
   <div class="loader">
     <div class="spinner"></div>
+    <div class="error">
+      <p>Veuillez activer JavaScript pour utiliser ce site.</p>
+    </div>
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.min.js"></script>
@@ -143,5 +190,12 @@
       d="M 239.1 18.301 L 241.9 16.601 Q 242.475 13.629 239.742 13.506 A 5.388 5.388 0 0 0 239.5 13.501 A 3.607 3.607 0 0 0 236.06 15.517 Q 235.269 17.017 235.206 19.634 A 19.188 19.188 0 0 0 235.2 20.101 A 23.58 23.58 0 0 0 235.334 22.529 Q 235.463 23.773 235.717 25.16 A 43.436 43.436 0 0 0 235.9 26.101 A 20.023 20.023 0 0 1 240.069 29.754 A 14.113 14.113 0 0 1 243.5 39.151 A 18.373 18.373 0 0 1 242.758 44.51 A 13.971 13.971 0 0 1 238 51.501 A 18.877 18.877 0 0 1 231.174 54.901 Q 228.478 55.651 225.284 55.838 A 37.307 37.307 0 0 1 223.1 55.901 Q 219.2 55.901 215 55.101 A 35.804 35.804 0 0 0 213.505 56.101 Q 211.388 57.604 210.814 58.615 A 1.414 1.414 0 0 0 210.6 59.301 A 0.776 0.776 0 0 0 211.058 59.95 Q 212.313 60.701 217 60.701 L 227.2 60.701 Q 249.492 60.701 249.893 76.42 A 22.789 22.789 0 0 1 249.9 77.001 Q 249.9 85.721 243.173 90.857 A 20.766 20.766 0 0 1 243.05 90.951 Q 236.637 95.772 223.519 96.08 A 77.609 77.609 0 0 1 221.7 96.101 A 86.06 86.06 0 0 1 213.621 95.755 Q 199.865 94.45 197.494 88.213 A 7.848 7.848 0 0 1 197 85.401 A 6.99 6.99 0 0 1 200.316 79.339 Q 201.51 78.526 203.135 77.915 A 20.201 20.201 0 0 1 204.7 77.401 L 210.7 80.101 Q 209.9 83.001 209.9 85.601 A 7.957 7.957 0 0 0 211.088 90.043 Q 213.8 94.201 222.7 94.201 Q 230.5 94.201 234.7 91.301 Q 238.9 88.401 238.9 84.101 A 11.212 11.212 0 0 0 238.731 82.073 Q 238.532 80.998 238.102 80.182 A 4.43 4.43 0 0 0 236.35 78.351 Q 233.985 77.006 227.276 76.908 A 74.044 74.044 0 0 0 226.2 76.901 L 216.5 76.901 Q 208.4 76.901 204.9 74.201 A 10.001 10.001 0 0 1 202.836 72.099 A 7.652 7.652 0 0 1 201.4 67.551 A 10.272 10.272 0 0 1 201.94 64.159 A 8.879 8.879 0 0 1 203.9 60.951 Q 206.4 58.301 212.8 54.401 Q 202.633 51.508 201.377 42.01 A 21.429 21.429 0 0 1 201.2 39.201 A 16.87 16.87 0 0 1 202.197 33.291 A 14.83 14.83 0 0 1 206.6 27.101 A 16.968 16.968 0 0 1 212.117 24.038 Q 216.556 22.501 222.8 22.501 A 28.275 28.275 0 0 1 227.946 22.946 Q 231.086 23.527 233.649 24.867 A 17.728 17.728 0 0 1 233.9 25.001 A 27.348 27.348 0 0 1 233.469 22.579 Q 233.313 21.372 233.301 20.284 A 16.363 16.363 0 0 1 233.3 20.101 Q 233.3 16.553 234.504 14.25 A 7.277 7.277 0 0 1 236.3 12.001 A 10.758 10.758 0 0 1 239.896 9.979 A 10.055 10.055 0 0 1 243 9.501 A 11.406 11.406 0 0 1 245.546 9.769 Q 247.473 10.21 248.861 11.375 A 7.305 7.305 0 0 1 248.95 11.451 A 6.393 6.393 0 0 1 251.121 15.577 A 9.156 9.156 0 0 1 251.2 16.801 Q 251.2 20.201 249.4 21.851 Q 247.6 23.501 245.05 23.501 A 7.898 7.898 0 0 1 243.144 23.282 A 5.762 5.762 0 0 1 240.85 22.151 A 4.638 4.638 0 0 1 239.236 19.427 A 6.766 6.766 0 0 1 239.1 18.301 Z M 217.9 37.001 L 217.9 42.401 Q 217.9 48.925 218.99 51.372 A 5.143 5.143 0 0 0 219.05 51.501 A 5.152 5.152 0 0 0 219.839 52.714 A 3.471 3.471 0 0 0 222.55 53.901 A 3.623 3.623 0 0 0 224.188 53.542 Q 225.31 52.983 225.95 51.551 A 7.662 7.662 0 0 0 226.397 50.122 Q 226.941 47.694 226.994 42.95 A 94.076 94.076 0 0 0 227 41.901 L 227 37.001 A 96.18 96.18 0 0 0 226.952 33.844 Q 226.804 29.355 226.198 27.319 A 6.173 6.173 0 0 0 226 26.751 A 4.928 4.928 0 0 0 225.331 25.566 A 3.226 3.226 0 0 0 222.65 24.301 Q 220.3 24.301 219.1 26.851 A 8.195 8.195 0 0 0 218.577 28.434 Q 217.9 31.293 217.9 37.001 Z" />
     <path
       d="M 256.85 69.551 A 6.478 6.478 0 0 0 258.105 70.696 Q 260.121 72.101 263.35 72.101 Q 265.185 72.101 266.647 71.674 A 7.186 7.186 0 0 0 269.95 69.701 Q 271.427 68.126 271.934 65.775 A 12.67 12.67 0 0 0 272.2 63.101 A 13.887 13.887 0 0 0 272.186 62.473 Q 272.017 58.741 269.8 56.801 A 7.537 7.537 0 0 0 268.974 56.173 Q 266.733 54.701 263.3 54.701 A 11.044 11.044 0 0 0 260.973 54.933 A 7.332 7.332 0 0 0 256.95 57.201 A 8.496 8.496 0 0 0 255.211 60.133 A 9.788 9.788 0 0 0 254.7 63.351 A 11.734 11.734 0 0 0 254.734 64.246 A 9.087 9.087 0 0 0 256.85 69.551 Z" />
+  </g>
+</svg>
+
+<svg class='hidden'>
+  <g id='check'>
+    <path
+      d='M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z' />
   </g>
 </svg>

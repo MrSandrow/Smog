@@ -22,13 +22,13 @@ html {
   --accent: black;
   --gradient: var(--accent);
 
-  &[data-theme='light'] {
+  &[data-theme="light"] {
     --bg: white;
     --accent: black;
     --gradient: var(--accent);
   }
-  
-  &[data-theme='dark'] {
+
+  &[data-theme="dark"] {
     --bg: black;
     --accent: white;
     --gradient: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%);
@@ -91,6 +91,10 @@ footer {
   animation: loader 1s infinite ease-in-out;
 }
 
+.error {
+  display: none;
+}
+
 @keyframes loader {
   0% {
     transform: scale(0);
@@ -102,6 +106,19 @@ footer {
     opacity: 0;
   }
 }
+
+.no-js {
+  .spinner {
+    display: none;
+  }
+
+  .error {
+    display: block;
+    max-width: 80vw;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+} 
 
 // CSS Components
 
@@ -139,12 +156,12 @@ svg {
   button {
     cursor: pointer;
 
-    &:hover {
+    &.hover:hover {
       transform: scale(1.1);
     }
   }
 
-  svg {
+  .pointer {
     cursor: pointer;
   }
 
@@ -199,5 +216,13 @@ svg {
 @media (min-width: 992px) {
   html {
     font-size: 16px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    --bg: black;
+    --accent: white;
+    --gradient: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%);
   }
 }
