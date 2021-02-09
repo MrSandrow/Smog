@@ -317,17 +317,17 @@ const checkBlank = sEmail.value != ""
 
 function checkEmail() {
   if (checkAt === false || checkDot === false || checkBlank === false) {
-    const span = document.querySelector(".sixth .email span");
-    span.classList.remove("transparent");
+    // const span = document.querySelector(".sixth .email span");
+    // span.classList.remove("transparent");
     return false
   }
 }
 
 function validateEmail() {
-  return checkEmail()
+  return false
 }
-console.log(validateEmail());
 
+console.log(validateEmail());
 // Glasmorphism
 
 const cards = document.querySelectorAll(".last .card");
