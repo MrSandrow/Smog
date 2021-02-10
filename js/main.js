@@ -37,13 +37,13 @@ const browser = (function (agent) {
 
 // Loader
 
-const loader = document.querySelector(".loader");
+// const loader = document.querySelector(".loader");
 
-window.addEventListener("load", loaded);
+// window.addEventListener("load", loaded);
 
-function loaded() {
-  loader.classList.add("hidden");
-}
+// function loaded() {
+//   loader.classList.add("hidden");
+// }
 
 // Dark Theme
 

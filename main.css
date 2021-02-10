@@ -13,8 +13,8 @@ html {
   font-size: 12px;
   background: var(--bg);
   color: var(--accent);
-  -webkit-transition: all 0.4s;
-  transition: all 0.4s;
+  -webkit-transition: all 1s;
+  transition: all 1s;
   --bg: white;
   --accent: black;
   --gradient: var(--accent);
