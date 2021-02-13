@@ -1,7 +1,5 @@
 // Main Elements
 
-let i;
-
 const hover = window.matchMedia("(hover: hover)").matches;
 
 function runOnce(fn, context) {
@@ -230,110 +228,154 @@ new Waypoint({
 if (browser === "safari") {
   const path = document.querySelectorAll("#smog path");
 
-  for (i = 0; i < path.length; i++) {
+  for (let i = 0; i < path.length; i++) {
     path[i].style.strokeDashoffset = "0px";
   }
 }
 
 // Form Validation
 
-const bLogin = document.querySelector(".sixth .b-login");
-const bSignup = document.querySelector(".sixth .b-signup");
-const fLogin = document.querySelector(".sixth .f-login");
-const fSignup = document.querySelector(".sixth .f-signup");
-const sEmail = document.getElementById("s-email");
-const sPassword = document.getElementById("s-password");
-const sName = document.getElementById("s-name");
-const sSubmit = document.querySelector(".s-submit");
-const svg = document.querySelectorAll(".sixth svg");
+const login = document.querySelector(".sixth .login");
+const signup = document.querySelector(".sixth .signup");
+const formSignup = document.forms.Signup;
+const formLogin = document.forms.Login;
 
-bLogin.addEventListener("click", toggleForms);
-bSignup.addEventListener("click", toggleForms);
-sPassword.addEventListener("input", validateForm);
-sPassword.addEventListener("input", validation);
-fSignup.addEventListener("submit", validateEmail)
-
+login.addEventListener("click", toggleForms);
+signup.addEventListener("click", toggleForms);
 
 function toggleForms() {
-  bSignup.classList.toggle("inactive");
-  bLogin.classList.toggle("inactive");
-  fSignup.classList.toggle("hidden");
-  fLogin.classList.toggle("hidden");
+  signup.classList.toggle("inactive");
+  login.classList.toggle("inactive");
+  formSignup.classList.toggle("hidden");
+  formLogin.classList.toggle("hidden");
 }
 
-function validation() {
+const emailInput = formSignup.email;
+const passwordInput = formSignup.password;
+const nameInput = formSignup.name;
+
+emailInput.addEventListener("input", removeBorder)
+passwordInput.addEventListener("input", removeBorder)
+nameInput.addEventListener("input", removeBorder);
+
+function removeBorder() {
+  this.classList.remove("red-border");
+}
+
+function validateData() {
+  const email = emailInput.value;
+  const password = passwordInput.value;
+  const name = nameInput.value;
+  const svg = document.querySelectorAll(".sixth svg");
+
+  const errorsList = {
+    email: {
+      at: email.includes("@"),
+      dot: email.includes("."),
+    },
+    password: {
+      length: password.length >= 8,
+      capital: /[A-Z]/.test(password),
+      number: /[0-9]/.test(password),
+    },
+    name: {
+      length: name.length >= 1,
+    },
+  };
+
+  function check(value, param) {
+    return errorsList[value][param];
+  }
+
+  if (check("email", "at") && check("email", "dot")) {
+    emailInput.classList.remove("red-border");
+  }
+  if (check("password", "length")) {
+    svg[0].classList.add("green");
+  } else {
+    svg[0].classList.remove("green");
+  }
+  if (check("password", "capital")) {
+    svg[1].classList.add("green");
+  } else {
+    svg[1].classList.remove("green");
+  }
+  if (check("password", "number")) {
+    svg[2].classList.add("green");
+  } else {
+    svg[2].classList.remove("green");
+  }
   if (
-    checkLength() === false ||
-    checkCapital() === false ||
-    checkNumber() === false
+    check("password", "length") ||
+    check("password", "capital") ||
+    check("password", "number")
   ) {
-    // Empecher de submit
-    // fill le SVG correspondant en rouge
+    passwordInput.classList.remove("red-border");
+  }
+  if (check("name", "length")) {
+    nameInput.classList.remove("red-border");
   }
 }
 
-function validateForm() {
-  checkLength();
-  checkCapital();
-  checkNumber();
-}
+formSignup.addEventListener("submit", validateForm);
 
-function checkLength() {
-  if (sPassword.value.length < 8) {
-    svg[0].classList.remove("complete");
-    return false;
-  } else {
-    svg[0].classList.add("complete");
+function handleErrors() {
+  const email = emailInput.value;
+  const password = passwordInput.value;
+  const name = nameInput.value;
+  let state = true;
+
+  const errorsList = {
+    emailAt: email.includes("@"),
+    emailDot: email.includes("."),
+    passwordLength: password.length >= 8,
+    passwordCapital: /[A-Z]/.test(password),
+    passwordNumber: /[0-9]/.test(password),
+    nameLength: name.length >= 1,
+  };
+
+  function check(value) {
+    return errorsList[value];
+  }
+
+  if (!check("emailAt") || !check("emailDot")) {
+    emailInput.classList.add("red-border");
+    state = false;
+  }
+  if (!check("passwordLength")) {
+    passwordInput.classList.add("red-border");
+    state = false;
+  }
+  if (!check("passwordCapital")) {
+    passwordInput.classList.add("red-border");
+    state = false;
+  }
+  if (!check("passwordNumber")) {
+    passwordInput.classList.add("red-border");
+    state = false;
+  }
+  if (!check("nameLength")) {
+    nameInput.classList.add("red-border");
+    state = false;
+  }
+
+  if (state) {
+    return true;
   }
 }
 
-function checkCapital() {
-  const hasCapital = /[A-Z]/;
-  const testCapital = hasCapital.test(sPassword.value);
-
-  if (testCapital === false) {
-    svg[1].classList.remove("complete");
-    return false;
-  } else {
-    svg[1].classList.add("complete");
+function validateForm(event) {
+  if (!handleErrors()) {
+    event.preventDefault();
   }
 }
 
-function checkNumber() {
-  const hasNumber = /[0-9]/;
-  const testNumber = hasNumber.test(sPassword.value);
-
-  if (testNumber === false) {
-    svg[2].classList.remove("complete");
-    return false;
-  } else {
-    svg[2].classList.add("complete");
-  }
-}
-
-const checkAt = sEmail.value.includes("@");
-const checkDot = sEmail.value.includes(".");
-const checkBlank = sEmail.value != ""
-
-function checkEmail() {
-  if (checkAt === false || checkDot === false || checkBlank === false) {
-    // const span = document.querySelector(".sixth .email span");
-    // span.classList.remove("transparent");
-    return false
-  }
-}
-
-function validateEmail() {
-  return false
-}
-
-console.log(validateEmail());
 // Glasmorphism
 
 const cards = document.querySelectorAll(".last .card");
 
 if (browser != "safari") {
-  for (i = 0; i < cards.length; i++) {
+  for (let i = 0; i < cards.length; i++) {
     cards[i].classList.add("backdropfilter");
   }
 }
@@ -363,11 +405,11 @@ function resize() {
   const realWidth = Math.max(0, (container.offsetWidth - 375) / (375 + 48));
   const width = Math.min(realWidth, cards.length);
 
-  for (i = 0; i < width; i++) {
+  for (let i = 0; i < width; i++) {
     cards[i].classList.remove("hidden");
   }
 
-  for (i = cards.length - 1; i > width; i--) {
+  for (let i = cards.length - 1; i > width; i--) {
     cards[i].classList.add("hidden");
   }
 
@@ -375,7 +417,7 @@ function resize() {
   const content = document.querySelector(".last .content");
   const height = content.offsetHeight;
 
-  for (i = 0; i < cards.length; i++) {
+  for (let i = 0; i < cards.length; i++) {
     cards[i].style.height = `calc(${height}px + 8rem)`;
 
     if (hover && browser != "safari") {

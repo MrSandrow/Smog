@@ -210,7 +210,9 @@ html[data-theme="dark"] {
   display: grid;
 }
 
-.index .sixth form .email {
+.index .sixth form .email,
+.index .sixth form .name,
+.index .sixth form .password {
   display: -ms-grid;
   display: grid;
   gap: 0.5rem;
@@ -218,8 +220,8 @@ html[data-theme="dark"] {
   text-align: center;
 }
 
-.index .sixth form .email span {
-  color: #ff7b00;
+.index .sixth .form-error {
+  color: #ffe600;
   font-size: 1.2rem;
 }
 
@@ -234,19 +236,12 @@ html[data-theme="dark"] {
   color: var(--accent);
 }
 
-.index .sixth .validation {
-  display: -ms-grid;
-  display: grid;
-  font-size: 1.1rem;
-  -ms-grid-column-align: start;
-      justify-self: start;
-  margin-left: 1rem;
-}
-
 .index .sixth .condition {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin-left: 1rem;
+  font-size: 1.1rem;
 }
 
 .index .sixth svg {
@@ -259,12 +254,12 @@ html[data-theme="dark"] {
   fill: #a8a8a8;
 }
 
-.index .sixth .complete {
+.index .sixth .green {
   fill: #068f11;
 }
 
-.index .sixth .transparent {
-  visibility: hidden;
+.index .sixth .red-border {
+  border: 3px solid red;
 }
 
 .index .last {
@@ -562,6 +557,10 @@ svg {
 
 .hidden {
   display: none !important;
+}
+
+.invisible {
+  visibility: hidden;
 }
 
 @media (hover: hover) {

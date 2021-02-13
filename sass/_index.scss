@@ -146,17 +146,19 @@
       gap: 1.5rem;
       display: grid;
 
-      .email {
+      .email,
+      .name,
+      .password {
         display: grid;
         gap: 0.5rem;
         width: 100%;
         text-align: center;
-
-        span {
-          color: rgb(255, 123, 0);
-          font-size: 1.2rem;
-        }
       }
+    }
+
+    .form-error {
+      color: rgb(255, 230, 0);
+      font-size: 1.2rem;
     }
 
     input {
@@ -170,15 +172,10 @@
       color: var(--accent);
     }
 
-    .validation {
-      display: grid;
-      font-size: 1.1rem;
-      justify-self: start;
-      margin-left: 1rem;
-    }
-
     .condition {
       display: flex;
+      margin-left: 1rem;
+      font-size: 1.1rem;
     }
 
     svg {
@@ -188,13 +185,13 @@
       align-self: center;
       fill: rgb(168, 168, 168);
     }
-
-    .complete {
+    
+    .green {
       fill: rgb(6, 143, 17);
     }
 
-    .transparent {
-      visibility: hidden;
+    .red-border {
+      border: 3px solid red;
     }
   }
 

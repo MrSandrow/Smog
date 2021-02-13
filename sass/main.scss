@@ -16,7 +16,6 @@ html {
   font-size: 12px;
   background: var(--bg);
   color: var(--accent);
-  // transition: all 0.4s;
 
   --bg: white;
   --accent: black;
@@ -148,6 +147,10 @@ svg {
 
 .hidden {
   display: none !important;
+}
+
+.invisible {
+  visibility: hidden;
 }
 
 // Media Queries

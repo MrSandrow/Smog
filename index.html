@@ -65,22 +65,21 @@
   <section class="sixth">
     <div class="container">
       <div class="controls">
-        <button class="b-login inactive">Login</button>
-        <button class="b-signup">Signup</button>
+        <button class="login inactive">Login</button>
+        <button class="signup">Signup</button>
       </div>
       <div class="forms">
-        <form class="f-login hidden">
-          <input type="email" id="l-email" name="email" placeholder="Email">
-          <input type="password" id="l-password" name="password" placeholder="Mot de passe">
-          <button type="submit" class="l-submit">Se connecter</button>
+        <form class="hidden" name="Login" novalidate>
+          <input type="email" name="email" placeholder="Email">
+          <input type="password" name="password" placeholder="Mot de passe">
+          <button type="submit">Se connecter</button>
         </form>
-        <form class="f-signup" onsubmit="return false">
+        <form name="Signup" novalidate>
           <div class="email">
-            <input type="email" id="s-email" name="email" placeholder="Email">
-            <span class="transparent error-email">Veuillez saisir un email valide.</span>
+            <input type="email" name="email" placeholder="Email">
           </div>
-          <input type="text" id="s-password" name="password" placeholder="Mot de passe">
-          <div class="validation">
+          <div class="password">
+            <input type="text" name="password" placeholder="Mot de passe">
             <div class="condition">
               <svg viewBox='0 0 512 512'>
                 <use xlink:href='#check'></use>
@@ -100,8 +99,10 @@
               <span>Un chiffre minimum</span>
             </div>
           </div>
-          <input type="text" id="s-nom" name="nom" placeholder="Nom">
-          <button type="submit" class="s-submit">Créer un compte</button>
+          <div class="name">
+            <input type="text" name="name" placeholder="Nom">
+          </div>
+          <button type="submit">Créer un compte</button>
         </form>
       </div>
     </div>
