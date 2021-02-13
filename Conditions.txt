@@ -1,3 +1,14 @@
+input :
+retirer le border rouge du champ correspondant
+
+submit : 
+vérifier les informations
+ajouter border rouge si erreur
+
+input & load : 
+si errorslist.password => svg correspondant en vert
+sinon => retirer vert
+
 Ajouter un Bouton de Connexion qui crée le compte & remplace le contenu de la section par "Bonjour {nom}" - https://sheetdb.io/apis#
 Ajouter des boutons pour Changer de nom & Se déconnecter & Supprimer son compte
 Créer un menu de changement de nom avec un bouton de confirmation
