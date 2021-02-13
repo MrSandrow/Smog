@@ -254,68 +254,94 @@ const emailInput = formSignup.email;
 const passwordInput = formSignup.password;
 const nameInput = formSignup.name;
 
-emailInput.addEventListener("input", removeBorder)
-passwordInput.addEventListener("input", removeBorder)
+emailInput.addEventListener("input", removeBorder);
+passwordInput.addEventListener("input", removeBorder);
 nameInput.addEventListener("input", removeBorder);
 
 function removeBorder() {
   this.classList.remove("red-border");
 }
 
-function validateData() {
-  const email = emailInput.value;
+passwordInput.addEventListener("input", checkPassword);
+
+function checkPassword() {
   const password = passwordInput.value;
-  const name = nameInput.value;
+  const passwordLength = password.length >= 8;
+  const passwordCapital = /[A-Z]/.test(password);
+  const passwordNumber = /[0-9]/.test(password);
   const svg = document.querySelectorAll(".sixth svg");
 
-  const errorsList = {
-    email: {
-      at: email.includes("@"),
-      dot: email.includes("."),
-    },
-    password: {
-      length: password.length >= 8,
-      capital: /[A-Z]/.test(password),
-      number: /[0-9]/.test(password),
-    },
-    name: {
-      length: name.length >= 1,
-    },
-  };
-
-  function check(value, param) {
-    return errorsList[value][param];
-  }
-
-  if (check("email", "at") && check("email", "dot")) {
-    emailInput.classList.remove("red-border");
-  }
-  if (check("password", "length")) {
+  if (passwordLength) {
     svg[0].classList.add("green");
   } else {
     svg[0].classList.remove("green");
   }
-  if (check("password", "capital")) {
+  if (passwordCapital) {
     svg[1].classList.add("green");
   } else {
     svg[1].classList.remove("green");
   }
-  if (check("password", "number")) {
+  if (passwordNumber) {
     svg[2].classList.add("green");
   } else {
     svg[2].classList.remove("green");
   }
-  if (
-    check("password", "length") ||
-    check("password", "capital") ||
-    check("password", "number")
-  ) {
-    passwordInput.classList.remove("red-border");
-  }
-  if (check("name", "length")) {
-    nameInput.classList.remove("red-border");
-  }
 }
+
+// function validateData() {
+//   const email = emailInput.value;
+//   const password = passwordInput.value;
+//   const name = nameInput.value;
+//   const svg = document.querySelectorAll(".sixth svg");
+
+//   const errorsList = {
+//     email: {
+//       at: email.includes("@"),
+//       dot: email.includes("."),
+//     },
+//     password: {
+//       length: password.length >= 8,
+//       capital: /[A-Z]/.test(password),
+//       number: /[0-9]/.test(password),
+//     },
+//     name: {
+//       length: name.length >= 1,
+//     },
+//   };
+
+//   function check(value, param) {
+//     return errorsList[value][param];
+//   }
+
+//   if (check("email", "at") && check("email", "dot")) {
+//     emailInput.classList.remove("red-border");
+//   }
+//   if (check("password", "length")) {
+//     svg[0].classList.add("green");
+//   } else {
+//     svg[0].classList.remove("green");
+//   }
+//   if (check("password", "capital")) {
+//     svg[1].classList.add("green");
+//   } else {
+//     svg[1].classList.remove("green");
+//   }
+//   if (check("password", "number")) {
+//     svg[2].classList.add("green");
+//   } else {
+//     svg[2].classList.remove("green");
+//   }
+//   if (
+//     check("password", "length") ||
+//     check("password", "capital") ||
+//     check("password", "number")
+//   ) {
+//     passwordInput.classList.remove("red-border");
+//   }
+//   if (check("name", "length")) {
+//     nameInput.classList.remove("red-border");
+//   }
+// }
 
 formSignup.addEventListener("submit", validateForm);
 
@@ -338,24 +364,24 @@ function handleErrors() {
     return errorsList[value];
   }
 
+  function redBorder(element) {
+    element.classList.add("red-border");
+  }
+
   if (!check("emailAt") || !check("emailDot")) {
-    emailInput.classList.add("red-border");
+    redBorder(emailInput);
     state = false;
   }
-  if (!check("passwordLength")) {
-    passwordInput.classList.add("red-border");
-    state = false;
-  }
-  if (!check("passwordCapital")) {
-    passwordInput.classList.add("red-border");
-    state = false;
-  }
-  if (!check("passwordNumber")) {
-    passwordInput.classList.add("red-border");
+  if (
+    !check("passwordLength") ||
+    !check("passwordCapital") ||
+    !check("passwordNumber")
+  ) {
+    redBorder(passwordInput);
     state = false;
   }
   if (!check("nameLength")) {
-    nameInput.classList.add("red-border");
+    redBorder(nameInput);
     state = false;
   }
 
