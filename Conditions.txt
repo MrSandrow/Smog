@@ -10,16 +10,16 @@ vérifier les informations
 ajouter border rouge si erreur
 
 
-
 Ajouter un Bouton de Connexion qui crée le compte & remplace le contenu de la section par "Bonjour {nom}" - https://sheetdb.io/apis#
 Ajouter des boutons pour Changer de nom & Se déconnecter & Supprimer son compte
 Créer un menu de changement de nom avec un bouton de confirmation
 Créer un écran de confirmation pour les comptes supprimés
 Ajouter les Options au Login (Email & Mot de passe) & Bouton de Connexion
 Créer les messages d'erreurs en cas de mauvais identifiants
-Ajouter des animations
+Ajouter des animations & Ajouter un bouton pour afficher le mot de passe
 
 Ajouter des Conditions sur un Formulaire - https://youtu.be/lUUOMdnLBqY?t=24 (Ex : Mot de passe avec Majuscules & Caractères Spéciaux)
+Utiliser la police FontAwesome
 Intégrer une API & Fetch des données en JSON (AJAX) + Créer une Search Bar (Connectée à une API)
 Créer un Login & Register Form
 Scroll 100 VH - https://www.youtube.com/watch?v=LVFkJJsug50 & https://www.youtube.com/watch?v=towxNtiSyXE
@@ -40,7 +40,7 @@ Regarder https://javascript.info
 
 Demander le prénom de l'utilisateur, l'assigner à un objet / une classe, l'ajouter en local storage & Remplacer cet écran par "Bonjour {utilisateur}" & Ajouter un bouton pour changer son prénom
 Ajouter 3 produits dans des tailles différentes, déterminer au hasard s'ils sont en stock, ajouter au panier s'il y a du stock et afficher un message d'erreur s'il n'y a plus de stock, ajouter la possibilité d'ajouter plusieurs articles / vider le panier & Ajouter une page de checkout & Ouvrir le panier quand un article est ajouté
-Intégrer une deuxième API Cool
+Intégrer une deuxième API Cool - https://github.com/public-apis/public-apis
 Vérifier l'email du formulaire avec une API
 https://tympanus.net/codrops/2021/01/05/creating-an-infinite-auto-scrolling-gallery-using-webgl-with-ogl-and-glsl-shaders/
 https://tympanus.net/codrops/2020/12/01/crafting-a-scrollable-and-draggable-parallax-slider/
@@ -49,9 +49,9 @@ https://tympanus.net/codrops/2020/03/17/create-a-wave-motion-effect-on-an-image-
 https://tympanus.net/codrops/2019/12/20/how-to-create-the-apple-fifth-avenue-cube-in-webgl/
 https://tympanus.net/codrops/2019/11/13/high-speed-light-trails-in-three-js/
 
-Utiliser la police FontAwesome
 Corriger le bug du Line Drawing (ne fonctionne pas si on change de thème avant qu'il soit terminé)
 Désactiver le scroll du Loader
+Intégrer un graphique du cours d'une crypto en temps réel sur mon site
 Ajouter une Transition sur le Slider
 Ajouter une Transition sur le Compteur de Clics
 Ajouter un effet de propagation quand on clique sur un bouton
