@@ -27,7 +27,7 @@ Récupérer les informations d'une icône FontAwesome
 Ajouter une App Pomodoro - https://www.frontendmentor.io/challenges/pomodoro-app-KBFnycJ6G
 Créer un Breakout Game - https://www.webtips.dev/building-the-game-breakout-using-javascript
 Créer un site comme Zillow - https://youtu.be/lUUOMdnLBqY?t=112
-Intégrer Three.js
+Intégrer Three.js & WebGL
 
 Regarder https://javascript.info
 
