@@ -121,6 +121,8 @@
   .sixth {
     .container {
       display: grid;
+      grid-template-rows: auto 1fr;
+      row-gap: 3rem;
     }
 
     .controls {
@@ -145,6 +147,8 @@
       justify-items: center;
       gap: 1.5rem;
       display: grid;
+      max-width: 550px;
+      margin: 0 auto;
 
       .email,
       .name,
@@ -185,7 +189,7 @@
       align-self: center;
       fill: rgb(168, 168, 168);
     }
-    
+
     .green {
       fill: rgb(6, 143, 17);
     }

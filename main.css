@@ -179,6 +179,9 @@ html[data-theme="dark"] {
 .index .sixth .container {
   display: -ms-grid;
   display: grid;
+  -ms-grid-rows: auto 1fr;
+      grid-template-rows: auto 1fr;
+  row-gap: 3rem;
 }
 
 .index .sixth .controls {
@@ -208,6 +211,8 @@ html[data-theme="dark"] {
   gap: 1.5rem;
   display: -ms-grid;
   display: grid;
+  max-width: 550px;
+  margin: 0 auto;
 }
 
 .index .sixth form .email,

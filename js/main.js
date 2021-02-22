@@ -235,10 +235,13 @@ if (browser === "safari") {
 
 // Form Validation
 
+const sixthContainer = document.querySelector(".sixth .container");
 const login = document.querySelector(".sixth .login");
 const signup = document.querySelector(".sixth .signup");
 const formSignup = document.forms.Signup;
 const formLogin = document.forms.Login;
+
+sixthContainer.style.height = `calc(${signup.offsetHeight + formSignup.offsetHeight}px + 3rem)`;
 
 login.addEventListener("click", toggleForms);
 signup.addEventListener("click", toggleForms);
@@ -262,94 +265,10 @@ function removeBorder() {
   this.classList.remove("red-border");
 }
 
-passwordInput.addEventListener("input", checkPassword);
-
-function checkPassword() {
-  const password = passwordInput.value;
-  const passwordLength = password.length >= 8;
-  const passwordCapital = /[A-Z]/.test(password);
-  const passwordNumber = /[0-9]/.test(password);
-  const svg = document.querySelectorAll(".sixth svg");
-
-  if (passwordLength) {
-    svg[0].classList.add("green");
-  } else {
-    svg[0].classList.remove("green");
-  }
-  if (passwordCapital) {
-    svg[1].classList.add("green");
-  } else {
-    svg[1].classList.remove("green");
-  }
-  if (passwordNumber) {
-    svg[2].classList.add("green");
-  } else {
-    svg[2].classList.remove("green");
-  }
-}
-
-// function validateData() {
-//   const email = emailInput.value;
-//   const password = passwordInput.value;
-//   const name = nameInput.value;
-//   const svg = document.querySelectorAll(".sixth svg");
-
-//   const errorsList = {
-//     email: {
-//       at: email.includes("@"),
-//       dot: email.includes("."),
-//     },
-//     password: {
-//       length: password.length >= 8,
-//       capital: /[A-Z]/.test(password),
-//       number: /[0-9]/.test(password),
-//     },
-//     name: {
-//       length: name.length >= 1,
-//     },
-//   };
-
-//   function check(value, param) {
-//     return errorsList[value][param];
-//   }
-
-//   if (check("email", "at") && check("email", "dot")) {
-//     emailInput.classList.remove("red-border");
-//   }
-//   if (check("password", "length")) {
-//     svg[0].classList.add("green");
-//   } else {
-//     svg[0].classList.remove("green");
-//   }
-//   if (check("password", "capital")) {
-//     svg[1].classList.add("green");
-//   } else {
-//     svg[1].classList.remove("green");
-//   }
-//   if (check("password", "number")) {
-//     svg[2].classList.add("green");
-//   } else {
-//     svg[2].classList.remove("green");
-//   }
-//   if (
-//     check("password", "length") ||
-//     check("password", "capital") ||
-//     check("password", "number")
-//   ) {
-//     passwordInput.classList.remove("red-border");
-//   }
-//   if (check("name", "length")) {
-//     nameInput.classList.remove("red-border");
-//   }
-// }
-
-formSignup.addEventListener("submit", validateForm);
-
-function handleErrors() {
+function checkErrors(param) {
   const email = emailInput.value;
   const password = passwordInput.value;
   const name = nameInput.value;
-  let state = true;
 
   const errorsList = {
     emailAt: email.includes("@"),
@@ -360,38 +279,56 @@ function handleErrors() {
     nameLength: name.length >= 1,
   };
 
-  function check(value) {
-    return errorsList[value];
-  }
+  return errorsList[param];
+}
 
-  function redBorder(element) {
-    element.classList.add("red-border");
-  }
+passwordInput.addEventListener("input", checkPassword);
 
-  if (!check("emailAt") || !check("emailDot")) {
-    redBorder(emailInput);
-    state = false;
-  }
-  if (
-    !check("passwordLength") ||
-    !check("passwordCapital") ||
-    !check("passwordNumber")
-  ) {
-    redBorder(passwordInput);
-    state = false;
-  }
-  if (!check("nameLength")) {
-    redBorder(nameInput);
-    state = false;
-  }
+function checkPassword() {
+  const svg = document.querySelectorAll(".sixth svg");
 
-  if (state) {
-    return true;
+  if (checkErrors("passwordLength")) {
+    svg[0].classList.add("green");
+  } else {
+    svg[0].classList.remove("green");
+  }
+  if (checkErrors("passwordCapital")) {
+    svg[1].classList.add("green");
+  } else {
+    svg[1].classList.remove("green");
+  }
+  if (checkErrors("passwordNumber")) {
+    svg[2].classList.add("green");
+  } else {
+    svg[2].classList.remove("green");
   }
 }
 
+formSignup.addEventListener("submit", validateForm);
+
 function validateForm(event) {
-  if (!handleErrors()) {
+  let state = true;
+
+  if (!checkErrors("emailAt") || !checkErrors("emailDot")) {
+    emailInput.classList.add("red-border");
+    state = false;
+  }
+
+  if (
+    !checkErrors("passwordLength") ||
+    !checkErrors("passwordCapital") ||
+    !checkErrors("passwordNumber")
+  ) {
+    passwordInput.classList.add("red-border");
+    state = false;
+  }
+
+  if (!checkErrors("nameLength")) {
+    nameInput.classList.add("red-border");
+    state = false;
+  }
+
+  if (!state) {
     event.preventDefault();
   }
 }
