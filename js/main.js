@@ -235,13 +235,10 @@ if (browser === "safari") {
 
 // Form Validation
 
-const sixthContainer = document.querySelector(".sixth .container");
 const login = document.querySelector(".sixth .login");
 const signup = document.querySelector(".sixth .signup");
 const formSignup = document.forms.Signup;
 const formLogin = document.forms.Login;
-
-sixthContainer.style.height = `calc(${signup.offsetHeight + formSignup.offsetHeight}px + 3rem)`;
 
 login.addEventListener("click", toggleForms);
 signup.addEventListener("click", toggleForms);
@@ -285,22 +282,22 @@ function checkErrors(param) {
 passwordInput.addEventListener("input", checkPassword);
 
 function checkPassword() {
-  const svg = document.querySelectorAll(".sixth svg");
+  const span = document.querySelectorAll(".conditions span");
 
   if (checkErrors("passwordLength")) {
-    svg[0].classList.add("green");
+    span[0].classList.add("green");
   } else {
-    svg[0].classList.remove("green");
+    span[0].classList.remove("green");
   }
   if (checkErrors("passwordCapital")) {
-    svg[1].classList.add("green");
+    span[1].classList.add("green");
   } else {
-    svg[1].classList.remove("green");
+    span[1].classList.remove("green");
   }
   if (checkErrors("passwordNumber")) {
-    svg[2].classList.add("green");
+    span[2].classList.add("green");
   } else {
-    svg[2].classList.remove("green");
+    span[2].classList.remove("green");
   }
 }
 

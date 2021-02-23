@@ -54,8 +54,7 @@
 
     .content {
       display: grid;
-      grid-row-gap: 0.5rem;
-      row-gap: 0.5rem;
+      row-gap: 0.75rem;
       text-align: center;
     }
 
@@ -80,26 +79,47 @@
   }
 
   .fourth {
-    display: flex;
-    justify-content: center;
-
-    svg {
-      height: fit-content;
-      align-self: center;
+    .container {
+      display: flex;
+      position: relative;
+      border-radius: 20px;
+      background: url(img/day.jpg) center/cover;
     }
 
     .prev {
-      margin: 0 1.5rem;
-      transform: scaleX(-1);
+      position: absolute;
+      left: 0px;
+      align-self: center;
+      padding: 0.25rem 1rem 0.25rem 0.5rem;
+      background: rgba(255, 255, 255, 0.4);
+      border-radius: 0 1rem 1rem 0;
+      box-shadow: 5px 2px 20px -10px rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(1px);
+
+      &::before {
+        content: "\f0d9";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        font-size: 4.5rem;
+      }
     }
 
     .next {
-      margin: 0 1.5rem;
-    }
+      position: absolute;
+      right: 0px;
+      align-self: center;
+      padding: 0.25rem 0.5rem 0.25rem 1rem;
+      background: rgba(255, 255, 255, 0.4);
+      border-radius: 1rem 0 0 1rem;
+      box-shadow: -5px 2px 20px -10px rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(1px);
 
-    .container {
-      border-radius: 20px;
-      background: url(img/day.jpg) center/cover;
+      &::before {
+        content: "\f0da";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        font-size: 4.5rem;
+      }
     }
   }
 
@@ -121,81 +141,58 @@
   .sixth {
     .container {
       display: grid;
-      grid-template-rows: auto 1fr;
-      row-gap: 3rem;
+      grid-template-rows: auto 10% auto 1fr;
     }
 
     .controls {
       display: flex;
       justify-content: center;
+    }
 
-      button {
-        margin: 0;
+    .login,
+    .signup {
+      margin: 0;
 
-        &:not(:first-child) {
-          margin-left: 1rem;
-        }
-
-        &.inactive {
-          background: var(--bg);
-          color: var(--accent);
-        }
+      &:not(:first-child) {
+        margin-left: 1rem;
       }
+
+      &.inactive {
+        background: var(--bg);
+        color: var(--accent);
+      }
+    }
+
+    .forms {
+      grid-row: 3;
     }
 
     form {
-      justify-items: center;
-      gap: 1.5rem;
       display: grid;
+      gap: 1.5rem;
       max-width: 550px;
       margin: 0 auto;
-
-      .email,
-      .name,
-      .password {
-        display: grid;
-        gap: 0.5rem;
-        width: 100%;
-        text-align: center;
-      }
     }
 
-    .form-error {
-      color: rgb(255, 230, 0);
-      font-size: 1.2rem;
+    .conditions {
+      display: grid;
+      gap: 0.5rem;
     }
 
-    input {
-      width: 100%;
-      padding: 0.5rem 1rem;
-      font-size: 1.25rem;
-      border-radius: 1em;
-      border: 3px solid var(--accent);
-      min-height: 4rem;
-      background: var(--bg);
-      color: var(--accent);
-    }
-
-    .condition {
-      display: flex;
+    span {
       margin-left: 1rem;
-      font-size: 1.1rem;
-    }
 
-    svg {
-      width: 1rem;
-      height: 1rem;
-      margin-right: 0.5rem;
-      align-self: center;
-      fill: rgb(168, 168, 168);
-    }
+      &::before {
+        content: "\f00c";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        margin-right: 0.5rem;
+        color: rgb(168, 168, 168);
+      }
 
-    .green {
-      fill: rgb(6, 143, 17);
-    }
-
-    .red-border {
-      border: 3px solid red;
+      &.green::before {
+        color: rgb(6, 143, 17);
+      }
     }
   }
 
@@ -258,7 +255,6 @@
     .content {
       display: grid;
       row-gap: 1.5rem;
-      grid-row-gap: 1.5rem;
       max-height: 100%;
       padding: 0 2rem;
       position: relative;

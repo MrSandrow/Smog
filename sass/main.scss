@@ -39,119 +39,7 @@ html {
 @import "index";
 @import "slider";
 
-// CSS Sections
-
-nav {
-  margin: 2rem;
-}
-
-.moon {
-  width: fit-content;
-  margin-left: auto;
-}
-
-section {
-  display: grid;
-  height: 100vh;
-}
-
-.container {
-  width: 80vw;
-  height: 80vh;
-  align-self: center;
-  justify-self: center;
-}
-
-footer {
-  margin: 0 auto 1.5rem;
-  align-self: end;
-  font-weight: bold;
-  position: relative;
-}
-
-.loader {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 10;
-  background: var(--bg);
-}
-
-.spinner {
-  width: 5rem;
-  height: 5rem;
-  background: var(--accent);
-  border-radius: 50%;
-  animation: loader 1s infinite ease-in-out;
-}
-
-.error {
-  display: none;
-}
-
-@keyframes loader {
-  0% {
-    transform: scale(0);
-    opacity: 1;
-  }
-
-  100% {
-    transform: scale(1);
-    opacity: 0;
-  }
-}
-
-.no-js {
-  .spinner {
-    display: none;
-  }
-
-  .error {
-    display: block;
-    max-width: 80vw;
-    font-size: 1.5rem;
-    text-align: center;
-  }
-}
-
-// CSS Components
-
-button {
-  background: var(--accent);
-  color: var(--bg);
-  font-family: $font;
-  font-weight: 700;
-  height: fit-content;
-  border: none;
-  border-radius: 2em;
-  padding: 1em 2em;
-  margin: 0.5rem auto 0;
-  transition: all ease 0.2s;
-}
-
-img {
-  width: 100%;
-  display: block;
-}
-
-svg {
-  width: 1.75rem;
-  height: 100%;
-  fill: var(--accent);
-}
-
-.hidden {
-  display: none !important;
-}
-
-.invisible {
-  visibility: hidden;
-}
+@import "components";
 
 // Media Queries
 
@@ -179,10 +67,6 @@ svg {
 
     .second {
       display: grid;
-    }
-
-    .fourth svg {
-      width: 1rem;
     }
 
     .last {

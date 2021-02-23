@@ -7,11 +7,9 @@ Créer les messages d'erreurs en cas de mauvais identifiants
 Ajouter des animations & Ajouter un bouton pour afficher le mot de passe
 
 Ajouter des Conditions sur un Formulaire - https://youtu.be/lUUOMdnLBqY?t=24 (Ex : Mot de passe avec Majuscules & Caractères Spéciaux)
-Utiliser la police FontAwesome
 Intégrer une API & Fetch des données en JSON (AJAX) + Créer une Search Bar (Connectée à une API)
 Créer un Login & Register Form
 Scroll 100 VH - https://www.youtube.com/watch?v=LVFkJJsug50 & https://www.youtube.com/watch?v=towxNtiSyXE & https://www.cappen.com/pt/works
-Récupérer les informations d'une icône FontAwesome
 Ajouter une App Pomodoro - https://www.frontendmentor.io/challenges/pomodoro-app-KBFnycJ6G
 Créer un Breakout Game - https://www.webtips.dev/building-the-game-breakout-using-javascript
 Créer un site comme Zillow - https://youtu.be/lUUOMdnLBqY?t=112
@@ -39,6 +37,7 @@ https://tympanus.net/codrops/2019/11/13/high-speed-light-trails-in-three-js/
 
 Corriger le bug du Line Drawing (ne fonctionne pas si on change de thème avant qu'il soit terminé)
 Désactiver le scroll du Loader
+Corriger le bug du formulaire qui déborde sur la section d'en dessous (sur mobile en paysage)
 Intégrer un graphique du cours d'une crypto en temps réel sur mon site
 Ajouter une Transition sur le Slider
 Ajouter une Transition sur le Compteur de Clics
