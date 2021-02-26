@@ -138,64 +138,6 @@
     }
   }
 
-  .sixth {
-    .container {
-      display: grid;
-      grid-template-rows: auto 10% auto 1fr;
-    }
-
-    .controls {
-      display: flex;
-      justify-content: center;
-    }
-
-    .login,
-    .signup {
-      margin: 0;
-
-      &:not(:first-child) {
-        margin-left: 1rem;
-      }
-
-      &.inactive {
-        background: var(--bg);
-        color: var(--accent);
-      }
-    }
-
-    .forms {
-      grid-row: 3;
-    }
-
-    form {
-      display: grid;
-      gap: 1.5rem;
-      max-width: 550px;
-      margin: 0 auto;
-    }
-
-    .conditions {
-      display: grid;
-      gap: 0.5rem;
-    }
-
-    span {
-      margin-left: 1rem;
-
-      &::before {
-        content: "\f00c";
-        font-family: "Font Awesome 5 Free";
-        font-weight: 900;
-        margin-right: 0.5rem;
-        color: rgb(168, 168, 168);
-      }
-
-      &.green::before {
-        color: rgb(6, 143, 17);
-      }
-    }
-  }
-
   .last {
     grid-template-rows: 1fr auto;
 

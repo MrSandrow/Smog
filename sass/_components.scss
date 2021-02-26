@@ -56,10 +56,6 @@ input {
   min-height: 4rem;
   background: var(--bg);
   color: var(--accent);
-
-  &.red-border {
-    border: 3px solid red;
-  }
 }
 
 svg {
@@ -79,54 +75,33 @@ svg {
   display: none !important;
 }
 
-// Loader
+// JavaScript Disabled
 
-.loader {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.error {
+  display: none;
   position: fixed;
+  background: var(--bg);
   top: 0;
   left: 0;
-  width: 100%;
   height: 100%;
+  width: 100%;
   z-index: 10;
-  background: var(--bg);
 
-  .spinner {
-    width: 5rem;
-    height: 5rem;
-    background: var(--accent);
-    border-radius: 50%;
-    animation: spinner 1s infinite ease-in-out;
-  }
-
-  .error {
-    display: none;
+  .container {
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.5rem;
   }
 }
 
 .no-js {
-  .spinner {
-    display: none;
+  body {
+    overflow: hidden;
   }
 
   .error {
-    display: block;
-    max-width: 80vw;
-    font-size: 1.5rem;
-    text-align: center;
-  }
-}
-
-@keyframes spinner {
-  0% {
-    transform: scale(0);
-    opacity: 1;
-  }
-
-  100% {
-    transform: scale(1);
-    opacity: 0;
+    display: grid;
   }
 }
