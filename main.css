@@ -63,16 +63,37 @@ html[data-theme="dark"] {
           user-select: none;
 }
 
-.index .second .img1, .index .second .img2 {
-  position: absolute;
-  overflow: hidden;
-}
-
 .index .second img {
   height: 80vh;
   width: 80vw;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.index .second .img1,
+.index .second .img2 {
+  position: absolute;
+  overflow: hidden;
+}
+
+.index .second .img2 {
+  width: 50%;
+}
+
+.index .second .night {
+  background: url(img/night.jpg);
+  height: 80vh;
+  width: 80vw;
+  background-size: cover;
+  background-position: center;
+}
+
+.index .second .day {
+  background: url(img/day.jpg);
+  height: 80vh;
+  width: 80vw;
+  background-size: cover;
+  background-position: center;
 }
 
 .index .third .container {
@@ -502,7 +523,8 @@ svg {
   .container {
     width: 60vw;
   }
-  .index .second img {
+  .index .second .day,
+  .index .second .night {
     width: 60vw;
   }
 }

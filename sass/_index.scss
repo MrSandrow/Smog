@@ -41,15 +41,36 @@
     //   height: 100%;
     // }
 
-    .img1, .img2 {
-      position: absolute;
-      overflow: hidden;
-    }
-
     img {
       height: 80vh;
       width: 80vw;
       object-fit: cover;
+    }
+
+    .img1,
+    .img2 {
+      position: absolute;
+      overflow: hidden;
+    }
+
+    .img2 {
+      width: 50%;
+    }
+
+    .night {
+      background: url(img/night.jpg);
+      height: 80vh;
+      width: 80vw;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .day {
+      background: url(img/day.jpg);
+      height: 80vh;
+      width: 80vw;
+      background-size: cover;
+      background-position: center;
     }
   }
 
