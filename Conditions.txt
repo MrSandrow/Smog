@@ -1,4 +1,3 @@
-Corriger le bug du Line Drawing (ne fonctionne pas si on change de thème avant qu'il soit terminé)
 Réafficher la 2ème section sur mobile - https://www.mailgun.com/
 Ajouter une Transition sur le Slider
 Ajouter une Transition sur le Compteur de Clics

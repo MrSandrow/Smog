@@ -104,17 +104,34 @@ function randomEmoji() {
 
 // Image Slider
 
+// const second = document.querySelector(".second");
+// second.addEventListener("mousemove", slider);
+
+// function slider(e) {
+//   const body = document.querySelector("body");
+//   const container = document.querySelector(".second .container");
+//   const img2 = document.querySelector(".img2");
+//   const width = (body.offsetWidth - container.offsetWidth) / 2;
+
+//   let x = Math.max(0, e.clientX - width);
+//   img2.style.left = x + "px";
+// }
+
 const second = document.querySelector(".second");
 second.addEventListener("mousemove", slider);
+
+if (hover) {
+  
+}
 
 function slider(e) {
   const body = document.querySelector("body");
   const container = document.querySelector(".second .container");
-  const img2 = document.querySelector(".img2");
+  const img1 = document.querySelector(".img1");
   const width = (body.offsetWidth - container.offsetWidth) / 2;
 
   let x = Math.max(0, e.clientX - width);
-  img2.style.left = x + "px";
+  img1.style.width = x + "px";
 }
 
 // Clicks Counter
@@ -205,9 +222,6 @@ const smog = anime({
 
 function lineDraw() {
   smog.play();
-  // if (browser != "safari") {
-  //   smog.play();
-  // }
 }
 
 new Waypoint({
@@ -215,14 +229,6 @@ new Waypoint({
   offset: "30%",
   handler: runOnce(lineDraw),
 });
-
-// if (browser === "safari") {
-//   const path = document.querySelectorAll(".smog path");
-
-//   for (let i = 0; i < path.length; i++) {
-//     path[i].style.strokeDashoffset = "0px";
-//   }
-// }
 
 // Glasmorphism
 

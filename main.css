@@ -53,10 +53,6 @@ html[data-theme="dark"] {
   transition: all ease-out 0.1s;
 }
 
-.index .second {
-  display: none;
-}
-
 .index .second .container {
   position: relative;
   overflow: hidden;
@@ -67,22 +63,20 @@ html[data-theme="dark"] {
           user-select: none;
 }
 
-.index .second .img1 {
-  background: url("img/day.jpg");
-}
-
-.index .second .img2 {
-  background: url("img/night.jpg");
-  left: 50%;
-}
-
 .index .second .img {
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
   position: absolute;
-  width: 100%;
-  height: 100%;
+  overflow: hidden;
+}
+
+.index .second .img1 {
+  width: 50%;
+}
+
+.index .second img {
+  height: 80vh;
+  width: 80vw;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .index .third .container {
@@ -190,7 +184,6 @@ html[data-theme="dark"] {
 .index .fifth svg {
   max-width: 100%;
   width: 35rem;
-  cursor: default;
   -webkit-filter: drop-shadow(0px 4px 8px #ff9100);
           filter: drop-shadow(0px 4px 8px #ff9100);
 }
@@ -487,10 +480,6 @@ svg {
     -webkit-transform: scale(1.3);
             transform: scale(1.3);
   }
-  .index .second {
-    display: -ms-grid;
-    display: grid;
-  }
   .index .last .content {
     -webkit-transform: translateY(7rem);
             transform: translateY(7rem);
@@ -515,6 +504,9 @@ svg {
 
 @media (min-width: 600px) {
   .container {
+    width: 60vw;
+  }
+  .index .second img {
     width: 60vw;
   }
 }
