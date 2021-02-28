@@ -195,7 +195,7 @@ function nexto() {
 const fifth = document.querySelector(".fifth");
 
 const smog = anime({
-  targets: "#smog path",
+  targets: ".smog path",
   strokeDashoffset: [anime.setDashoffset, 0],
   easing: "easeInOutSine",
   duration: 3000,
@@ -204,9 +204,10 @@ const smog = anime({
 });
 
 function lineDraw() {
-  if (browser != "safari") {
-    smog.play();
-  }
+  smog.play();
+  // if (browser != "safari") {
+  //   smog.play();
+  // }
 }
 
 new Waypoint({
@@ -215,13 +216,13 @@ new Waypoint({
   handler: runOnce(lineDraw),
 });
 
-if (browser === "safari") {
-  const path = document.querySelectorAll("#smog path");
+// if (browser === "safari") {
+//   const path = document.querySelectorAll(".smog path");
 
-  for (let i = 0; i < path.length; i++) {
-    path[i].style.strokeDashoffset = "0px";
-  }
-}
+//   for (let i = 0; i < path.length; i++) {
+//     path[i].style.strokeDashoffset = "0px";
+//   }
+// }
 
 // Glasmorphism
 

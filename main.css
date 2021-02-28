@@ -296,7 +296,7 @@ html[data-theme="dark"] {
   font-size: 1.25rem;
 }
 
-#smog path {
+.smog path {
   fill: none;
   stroke: #ff9100;
   stroke-width: 2px;
