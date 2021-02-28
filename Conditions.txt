@@ -1,4 +1,3 @@
-Réafficher la 2ème section sur mobile - https://www.mailgun.com/
 Ajouter une Transition sur le Slider
 Ajouter une Transition sur le Compteur de Clics
 Améliorer la gestion de mon JS (Mettre chaque fonctionnalité dans un module & Séparer le code en production et le code en développement)
