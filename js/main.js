@@ -104,19 +104,6 @@ function randomEmoji() {
 
 // Image Slider
 
-// const second = document.querySelector(".second");
-// second.addEventListener("mousemove", slider);
-
-// function slider(e) {
-//   const body = document.querySelector("body");
-//   const container = document.querySelector(".second .container");
-//   const img2 = document.querySelector(".img2");
-//   const width = (body.offsetWidth - container.offsetWidth) / 2;
-
-//   let x = Math.max(0, e.clientX - width);
-//   img2.style.left = x + "px";
-// }
-
 const second = document.querySelector(".second");
 second.addEventListener("mousemove", slider);
 second.addEventListener("touchmove", slider);
