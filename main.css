@@ -63,12 +63,14 @@ html[data-theme="dark"] {
           user-select: none;
 }
 
-.index .second .img {
+.index .second .img1 {
   position: absolute;
   overflow: hidden;
 }
 
-.index .second .img1 {
+.index .second .img2 {
+  position: absolute;
+  overflow: hidden;
   width: 50%;
 }
 

@@ -119,19 +119,17 @@ function randomEmoji() {
 
 const second = document.querySelector(".second");
 second.addEventListener("mousemove", slider);
-
-if (hover) {
-  
-}
+second.addEventListener("touchmove", slider);
 
 function slider(e) {
   const body = document.querySelector("body");
   const container = document.querySelector(".second .container");
-  const img1 = document.querySelector(".img1");
+  const img2 = document.querySelector(".img2");
   const width = (body.offsetWidth - container.offsetWidth) / 2;
+  const clientX = e.clientX || e.touches[0].clientX;
 
-  let x = Math.max(0, e.clientX - width);
-  img1.style.width = x + "px";
+  let x = Math.max(0, clientX - width);
+  img2.style.width = x + "px";
 }
 
 // Clicks Counter
