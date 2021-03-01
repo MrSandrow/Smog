@@ -104,13 +104,13 @@ function randomEmoji() {
 
 // Image Slider
 
-const second = document.querySelector(".second");
+const second = document.querySelector(".index-second");
 second.addEventListener("mousemove", slider);
 second.addEventListener("touchmove", slider);
 
 function slider(e) {
   const body = document.querySelector("body");
-  const container = document.querySelector(".second .container");
+  const container = document.querySelector(".index-second .container");
   const img2 = document.querySelector(".img2");
   const width = (body.offsetWidth - container.offsetWidth) / 2;
   const clientX = e.clientX || e.touches[0].clientX;
@@ -127,7 +127,7 @@ counter.addEventListener("click", count);
 let number = 0;
 
 function count() {
-  const span = document.querySelector(".third span");
+  const span = document.querySelector(".index-third span");
 
   span.style.transform = "translateY(-1.5rem)";
   number = number + 1;
@@ -148,8 +148,8 @@ function count() {
 
 // Counter Up
 
-import { CountUp } from "./counter.js";
-const third = document.querySelector(".third");
+import { CountUp } from "https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.0.7/countUp.js";
+const third = document.querySelector(".index-third");
 
 function counterUp() {
   const target = document.querySelector(".counter-up");
@@ -166,45 +166,51 @@ new Waypoint({
 
 // Carrousel
 
-let src = 0;
+// let src = 0;
+// const prev = document.querySelector(".prev");
+// const next = document.querySelector(".next");
+// const images = [
+//   "img/day.jpg",
+//   "img/night.jpg",
+//   "img/cactus.jpg",
+//   "img/city.jpg",
+//   "img/mountains.jpg",
+// ];
+
+// prev.addEventListener("click", prevo);
+// next.addEventListener("click", nexto);
+
+// function prevo() {
+//   const container = document.querySelector(".fourth .container");
+
+//   if (src === 0) {
+//     src = images.length - 1;
+//   } else {
+//     src--;
+//   }
+//   container.style.background = `url(${images[src]}) center/cover`;
+// }
+
+// function nexto() {
+//   const container = document.querySelector(".fourth .container");
+
+//   if (src >= images.length - 1) {
+//     src = 0;
+//   } else {
+//     src++;
+//   }
+//   container.style.background = `url(${images[src]}) center/cover`;
+// }
+
 const prev = document.querySelector(".prev");
 const next = document.querySelector(".next");
-const images = [
-  "img/day.jpg",
-  "img/night.jpg",
-  "img/cactus.jpg",
-  "img/city.jpg",
-  "img/mountains.jpg",
-];
 
 prev.addEventListener("click", prevo);
 next.addEventListener("click", nexto);
 
-function prevo() {
-  const container = document.querySelector(".fourth .container");
-
-  if (src === 0) {
-    src = images.length - 1;
-  } else {
-    src--;
-  }
-  container.style.background = `url(${images[src]}) center/cover`;
-}
-
-function nexto() {
-  const container = document.querySelector(".fourth .container");
-
-  if (src >= images.length - 1) {
-    src = 0;
-  } else {
-    src++;
-  }
-  container.style.background = `url(${images[src]}) center/cover`;
-}
-
 // Line Drawing
 
-const fifth = document.querySelector(".fifth");
+const fifth = document.querySelector(".index-fifth");
 
 const smog = anime({
   targets: ".smog path",
@@ -227,7 +233,7 @@ new Waypoint({
 
 // Glasmorphism
 
-const cards = document.querySelectorAll(".last .card");
+const cards = document.querySelectorAll(".index-last .card");
 
 if (browser != "safari") {
   for (let i = 0; i < cards.length; i++) {
@@ -256,7 +262,7 @@ window.addEventListener("load", resize);
 window.addEventListener("resize", resize);
 
 function resize() {
-  const container = document.querySelector(".last .container");
+  const container = document.querySelector(".index-last .container");
   const realWidth = Math.max(0, (container.offsetWidth - 375) / (375 + 48));
   const width = Math.min(realWidth, cards.length);
 
@@ -269,7 +275,7 @@ function resize() {
   }
 
   const glare = document.querySelectorAll(".js-tilt-glare-inner");
-  const content = document.querySelector(".last .content");
+  const content = document.querySelector(".index-last .content");
   const height = content.offsetHeight;
 
   for (let i = 0; i < cards.length; i++) {

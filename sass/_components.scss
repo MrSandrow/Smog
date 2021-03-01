@@ -33,7 +33,7 @@ footer {
 button {
   background: var(--accent);
   color: var(--bg);
-  font-family: $font;
+  font-family: Montserrat, Arial, sans-serif;
   font-weight: 700;
   height: fit-content;
   border: none;
@@ -63,6 +63,10 @@ svg {
 }
 
 // Custom Classes
+
+.backdropfilter .card {
+  backdrop-filter: blur(5px);
+}
 
 .container {
   width: 80vw;
@@ -103,5 +107,27 @@ svg {
 
   .error {
     display: grid;
+  }
+}
+
+// Media Queries
+
+@media (hover: hover) {
+  button {
+    cursor: pointer;
+
+    &.hover:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  .pointer {
+    cursor: pointer;
+  }
+}
+
+@media (min-width: 600px) {
+  .container {
+    width: 60vw;
   }
 }
