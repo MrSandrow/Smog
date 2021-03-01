@@ -1,5 +1,4 @@
 Ajouter une Transition sur le Slider
-Ajouter une Transition sur le Compteur de Clics
 Améliorer la gestion de mon JS (Mettre chaque fonctionnalité dans un module & Séparer le code en production et le code en développement)
 Scroll 100 VH - https://www.youtube.com/watch?v=LVFkJJsug50 & https://www.youtube.com/watch?v=towxNtiSyXE & https://www.cappen.com/pt/works
 Intégrer une API & Fetch des données en JSON (AJAX) + Créer une Search Bar (Connectée à l'API)

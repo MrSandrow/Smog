@@ -121,12 +121,15 @@ function slider(e) {
 
 // Clicks Counter
 
-let number = 0;
 const counter = document.querySelector(".counter");
 counter.addEventListener("click", count);
 
+let number = 0;
+
 function count() {
   const span = document.querySelector(".third span");
+
+  span.style.transform = "translateY(-1.5rem)";
   number = number + 1;
 
   if (number === 1) {
@@ -134,6 +137,13 @@ function count() {
   } else {
     span.innerText = `${number} Clics`;
   }
+
+  anime({
+    targets: span,
+    translateY: 0,
+    duration: 1500,
+    easing: "easeOutElastic",
+  });
 }
 
 // Counter Up
