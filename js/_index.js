@@ -33,6 +33,23 @@ const browser = (function (agent) {
   }
 })(window.navigator.userAgent.toLowerCase());
 
+// Scroll 100 VH
+
+const scrollWrapper = document.querySelector(".index-slider .wrapper");
+let currentSection = 0;
+
+window.addEventListener("wheel", scrollSection);
+
+function scrollSection(event) {
+  if (event.deltaY < 0) {
+    currentSection = currentSection - 1;
+  } else {
+    currentSection = currentSection + 1;
+  }
+
+  scrollWrapper.style.transform = `translateY(-${currentSection * 100}vh)`;
+}
+
 // Random Emojis
 
 const emojis = document.querySelector(".emojis");
@@ -148,29 +165,29 @@ new Waypoint({
 const prevButton = document.querySelector(".prev");
 const nextButton = document.querySelector(".next");
 const sliderWrapper = document.querySelector(".index-fourth .wrapper");
-let current = 0;
+let currentSlide = 0;
 
 prevButton.addEventListener("click", prevSlide);
 nextButton.addEventListener("click", nextSlide);
 
 function prevSlide() {
-  if (current === 0) {
-    current = sliderWrapper.childElementCount - 1;
+  if (currentSlide === 0) {
+    currentSlide = sliderWrapper.childElementCount - 1;
   } else {
-    current = current - 1;
+    currentSlide = currentSlide - 1;
   }
 
-  sliderWrapper.style.marginLeft = `-${current * 100}%`;
+  sliderWrapper.style.marginLeft = `-${currentSlide * 100}%`;
 }
 
 function nextSlide() {
-  if (current === sliderWrapper.childElementCount - 1) {
-    current = 0;
+  if (currentSlide === sliderWrapper.childElementCount - 1) {
+    currentSlide = 0;
   } else {
-    current = current + 1;
+    currentSlide = currentSlide + 1;
   }
 
-  sliderWrapper.style.marginLeft = `-${current * 100}%`;
+  sliderWrapper.style.marginLeft = `-${currentSlide * 100}%`;
 }
 
 // Line Drawing

@@ -1,3 +1,9 @@
+Limiter les valeurs de currentSlide
+Repenser les Waypoints
+Choisir une animation pour translate
+Ajouter un index à droite
+Empêcher de scroller trop vite
+
 Scroll 100 VH - https://www.youtube.com/watch?v=LVFkJJsug50 & https://www.youtube.com/watch?v=towxNtiSyXE & https://www.cappen.com/pt/works
 Intégrer une API & Fetch des données en JSON (AJAX) + Créer une Search Bar (Connectée à l'API)
 

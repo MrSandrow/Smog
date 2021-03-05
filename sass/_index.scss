@@ -244,6 +244,15 @@
 // Media Queries
 
 @media (hover: hover) {
+  .index-slider {
+    height: 100vh;
+    overflow: hidden;
+
+    .wrapper {
+      transition: transform 0.5s;
+    }
+  }
+
   .index-first .emojis {
     cursor: pointer;
 

@@ -334,6 +334,16 @@ html[data-theme="dark"] {
 }
 
 @media (hover: hover) {
+  .index-slider {
+    height: 100vh;
+    overflow: hidden;
+  }
+  .index-slider .wrapper {
+    -webkit-transition: -webkit-transform 0.5s;
+    transition: -webkit-transform 0.5s;
+    transition: transform 0.5s;
+    transition: transform 0.5s, -webkit-transform 0.5s;
+  }
   .index-first .emojis {
     cursor: pointer;
   }
