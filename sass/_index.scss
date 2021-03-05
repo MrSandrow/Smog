@@ -82,20 +82,19 @@
 
 .index-fourth {
   .container {
-    display: flex;
+    display: grid;
     position: relative;
-    border-radius: 20px;
-    // background: url(img/day.jpg) center/cover;
     overflow: hidden;
+    border-radius: 20px;
   }
 
   .wrapper {
     display: flex;
-    transform: translateX(0);
+    width: 100%;
+    transition: margin 0.6s;
   }
 
   img {
-    height: 80vh;
     object-fit: cover;
   }
 
@@ -103,6 +102,7 @@
     position: absolute;
     left: 0px;
     align-self: center;
+    color: white;
     padding: 0.25rem 1rem 0.25rem 0.5rem;
     background: rgba(255, 255, 255, 0.4);
     border-radius: 0 1rem 1rem 0;
@@ -121,6 +121,7 @@
     position: absolute;
     right: 0px;
     align-self: center;
+    color: white;
     padding: 0.25rem 0.5rem 0.25rem 1rem;
     background: rgba(255, 255, 255, 0.4);
     border-radius: 1rem 0 0 1rem;

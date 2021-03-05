@@ -145,47 +145,33 @@ new Waypoint({
 
 // Carrousel
 
-// let src = 0;
-// const prev = document.querySelector(".prev");
-// const next = document.querySelector(".next");
-// const images = [
-//   "img/day.jpg",
-//   "img/night.jpg",
-//   "img/cactus.jpg",
-//   "img/city.jpg",
-//   "img/mountains.jpg",
-// ];
+const prevButton = document.querySelector(".prev");
+const nextButton = document.querySelector(".next");
+const sliderWrapper = document.querySelector(".index-fourth .wrapper");
+let current = 0;
 
-// prev.addEventListener("click", prevo);
-// next.addEventListener("click", nexto);
+prevButton.addEventListener("click", prevSlide);
+nextButton.addEventListener("click", nextSlide);
 
-// function prevo() {
-//   const container = document.querySelector(".fourth .container");
+function prevSlide() {
+  if (current === 0) {
+    current = sliderWrapper.childElementCount - 1;
+  } else {
+    current = current - 1;
+  }
 
-//   if (src === 0) {
-//     src = images.length - 1;
-//   } else {
-//     src--;
-//   }
-//   container.style.background = `url(${images[src]}) center/cover`;
-// }
+  sliderWrapper.style.marginLeft = `-${current * 100}%`;
+}
 
-// function nexto() {
-//   const container = document.querySelector(".fourth .container");
+function nextSlide() {
+  if (current === sliderWrapper.childElementCount - 1) {
+    current = 0;
+  } else {
+    current = current + 1;
+  }
 
-//   if (src >= images.length - 1) {
-//     src = 0;
-//   } else {
-//     src++;
-//   }
-//   container.style.background = `url(${images[src]}) center/cover`;
-// }
-
-const prev = document.querySelector(".prev");
-const next = document.querySelector(".next");
-
-// prev.addEventListener("click", prevo);
-// next.addEventListener("click", nexto);
+  sliderWrapper.style.marginLeft = `-${current * 100}%`;
+}
 
 // Line Drawing
 

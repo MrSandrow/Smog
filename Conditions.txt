@@ -1,5 +1,3 @@
-Améliorer la gestion de mon JS (Passer les variables de main à index & Renommer les variables de index) - https://www.freecodecamp.org/news/javascript-modules-a-beginner-s-guide-783f7d7a5fcc/ & https://general.support.brightcove.com/developer/concepts-javascript-module-design-pattern.html
-Ajouter une Transition sur le Slider
 Scroll 100 VH - https://www.youtube.com/watch?v=LVFkJJsug50 & https://www.youtube.com/watch?v=towxNtiSyXE & https://www.cappen.com/pt/works
 Intégrer une API & Fetch des données en JSON (AJAX) + Créer une Search Bar (Connectée à l'API)
 
@@ -27,7 +25,7 @@ Ajouter un effet de propagation quand on clique sur un bouton
 Créer un feu d'artifice quand on clique - https://codepen.io/juliangarnier/pen/xOgyjB?editors=0010
 Créer un Overlay (100% de l'écran) visible en cliquant sur un Bouton. L'overlay part du bouton et se propage en cercle.
 Afficher un background de chargement / Flouter une image le temps qu'elle se charge
-Faire Apparaître / Slider le texte et les images quand je scroll - https://www.shopify.com/plus
+Faire Apparaître / Slider le texte et les images quand je scroll - https://www.shopify.com/plus & https://www.youtube.com/watch?v=VplDlwLTR50
 Faire un Slide Horizontall au début du scroll
 Ajouter un Effet Parallax - https://www.youtube.com/watch?v=Dxm6EwvQIl8 & https://youtu.be/P5zGTEGPpu4?t=117 & https://www.youtube.com/watch?v=XK7T3mY1V-w
 
