@@ -1,3 +1,55 @@
+.index-slider {
+  .scroll-wrapper {
+    transition: transform 0.5s;
+  }
+
+  .controls {
+    display: none;
+    position: absolute;
+    flex-direction: column;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 3rem;
+    padding: 1rem;
+    background: black;
+    border-radius: 3rem;
+  }
+
+  .button {
+    position: relative;
+    width: 2.5rem;
+    height: 2.5rem;
+    margin: 1rem 0;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 1rem;
+      height: 1rem;
+      top: 50%;
+      left: 50%;
+      background: white;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 50%;
+      transform: scale(0.5);
+      transition: transform 0.5s;
+    }
+
+    &.active::after {
+      border: 1px solid white;
+      transform: scale(1);
+    }
+  }
+}
+
 .index-first {
   grid-template-rows: auto 1fr;
 
@@ -247,18 +299,10 @@
   .index-slider {
     height: 100vh;
     overflow: hidden;
-
-    .wrapper {
-      transition: transform 0.5s;
-    }
   }
 
-  .index-first .emojis {
-    cursor: pointer;
-
-    &:hover {
-      transform: scale(1.3);
-    }
+  .index-first .emojis:hover {
+    transform: scale(1.3);
   }
 
   .index-last {
@@ -278,5 +322,11 @@
 @media (min-width: 600px) {
   .index-second .img {
     width: 60vw;
+  }
+}
+
+@media (hover: hover) and (min-width: 992px) {
+  .index-slider .controls {
+    display: flex;
   }
 }

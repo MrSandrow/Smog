@@ -35,19 +35,58 @@ const browser = (function (agent) {
 
 // Scroll 100 VH
 
-const scrollWrapper = document.querySelector(".index-slider .wrapper");
+const scrollWrapper = document.querySelector(".index-slider .scroll-wrapper");
+const buttons = document.querySelectorAll(".index-slider .button");
 let currentSection = 0;
+let playing = false;
+
+const scrollWaypoints = {
+  2: runOnce(counterUp),
+  4: runOnce(lineDraw),
+};
+
+function checkWaypoints() {
+  for (let key in scrollWaypoints) {
+    if (buttons[key].classList.contains("active")) {
+      setTimeout(scrollWaypoints[key], 250);
+    }
+  }
+}
 
 window.addEventListener("wheel", scrollSection);
 
 function scrollSection(event) {
-  if (event.deltaY < 0) {
-    currentSection = currentSection - 1;
-  } else {
-    currentSection = currentSection + 1;
-  }
+  if (!playing) {
+    playing = true;
 
+    if (event.deltaY < 0) {
+      setCurrentSection(Math.max(0, currentSection - 1));
+    } else {
+      setCurrentSection(
+        Math.min(scrollWrapper.childElementCount - 1, currentSection + 1)
+      );
+    }
+
+    setTimeout(() => {
+      playing = false;
+    }, 500);
+  }
+}
+
+buttons.forEach((item, index) => {
+  item.addEventListener("click", () => {
+    setCurrentSection(index);
+  });
+});
+
+function setCurrentSection(param) {
+  currentSection = param;
+  buttons.forEach((item) => {
+    item.classList.remove("active");
+  });
+  buttons[currentSection].classList.add("active");
   scrollWrapper.style.transform = `translateY(-${currentSection * 100}vh)`;
+  checkWaypoints();
 }
 
 // Random Emojis
@@ -154,11 +193,13 @@ function counterUp() {
   countUp.start();
 }
 
-new Waypoint({
-  element: third,
-  offset: "25%",
-  handler: runOnce(counterUp),
-});
+if (!hover) {
+  new Waypoint({
+    element: third,
+    offset: "25%",
+    handler: runOnce(counterUp),
+  });
+}
 
 // Carrousel
 
@@ -207,11 +248,13 @@ function lineDraw() {
   smog.play();
 }
 
-new Waypoint({
-  element: fifth,
-  offset: "30%",
-  handler: runOnce(lineDraw),
-});
+if (!hover) {
+  new Waypoint({
+    element: fifth,
+    offset: "30%",
+    handler: runOnce(lineDraw),
+  });
+}
 
 // Glasmorphism
 
