@@ -13,6 +13,8 @@ html {
   background: var(--bg);
   color: var(--accent);
 
+  --container-width: 80vw;
+
   --bg: white;
   --accent: black;
   --gradient: var(--accent);
@@ -37,6 +39,12 @@ html {
     --bg: black;
     --accent: white;
     --gradient: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%);
+  }
+}
+
+@media (min-width: 600px) {
+  html {
+    --container-width: 60vw;
   }
 }
 

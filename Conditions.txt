@@ -1,5 +1,3 @@
-Intégrer une API & Fetch des données en JSON (AJAX) + Créer une Search Bar (Connectée à l'API)
-
 Ajouter 3 produits dans des tailles différentes, déterminer au hasard s'ils sont en stock, ajouter au panier s'il y a du stock et afficher un message d'erreur s'il n'y a plus de stock, ajouter la possibilité d'ajouter plusieurs articles / vider le panier & Ajouter une page de checkout & Ouvrir le panier quand un article est ajouté
 Ajouter une App Pomodoro - https://www.frontendmentor.io/challenges/pomodoro-app-KBFnycJ6G
 Créer un Breakout Game - https://www.webtips.dev/building-the-game-breakout-using-javascript
@@ -20,7 +18,7 @@ Regarder https://javascript.info
 
 
 
-Ajouter un effet de propagation quand on clique sur un bouton
+Ajouter un effet de propagation quand on clique sur un bouton - https://www.google.com/search?q=spread+effect+when+clicked+on+button+css & https://www.google.com/search?q=button+ripple+effect
 Créer un feu d'artifice quand on clique - https://codepen.io/juliangarnier/pen/xOgyjB?editors=0010
 Créer un Overlay (100% de l'écran) visible en cliquant sur un Bouton. L'overlay part du bouton et se propage en cercle.
 Afficher un background de chargement / Flouter une image le temps qu'elle se charge

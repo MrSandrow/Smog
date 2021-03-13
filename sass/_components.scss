@@ -47,13 +47,16 @@ img {
 }
 
 input {
-  padding: 0.5rem 1rem;
-  font-size: 1.25rem;
-  border-radius: 1em;
-  border: 3px solid var(--accent);
-  min-height: 4rem;
+  width: 100%;
   background: var(--bg);
   color: var(--accent);
+  margin-top: 0.25rem;
+  padding: 0 0.5rem 0.75rem;
+  font-family: Montserrat, Arial, sans-serif;
+  font-weight: bold;
+  font-size: 2rem;
+  border: 0;
+  border-bottom: 5px solid var(--accent);
 }
 
 svg {
@@ -63,7 +66,7 @@ svg {
 // Custom Classes
 
 .container {
-  width: 80vw;
+  width: var(--container-width);
   height: 80vh;
   align-self: center;
   justify-self: center;
@@ -117,11 +120,5 @@ svg {
 
   .pointer {
     cursor: pointer;
-  }
-}
-
-@media (min-width: 600px) {
-  .container {
-    width: 60vw;
   }
 }

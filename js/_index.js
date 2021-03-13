@@ -256,6 +256,75 @@ if (!hover) {
   });
 }
 
+// REST API
+
+const characters = [];
+getCharacters("https://rickandmortyapi.com/api/character");
+
+function getCharacters(url) {
+  fetchCharacters(url).then(storeCharacters).catch(displayErreur);
+}
+
+async function fetchCharacters(url) {
+  const request = await fetch(url);
+  const response = await request.json();
+  return response;
+}
+
+function storeCharacters(response) {
+  const results = response.results;
+  const nextPage = response.info.next;
+
+  results.forEach((item) => characters.push(item));
+
+  if (nextPage) {
+    getCharacters(nextPage);
+  }
+}
+
+function displayErreur() {
+  const erreur = document.querySelector(".index-sixth .erreur");
+  erreur.classList.remove("hidden");
+}
+
+const searchBar = document.querySelector(".index-sixth .searchbar");
+searchBar.addEventListener("input", displayResult);
+
+function displayResult() {
+  const result = document.querySelector(".index-sixth .result");
+  const fail = document.querySelector(".index-sixth .fail");
+  const searched = searchBar.value.toLowerCase();
+  const filteredCharacters = characters.filter((item) =>
+    item.name.toLowerCase().includes(searched)
+  );
+
+  if (searchBar.value.length > 0 && filteredCharacters.length > 0) {
+    fail.classList.add("hidden");
+    injectResult(filteredCharacters[0]);
+    result.classList.remove("hidden");
+  } else if (searchBar.value.length > 0 && filteredCharacters.length < 1) {
+    fail.classList.remove("hidden");
+  } else {
+    result.classList.add("hidden");
+    fail.classList.add("hidden");
+  }
+}
+
+function injectResult(character) {
+  const result = document.querySelector(".index-sixth .result");
+  const specie =
+    character.species === "unknown" ? "Unknown Species" : character.species;
+
+  result.innerHTML = `
+  <div class="result-image">
+    <img src="${character.image}" alt="${character.name}">
+  </div>
+  <div class="result-text">
+    <h2>${character.name}</h2>
+    <span>${specie}</span>
+  </div>`;
+}
+
 // Glasmorphism
 
 const cards = document.querySelectorAll(".index-last .card");
