@@ -32,10 +32,13 @@ if (footer) {
 // Imports
 
 function loadScript() {
-  const pageLocation = window.location.pathname;
-  let currentPage = pageLocation.substring(1, pageLocation.length - 5);
+  let currentPage = window.location.pathname.substring(1);
 
-  if (currentPage === "/") {
+  if (currentPage.includes(".html")) {
+    currentPage = currentPage.substring(0, currentPage.length - 5);
+  }
+
+  if (currentPage.length === 0) {
     currentPage = "index";
   }
 
