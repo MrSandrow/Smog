@@ -4,6 +4,13 @@ nav {
   display: flex;
   margin: 2rem;
 
+  .switch::before {
+    content: "\f037";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 2rem;
+  }
+
   .moon {
     margin-left: auto;
 
@@ -27,6 +34,12 @@ footer {
 }
 
 // HTML Elements
+
+a {
+  text-decoration: none;
+  color: currentColor;
+  cursor: default;
+}
 
 button {
   background: var(--accent);

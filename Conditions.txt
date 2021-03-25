@@ -1,10 +1,11 @@
-Créer un site comme Zillow - https://youtu.be/lUUOMdnLBqY?t=112 (Filtrer les personnages de Rick & Morty par species)
-Ajouter 3 produits dans des tailles différentes, déterminer au hasard s'ils sont en stock, ajouter au panier s'il y a du stock et afficher un message d'erreur s'il n'y a plus de stock, ajouter la possibilité d'ajouter plusieurs articles / vider le panier & Ajouter une page de checkout & Ouvrir le panier quand un article est ajouté - https://youtu.be/90PgFUPIybY
-Ajouter un Effet Parallax - https://www.youtube.com/watch?v=Dxm6EwvQIl8 & https://youtu.be/P5zGTEGPpu4?t=117 & https://www.youtube.com/watch?v=XK7T3mY1V-w - https://www.youtube.com/watch?v=8Z1PetrtF1c
-Intégrer une API Basique - https://www.weatherapi.com/ - https://weatherstack.com/ - https://mailboxlayer.com/
 Faire un Slide Horizontall au début du scroll
+Ajouter un Effet Parallax - https://www.youtube.com/watch?v=Dxm6EwvQIl8 & https://youtu.be/P5zGTEGPpu4?t=117 & https://www.youtube.com/watch?v=XK7T3mY1V-w - https://www.youtube.com/watch?v=8Z1PetrtF1c
 Créer un feu d'artifice quand on clique - https://codepen.io/juliangarnier/pen/xOgyjB?editors=0010
 Utiliser AnimeJS - https://www.youtube.com/watch?v=lj37QZ047f8 & https://www.youtube.com/watch?v=YqOhQWbouCE
+Intégrer une API Basique - https://www.weatherapi.com/ - https://weatherstack.com/ - https://mailboxlayer.com/
+Ajouter 3 produits dans des tailles différentes, déterminer au hasard s'ils sont en stock, ajouter au panier s'il y a du stock et afficher un message d'erreur s'il n'y a plus de stock, ajouter la possibilité d'ajouter plusieurs articles / vider le panier & Ajouter une page de checkout & Ouvrir le panier quand un article est ajouté - https://youtu.be/90PgFUPIybY
+
+
 
 
 

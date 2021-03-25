@@ -140,8 +140,8 @@ function filterResults() {
   }
 
   if (filteredOrigin().length > 0) {
-    fail.classList.add("hidden");
     injectResult(filteredOrigin());
+    fail.classList.add("hidden");
   } else {
     injectResult(new Array());
     fail.classList.remove("hidden");
