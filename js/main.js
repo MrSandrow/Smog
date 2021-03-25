@@ -1,11 +1,13 @@
 // Dark Theme
 
-const html = document.documentElement;
 const moon = document.querySelector(".moon");
 
-moon.addEventListener("click", switchTheme);
+if (moon) {
+  moon.addEventListener("click", switchTheme);
+}
 
 function switchTheme() {
+  const html = document.documentElement;
   const dataTheme = html.getAttribute("data-theme");
   let targetTheme;
 
@@ -22,8 +24,22 @@ function switchTheme() {
 // Copyright
 
 const footer = document.querySelector("footer");
-footer.innerText = `Copyright - © ${new Date().getFullYear()}`;
+
+if (footer) {
+  footer.innerText = `Copyright - © ${new Date().getFullYear()}`;
+}
 
 // Imports
 
-import {} from "./_index.js";
+function loadScript() {
+  const pageLocation = window.location.pathname;
+  let currentPage = pageLocation.substring(1, pageLocation.length - 5);
+
+  if (currentPage === "/") {
+    currentPage = "index";
+  }
+
+  import(`./_${currentPage}.js`);
+}
+
+loadScript();

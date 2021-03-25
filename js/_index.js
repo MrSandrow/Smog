@@ -62,9 +62,7 @@ function scrollSection(event) {
     if (event.deltaY < 0) {
       setCurrentSection(Math.max(0, currentSection - 1));
     } else {
-      setCurrentSection(
-        Math.min(scrollWrapper.childElementCount - 1, currentSection + 1)
-      );
+      setCurrentSection(Math.min(scrollWrapper.childElementCount - 1, currentSection + 1));
     }
 
     setTimeout(() => {
@@ -312,8 +310,7 @@ function displayResult() {
 
 function injectResult(character) {
   const result = document.querySelector(".index-sixth .result");
-  const specie =
-    character.species === "unknown" ? "Unknown Species" : character.species;
+  const specie = character.species === "unknown" ? "Unknown Species" : character.species;
 
   result.innerHTML = `
   <div class="result-image">
@@ -352,7 +349,7 @@ if (hover && browser != "safari") {
   });
 }
 
-window.addEventListener("load", resize);
+resize();
 window.addEventListener("resize", resize);
 
 function resize() {

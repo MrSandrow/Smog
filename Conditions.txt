@@ -1,36 +1,29 @@
-Ajouter 3 produits dans des tailles différentes, déterminer au hasard s'ils sont en stock, ajouter au panier s'il y a du stock et afficher un message d'erreur s'il n'y a plus de stock, ajouter la possibilité d'ajouter plusieurs articles / vider le panier & Ajouter une page de checkout & Ouvrir le panier quand un article est ajouté
-Ajouter une App Pomodoro - https://www.frontendmentor.io/challenges/pomodoro-app-KBFnycJ6G
-Créer un Breakout Game - https://www.webtips.dev/building-the-game-breakout-using-javascript
-Créer un site comme Zillow - https://youtu.be/lUUOMdnLBqY?t=112
-https://tympanus.net/codrops/2021/01/05/creating-an-infinite-auto-scrolling-gallery-using-webgl-with-ogl-and-glsl-shaders/
-https://tympanus.net/codrops/2020/12/01/crafting-a-scrollable-and-draggable-parallax-slider/
-https://tympanus.net/codrops/2020/06/10/how-to-create-a-motion-hover-effect-for-a-background-image-grid/
-https://tympanus.net/codrops/2020/03/17/create-a-wave-motion-effect-on-an-image-with-three-js/
-https://tympanus.net/codrops/2019/12/20/how-to-create-the-apple-fifth-avenue-cube-in-webgl/
-https://tympanus.net/codrops/2019/11/13/high-speed-light-trails-in-three-js/
-Intégrer Three.js & WebGL
-
-Regarder https://javascript.info
-
-
-
-
-
-
-
-Ajouter un effet de propagation quand on clique sur un bouton - https://www.google.com/search?q=spread+effect+when+clicked+on+button+css & https://www.google.com/search?q=button+ripple+effect
-Créer un feu d'artifice quand on clique - https://codepen.io/juliangarnier/pen/xOgyjB?editors=0010
-Créer un Overlay (100% de l'écran) visible en cliquant sur un Bouton. L'overlay part du bouton et se propage en cercle.
-Afficher un background de chargement / Flouter une image le temps qu'elle se charge
-Faire Apparaître / Slider le texte et les images quand je scroll - https://www.shopify.com/plus & https://www.youtube.com/watch?v=VplDlwLTR50
-Faire un Slide Horizontall au début du scroll
+Créer un site comme Zillow - https://youtu.be/lUUOMdnLBqY?t=112 (Filtrer les personnages de Rick & Morty par species)
+Ajouter 3 produits dans des tailles différentes, déterminer au hasard s'ils sont en stock, ajouter au panier s'il y a du stock et afficher un message d'erreur s'il n'y a plus de stock, ajouter la possibilité d'ajouter plusieurs articles / vider le panier & Ajouter une page de checkout & Ouvrir le panier quand un article est ajouté - https://youtu.be/90PgFUPIybY
 Ajouter un Effet Parallax - https://www.youtube.com/watch?v=Dxm6EwvQIl8 & https://youtu.be/P5zGTEGPpu4?t=117 & https://www.youtube.com/watch?v=XK7T3mY1V-w - https://www.youtube.com/watch?v=8Z1PetrtF1c
-
+Intégrer une API Basique - https://www.weatherapi.com/ - https://weatherstack.com/ - https://mailboxlayer.com/
+Faire un Slide Horizontall au début du scroll
+Créer un feu d'artifice quand on clique - https://codepen.io/juliangarnier/pen/xOgyjB?editors=0010
 Utiliser AnimeJS - https://www.youtube.com/watch?v=lj37QZ047f8 & https://www.youtube.com/watch?v=YqOhQWbouCE
-Changer la couleur du background en scrollant (Heetch) + Background Radial Gradient
-Faire "Rebondir" un texte ou une image
-Créer un menu comme celui de Stripe (Page des projets)
-Utiliser une framework de testing (Jest)
+
+
+
+
+
+
+
+
+
+
+
+
+
 Ajouter un Burger Menu
-Intégrer une API Basique - https://api.chucknorris.io/ - https://www.weatherapi.com/ - https://weatherstack.com/ - https://mailboxlayer.com/
-Intégrer un graphique du cours d'une crypto en temps réel sur mon site
+Créer un Overlay (100% de l'écran) visible en cliquant sur un Bouton. L'overlay part du bouton et se propage en cercle.
+Faire "Rebondir" un texte ou une image
+Afficher un background de chargement / Flouter une image le temps qu'elle se charge
+Ajouter un effet de propagation quand on clique sur un bouton - https://www.google.com/search?q=spread+effect+when+clicked+on+button+css & https://www.google.com/search?q=button+ripple+effect
+Faire Apparaître / Slider le texte et les images quand je scroll - https://www.shopify.com/plus & https://www.youtube.com/watch?v=VplDlwLTR50
+Changer la couleur du background en scrollant (Heetch) + Background Radial Gradient
+Projets Avancés - https://thesmartcoder.dev/9-awesome-projects-you-can-build-with-vanilla-javascript/ & Site Builder
+Animer un Objet en 3D avec Three JS

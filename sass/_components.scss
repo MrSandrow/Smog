@@ -1,10 +1,10 @@
 // Main Sections
 
 nav {
+  display: flex;
   margin: 2rem;
 
   .moon {
-    width: fit-content;
     margin-left: auto;
 
     &::before {
@@ -32,6 +32,7 @@ button {
   background: var(--accent);
   color: var(--bg);
   font-family: Montserrat, Arial, sans-serif;
+  font-size: 1rem;
   font-weight: 700;
   height: fit-content;
   border: none;
