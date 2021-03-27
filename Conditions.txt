@@ -1,5 +1,4 @@
-Faire un Slide Horizontall au début du scroll - https://willburstein.com/#
-Ajouter un Effet Parallax - https://www.youtube.com/watch?v=Dxm6EwvQIl8 & https://youtu.be/P5zGTEGPpu4?t=117 & https://www.youtube.com/watch?v=XK7T3mY1V-w - https://www.youtube.com/watch?v=8Z1PetrtF1c
+Ajouter un Effet Parallax - https://www.youtube.com/watch?v=XK7T3mY1V-w
 Créer un feu d'artifice quand on clique - https://codepen.io/juliangarnier/pen/xOgyjB?editors=0010
 Utiliser AnimeJS - https://www.youtube.com/watch?v=lj37QZ047f8 & https://www.youtube.com/watch?v=YqOhQWbouCE
 Intégrer une API Basique - https://www.weatherapi.com/ - https://weatherstack.com/ - https://mailboxlayer.com/

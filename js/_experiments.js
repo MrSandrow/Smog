@@ -5,7 +5,9 @@ const hover = window.matchMedia("(hover: hover)").matches;
 // Hybrid Section
 
 if (hover) {
+  window.addEventListener("load", slideSection);
   window.addEventListener("scroll", slideSection);
+  window.addEventListener("resize", slideSection);
 }
 
 function slideSection() {
@@ -168,4 +170,37 @@ function filterResults() {
     injectResult(new Array());
     fail.classList.remove("hidden");
   }
+}
+
+// Parallax Effect
+
+const card = document.querySelector(".experiments-last .card");
+let mouseLeave;
+
+if (hover) {
+  card.addEventListener("mousemove", transformCard);
+  card.addEventListener("mouseleave", resetCard);
+}
+
+function transformCard(event) {
+  const container = document.querySelector(".experiments-last .container");
+  const eventX = event.clientX - container.getBoundingClientRect().left;
+  const eventY = event.clientY - container.getBoundingClientRect().top;
+  const xAxis = (container.offsetWidth / 2 - eventX) / 10;
+  const yAxis = (container.offsetHeight / 2 - eventY) / 10;
+
+  if (mouseLeave) {
+    mouseLeave.pause();
+  }
+
+  card.style.transform = `perspective(750px) rotateX(${yAxis}deg) rotateY(${xAxis}deg)`;
+}
+
+function resetCard() {
+  mouseLeave = anime({
+    targets: card,
+    rotateX: 0,
+    rotateY: 0,
+    easing: "spring(1, 100, 10, 0)",
+  });
 }

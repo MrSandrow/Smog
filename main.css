@@ -406,6 +406,7 @@ html[data-theme=dark] {
 .experiments-hybrid {
   position: relative;
   height: 200vh;
+  overflow: hidden;
 }
 
 .experiments-first {
@@ -563,6 +564,52 @@ html[data-theme=dark] {
   background: var(--bg);
   grid-template-rows: 1fr auto;
 }
+.experiments-last .container {
+  display: flex;
+}
+.experiments-last .card {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(160deg, #2e2e2e, #1b1b1b);
+  color: white;
+  border-radius: 1rem;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+  padding: 1.5rem;
+  margin: auto;
+  transform-style: preserve-3d;
+}
+.experiments-last .card:hover .circle {
+  transform: scale(0.5);
+}
+.experiments-last .card:hover img {
+  transform: rotate(-25deg) translateZ(75px);
+}
+.experiments-last .card:hover .title {
+  transform: scale(1.5) translateY(-15px);
+}
+.experiments-last .sneaker {
+  position: relative;
+  width: 20rem;
+  height: 20rem;
+  margin-bottom: 1rem;
+}
+.experiments-last .circle {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: white;
+  border-radius: 50%;
+  transition: all 0.5s;
+}
+.experiments-last img {
+  position: absolute;
+  transition: all 0.5s 0.1s;
+}
+.experiments-last .title {
+  transition: all 0.5s;
+}
 
 @media (hover: hover) {
   .experiments-first,
@@ -578,6 +625,12 @@ html[data-theme=dark] {
 .experiments-second .species,
 .experiments-second .origin {
     justify-content: flex-start;
+  }
+}
+@media (max-width: 992px) {
+  .experiments-last .sneaker {
+    width: 13rem;
+    height: 13rem;
   }
 }
 nav {

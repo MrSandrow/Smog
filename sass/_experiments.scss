@@ -1,6 +1,7 @@
 .experiments-hybrid {
   position: relative;
   height: 200vh;
+  overflow: hidden;
 }
 
 .experiments-first {
@@ -179,6 +180,63 @@
   position: relative;
   background: var(--bg);
   grid-template-rows: 1fr auto;
+
+  .container {
+    display: flex;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(160deg, #2e2e2e, #1b1b1b);
+    color: white;
+    border-radius: 1rem;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+    padding: 1.5rem;
+    margin: auto;
+    transform-style: preserve-3d;
+
+    &:hover {
+      .circle {
+        transform: scale(0.5);
+      }
+
+      img {
+        transform: rotate(-25deg) translateZ(75px);
+      }
+
+      .title {
+        transform: scale(1.5) translateY(-15px);
+      }
+    }
+  }
+
+  .sneaker {
+    position: relative;
+    width: 20rem;
+    height: 20rem;
+    margin-bottom: 1rem;
+  }
+
+  .circle {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: white;
+    border-radius: 50%;
+    transition: all 0.5s;
+  }
+
+  img {
+    position: absolute;
+    transition: all 0.5s 0.1s;
+  }
+
+  .title {
+    transition: all 0.5s;
+  }
 }
 
 @media (hover: hover) {
@@ -199,5 +257,12 @@
     .origin {
       justify-content: flex-start;
     }
+  }
+}
+
+@media (max-width: 992px) {
+  .experiments-last .sneaker {
+    width: 13rem;
+    height: 13rem;
   }
 }
