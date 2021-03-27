@@ -1,3 +1,19 @@
+// Hybrid Section
+
+window.addEventListener("scroll", slideSection);
+
+function slideSection() {
+  const viewportHeight = document.documentElement.clientHeight;
+  const viewportWidth = document.documentElement.clientWidth;
+  const scrolledValue = window.scrollY;
+
+  const experimentsFirst = document.querySelector(".experiments-first");
+  const ratio = Math.min(1, scrolledValue / viewportHeight);
+  const translated = ratio * viewportWidth;
+
+  experimentsFirst.style.transform = `translateX(${translated}px)`;
+}
+
 // Filters
 
 const characters = [];

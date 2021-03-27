@@ -403,13 +403,26 @@ html[data-theme=dark] {
     display: flex;
   }
 }
+.experiments-hybrid {
+  position: relative;
+  height: 200vh;
+}
+
 .experiments-first {
+  position: fixed;
+  width: 100%;
+  background: var(--bg);
+  z-index: 1;
   grid-template-rows: auto 1fr;
 }
 .experiments-first .container {
   max-height: calc(100vh - 6.5rem);
 }
 
+.experiments-second {
+  position: fixed;
+  width: 100%;
+}
 .experiments-second .container {
   display: flex;
   flex-direction: column;
@@ -548,6 +561,8 @@ html[data-theme=dark] {
 }
 
 .experiments-last {
+  position: relative;
+  background: var(--bg);
   grid-template-rows: 1fr auto;
 }
 
