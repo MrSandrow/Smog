@@ -4,7 +4,6 @@
 }
 
 .experiments-first {
-  position: fixed;
   width: 100%;
   background: var(--bg);
   z-index: 1;
@@ -16,7 +15,6 @@
 }
 
 .experiments-second {
-  position: fixed;
   width: 100%;
 
   .container {
@@ -181,6 +179,13 @@
   position: relative;
   background: var(--bg);
   grid-template-rows: 1fr auto;
+}
+
+@media (hover: hover) {
+  .experiments-first,
+  .experiments-second {
+    position: fixed;
+  }
 }
 
 @media (orientation: landscape) and (max-height: 600px) {

@@ -409,7 +409,6 @@ html[data-theme=dark] {
 }
 
 .experiments-first {
-  position: fixed;
   width: 100%;
   background: var(--bg);
   z-index: 1;
@@ -420,7 +419,6 @@ html[data-theme=dark] {
 }
 
 .experiments-second {
-  position: fixed;
   width: 100%;
 }
 .experiments-second .container {
@@ -566,6 +564,12 @@ html[data-theme=dark] {
   grid-template-rows: 1fr auto;
 }
 
+@media (hover: hover) {
+  .experiments-first,
+.experiments-second {
+    position: fixed;
+  }
+}
 @media (orientation: landscape) and (max-height: 600px) {
   .experiments-second .criterias {
     grid-template-columns: auto 1fr;

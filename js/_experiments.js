@@ -1,6 +1,12 @@
+// Main Elements
+
+const hover = window.matchMedia("(hover: hover)").matches;
+
 // Hybrid Section
 
-window.addEventListener("scroll", slideSection);
+if (hover) {
+  window.addEventListener("scroll", slideSection);
+}
 
 function slideSection() {
   const viewportHeight = document.documentElement.clientHeight;
