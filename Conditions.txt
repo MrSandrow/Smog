@@ -1,4 +1,4 @@
-Créer un feu d'artifice quand on clique - https://codepen.io/juliangarnier/pen/xOgyjB?editors=0010
+Créer un feu d'artifice quand on clique - https://codepen.io/juliangarnier/pen/xOgyjB & https://codepen.io/juliangarnier/pen/gmOwJX
 Utiliser AnimeJS - https://www.youtube.com/watch?v=lj37QZ047f8 & https://www.youtube.com/watch?v=YqOhQWbouCE
 Intégrer une API Basique - https://www.weatherapi.com/ - https://weatherstack.com/ - https://mailboxlayer.com/
 Ajouter 3 produits dans des tailles différentes, déterminer au hasard s'ils sont en stock, ajouter au panier s'il y a du stock et afficher un message d'erreur s'il n'y a plus de stock, ajouter la possibilité d'ajouter plusieurs articles / vider le panier & Ajouter une page de checkout & Ouvrir le panier quand un article est ajouté - https://youtu.be/90PgFUPIybY
