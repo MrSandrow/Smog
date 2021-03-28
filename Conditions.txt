@@ -1,4 +1,3 @@
-Ajouter un Effet Parallax - https://www.youtube.com/watch?v=XK7T3mY1V-w
 Créer un feu d'artifice quand on clique - https://codepen.io/juliangarnier/pen/xOgyjB?editors=0010
 Utiliser AnimeJS - https://www.youtube.com/watch?v=lj37QZ047f8 & https://www.youtube.com/watch?v=YqOhQWbouCE
 Intégrer une API Basique - https://www.weatherapi.com/ - https://weatherstack.com/ - https://mailboxlayer.com/
