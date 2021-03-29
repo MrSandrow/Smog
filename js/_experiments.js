@@ -27,8 +27,6 @@ function slideSection() {
 const fireworksContainer = document.querySelector(".experiments-first .container");
 const canvasEl = document.querySelector(".fireworks");
 const ctx = canvasEl.getContext("2d");
-const colors = ["#dc0000", "#f56656", "#ffc700", "#e05600"];
-const numberOfParticules = 35;
 
 anime({
   duration: Infinity,
@@ -64,6 +62,7 @@ function startFirework(e) {
 
 function animateParticules(x, y) {
   const circle = createCircle(x, y);
+  const numberOfParticules = 35;
   const particules = [];
 
   for (let i = 0; i < numberOfParticules; i++) {
@@ -119,6 +118,7 @@ function createCircle(x, y) {
 }
 
 function createParticule(x, y) {
+  const colors = ["#dc0000", "#f56656", "#ffc700", "#e05600"];
   const p = {};
 
   p.x = x;
