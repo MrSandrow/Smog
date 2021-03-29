@@ -303,6 +303,47 @@ function filterResults() {
   }
 }
 
+// MailboxLayer API
+
+const formInput = document.forms.mailboxlayer.email;
+const submitButton = document.querySelector(".experiments-fifth button");
+
+submitButton.addEventListener("click", submitForm);
+
+function submitForm(event) {
+  event.preventDefault();
+
+  if (formInput.value.length > 0) {
+    checkEmail(formInput.value).then(setBorder).catch(handleError);
+  } else {
+    formInput.classList.add("fail");
+  }
+}
+
+async function checkEmail(email) {
+  const url = `https://apilayer.net/api/check?access_key=cc2a8440b76e7f4a719942710f3f2401&email=${email}&smtp=1&format=1`;
+  const request = await fetch(url);
+  const response = await request.json();
+  return response;
+}
+
+function setBorder(response) {
+  if (response.error) {
+    handleError();
+  } else if (response.disposable || !response.smtp_check) {
+    formInput.classList.remove("success");
+    formInput.classList.add("fail");
+  } else {
+    formInput.classList.remove("fail");
+    formInput.classList.add("success");
+  }
+}
+
+function handleError() {
+  const errorMessage = document.createTextNode("Une erreur s'est produite avec l'API");
+  document.forms.mailboxlayer.insertBefore(errorMessage, formInput);
+}
+
 // Parallax Effect
 
 const card = document.querySelector(".experiments-last .card");

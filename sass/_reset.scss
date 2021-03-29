@@ -18,20 +18,20 @@ html {
   --bg: white;
   --accent: black;
   --gradient: var(--accent);
-  --experiments: linear-gradient(135deg, #ffc700, #f7c13a);
+  --experiments: linear-gradient(90deg, #ffc700, #f7c13a);
 
   &[data-theme="light"] {
     --bg: white;
     --accent: black;
     --gradient: var(--accent);
-    --experiments: linear-gradient(135deg, #ffc700, #f7c13a);
+    --experiments: linear-gradient(90deg, #ffc700, #f7c13a);
   }
 
   &[data-theme="dark"] {
     --bg: black;
     --accent: white;
     --gradient: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%);
-    --experiments: linear-gradient(135deg, #2680f8, #006cae);
+    --experiments: linear-gradient(90deg, #2680f8, #006cae);
   }
 }
 
@@ -42,7 +42,7 @@ html {
     --bg: black;
     --accent: white;
     --gradient: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%);
-    --experiments: linear-gradient(135deg, #2680f8, #006cae);
+    --experiments: linear-gradient(90deg, #2680f8, #006cae);
   }
 }
 

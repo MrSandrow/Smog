@@ -196,6 +196,35 @@
   }
 }
 
+.experiments-fourth {
+  position: relative;
+  background: var(--experiments);
+}
+
+.experiments-fifth {
+  position: relative;
+  background: var(--bg);
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .success {
+    border-bottom: 5px solid green;
+  }
+
+  .fail {
+    border-bottom: 5px solid red;
+  }
+
+  button {
+    margin-top: 2rem;
+  }
+}
+
 .experiments-last {
   position: relative;
   background: var(--experiments);
