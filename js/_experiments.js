@@ -30,6 +30,12 @@ const ctx = canvasEl.getContext("2d");
 const colors = ["#dc0000", "#f56656", "#ffc700", "#e05600"];
 const numberOfParticules = 35;
 
+anime({
+  duration: Infinity,
+  autoplay: true,
+  update: () => ctx.clearRect(0, 0, canvasEl.width, canvasEl.height),
+});
+
 function getFontSize() {
   return parseFloat(getComputedStyle(document.documentElement).fontSize);
 }
@@ -48,15 +54,10 @@ window.addEventListener("resize", setCanvasSize);
 fireworksContainer.addEventListener("mousedown", startFirework);
 
 function startFirework(e) {
+  const leftSpace = fireworksContainer.getBoundingClientRect().left;
   const topSpace = fireworksContainer.getBoundingClientRect().top;
-  const pointerX = e.clientX || e.touches[0].clientX;
+  const pointerX = (e.clientX || e.touches[0].clientX) - leftSpace;
   const pointerY = (e.clientY || e.touches[0].clientY) - topSpace;
-
-  anime({
-    duration: Infinity,
-    autoplay: true,
-    update: () => ctx.clearRect(0, 0, canvasEl.width, canvasEl.height),
-  });
 
   animateParticules(pointerX, pointerY);
 }
