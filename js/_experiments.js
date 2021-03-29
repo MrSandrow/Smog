@@ -28,9 +28,11 @@ const fireworksContainer = document.querySelector(".experiments-first .container
 const canvasEl = document.querySelector(".fireworks");
 const ctx = canvasEl.getContext("2d");
 const colors = ["#dc0000", "#f56656", "#ffc700", "#e05600"];
-const numberOfParticules = 30;
+const numberOfParticules = 35;
 
-// var tap = "ontouchstart" in window || navigator.msMaxTouchPoints ? "touchstart" : "mousedown";
+function getFontSize() {
+  return parseFloat(getComputedStyle(document.documentElement).fontSize);
+}
 
 function setCanvasSize() {
   canvasEl.width = fireworksContainer.offsetWidth * 2;
@@ -40,56 +42,23 @@ function setCanvasSize() {
   canvasEl.getContext("2d").scale(2, 2);
 }
 
-function setParticuleDirection(p) {
-  var angle = (anime.random(0, 360) * Math.PI) / 180;
-  var value = anime.random(50, 180);
-  var radius = [-1, 1][anime.random(0, 1)] * value;
-  return {
-    x: p.x + radius * Math.cos(angle),
-    y: p.y + radius * Math.sin(angle),
-  };
-}
+setCanvasSize();
 
-function createParticule(x, y) {
-  var p = {};
-  p.x = x;
-  p.y = y;
-  p.color = colors[anime.random(0, colors.length - 1)];
-  p.radius = anime.random(16, 32);
-  p.endPos = setParticuleDirection(p);
-  p.draw = function () {
-    ctx.beginPath();
-    ctx.arc(p.x, p.y, p.radius, 0, 2 * Math.PI, true);
-    ctx.fillStyle = p.color;
-    ctx.fill();
-  };
-  return p;
-}
+window.addEventListener("resize", setCanvasSize);
+fireworksContainer.addEventListener("mousedown", startFirework);
 
-function createCircle(x, y) {
-  var p = {};
-  p.x = x;
-  p.y = y;
-  p.color = "#FFF";
-  p.radius = 0.1;
-  p.alpha = 0.5;
-  p.lineWidth = 6;
-  p.draw = function () {
-    ctx.globalAlpha = p.alpha;
-    ctx.beginPath();
-    ctx.arc(p.x, p.y, p.radius, 0, 2 * Math.PI, true);
-    ctx.lineWidth = p.lineWidth;
-    ctx.strokeStyle = p.color;
-    ctx.stroke();
-    ctx.globalAlpha = 1;
-  };
-  return p;
-}
+function startFirework(e) {
+  const topSpace = fireworksContainer.getBoundingClientRect().top;
+  const pointerX = e.clientX || e.touches[0].clientX;
+  const pointerY = (e.clientY || e.touches[0].clientY) - topSpace;
 
-function renderParticule(anim) {
-  for (var i = 0; i < anim.animatables.length; i++) {
-    anim.animatables[i].target.draw();
-  }
+  anime({
+    duration: Infinity,
+    autoplay: true,
+    update: () => ctx.clearRect(0, 0, canvasEl.width, canvasEl.height),
+  });
+
+  animateParticules(pointerX, pointerY);
 }
 
 function animateParticules(x, y) {
@@ -112,12 +81,12 @@ function animateParticules(x, y) {
 
   anime({
     targets: circle,
-    radius: anime.random(80, 160),
+    radius: anime.random(getFontSize() * 13, getFontSize() * 15),
     lineWidth: 0,
     alpha: {
       value: 0,
       easing: "linear",
-      duration: anime.random(600, 800),
+      duration: anime.random(400, 800),
     },
     duration: anime.random(1200, 1800),
     easing: "easeOutExpo",
@@ -126,27 +95,62 @@ function animateParticules(x, y) {
   });
 }
 
-var render = anime({
-  duration: Infinity,
-  update: function () {
-    ctx.clearRect(0, 0, canvasEl.width, canvasEl.height);
-  },
-});
+function createCircle(x, y) {
+  const p = {};
 
-fireworksContainer.addEventListener("mousedown", function (e) {
-  const topSpace = fireworksContainer.getBoundingClientRect().top;
-  const pointerX = e.clientX || e.touches[0].clientX;
-  const pointerY = (e.clientY || e.touches[0].clientY) - topSpace;
+  p.x = x;
+  p.y = y;
+  p.color = "#FFF";
+  p.radius = 0.1;
+  p.alpha = 0.5;
+  p.lineWidth = 6;
+  p.draw = function () {
+    ctx.globalAlpha = p.alpha;
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.radius, 0, 2 * Math.PI, true);
+    ctx.lineWidth = p.lineWidth;
+    ctx.strokeStyle = p.color;
+    ctx.stroke();
+    ctx.globalAlpha = 1;
+  };
 
-  render.play();
-  animateParticules(pointerX, pointerY);
-});
+  return p;
+}
 
-var centerX = window.innerWidth / 2;
-var centerY = window.innerHeight / 2;
+function createParticule(x, y) {
+  const p = {};
 
-setCanvasSize();
-window.addEventListener("resize", setCanvasSize);
+  p.x = x;
+  p.y = y;
+  p.color = colors[anime.random(0, colors.length - 1)];
+  p.radius = anime.random(getFontSize() * 1.5, getFontSize() * 3);
+  p.endPos = setParticuleDirection(p);
+  p.draw = function () {
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.radius, 0, 2 * Math.PI, true);
+    ctx.fillStyle = p.color;
+    ctx.fill();
+  };
+
+  return p;
+}
+
+function setParticuleDirection(p) {
+  const angle = (anime.random(0, 360) * Math.PI) / 180;
+  const value = anime.random(getFontSize() * 4, getFontSize() * 16);
+  const radius = [-1, 1][anime.random(0, 1)] * value;
+
+  return {
+    x: p.x + radius * Math.cos(angle),
+    y: p.y + radius * Math.sin(angle),
+  };
+}
+
+function renderParticule(anim) {
+  for (let i = 0; i < anim.animatables.length; i++) {
+    anim.animatables[i].target.draw();
+  }
+}
 
 // Filters
 
