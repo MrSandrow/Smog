@@ -305,17 +305,10 @@ function filterResults() {
 
 // Weather API
 
-getIP().then(checkWeather).then(displayWeather).catch(abortProcess);
+checkWeather().then(displayWeather).catch(abortProcess);
 
-async function getIP() {
-  const url = "http://api.ipstack.com/check?access_key=e93cba2ada1fe0dec9260a93053a956c";
-  const request = await fetch(url);
-  const response = await request.json();
-  return response.ip;
-}
-
-async function checkWeather(ip) {
-  const url = `https://api.weatherapi.com/v1/current.json?key=2fb89afe83e14609b16200513212903&q=${ip}`;
+async function checkWeather() {
+  const url = `https://api.weatherapi.com/v1/current.json?key=2fb89afe83e14609b16200513212903&q=le-coudray-montceaux`;
   const request = await fetch(url);
   const response = await request.json();
   return response;
