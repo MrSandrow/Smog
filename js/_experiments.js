@@ -303,6 +303,36 @@ function filterResults() {
   }
 }
 
+// Weather API
+
+getIP().then(checkWeather).then(displayWeather).catch(abortProcess);
+
+async function getIP() {
+  const url = "http://api.ipstack.com/check?access_key=e93cba2ada1fe0dec9260a93053a956c";
+  const request = await fetch(url);
+  const response = await request.json();
+  return response.ip;
+}
+
+async function checkWeather(ip) {
+  const url = `https://api.weatherapi.com/v1/current.json?key=2fb89afe83e14609b16200513212903&q=${ip}`;
+  const request = await fetch(url);
+  const response = await request.json();
+  return response;
+}
+
+function displayWeather(response) {
+  const temperature = Math.round(response.current.feelslike_c);
+  const span = document.querySelector(".experiments-fourth span");
+
+  span.innerText = `La température ressentie dehors est de ${temperature}°C`;
+}
+
+function abortProcess() {
+  const span = document.querySelector(".experiments-fourth span");
+  span.innerText = "Une erreur s'est produite avec l'API.";
+}
+
 // MailboxLayer API
 
 const formInput = document.forms.mailboxlayer.email;

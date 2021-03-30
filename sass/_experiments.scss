@@ -199,6 +199,13 @@
 .experiments-fourth {
   position: relative;
   background: var(--experiments);
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+  }
 }
 
 .experiments-fifth {

@@ -709,6 +709,12 @@ svg {
   position: relative;
   background: var(--experiments);
 }
+.experiments-fourth .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
 
 .experiments-fifth {
   position: relative;
