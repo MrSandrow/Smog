@@ -309,7 +309,7 @@ checkWeather().then(displayWeather).catch(abortProcess);
 
 async function checkWeather() {
   const url = `https://api.weatherapi.com/v1/current.json?key=2fb89afe83e14609b16200513212903&q=le-coudray-montceaux`;
-  const request = await fetch(url, { mode: "no-cors" });
+  const request = await fetch(url);
   const response = await request.json();
   return response;
 }
