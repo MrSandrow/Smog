@@ -1,25 +1,3 @@
-Utiliser AnimeJS - https://www.youtube.com/watch?v=lj37QZ047f8 & https://www.youtube.com/watch?v=YqOhQWbouCE
-Animer le Like comme sur Spotify
+Utiliser Barba JS
 Animer un Objet en 3D avec Three JS
-Afficher un background de chargement / Flouter une image le temps qu'elle se charge
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Ajouter un Burger Menu
-Créer un Overlay (100% de l'écran) visible en cliquant sur un Bouton. L'overlay part du bouton et se propage en cercle.
-Faire "Rebondir" un texte ou une image
-Ajouter un effet de propagation quand on clique sur un bouton - https://www.google.com/search?q=spread+effect+when+clicked+on+button+css & https://www.google.com/search?q=button+ripple+effect
-Faire Apparaître / Slider le texte et les images quand je scroll - https://www.shopify.com/plus & https://www.youtube.com/watch?v=VplDlwLTR50
-Changer la couleur du background en scrollant (Heetch) + Background Radial Gradient
 Projets Avancés - https://thesmartcoder.dev/9-awesome-projects-you-can-build-with-vanilla-javascript/ & Site Builder

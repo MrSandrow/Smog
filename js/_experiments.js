@@ -2,6 +2,16 @@
 
 const hover = window.matchMedia("(hover: hover)").matches;
 
+function runOnce(fn, context) {
+  let executed = false;
+  return function () {
+    if (!executed) {
+      executed = true;
+      fn(context);
+    }
+  };
+}
+
 // Hybrid Section
 
 if (hover) {
@@ -16,8 +26,17 @@ function slideSection() {
   const scrolledValue = window.scrollY;
 
   const experimentsFirst = document.querySelector(".experiments-first");
+  const experimentsSecond = document.querySelector(".experiments-second");
   const ratio = Math.min(1, scrolledValue / viewportHeight);
   const translated = ratio * viewportWidth;
+
+  if (ratio === 1) {
+    experimentsFirst.classList.remove("fixed");
+    experimentsSecond.classList.remove("fixed");
+  } else {
+    experimentsFirst.classList.add("fixed");
+    experimentsSecond.classList.add("fixed");
+  }
 
   experimentsFirst.style.transform = `translateX(${translated}px)`;
 }
@@ -118,7 +137,7 @@ function createCircle(x, y) {
 }
 
 function createParticule(x, y) {
-  const colors = ["#dc0000", "#f56656", "#ffc700", "#e05600"];
+  const colors = ["#eafc0b", "#305edc", "#02cdfe", "#f55e49"];
   const p = {};
 
   p.x = x;
@@ -286,9 +305,7 @@ function filterResults() {
 
   function filteredOrigin() {
     if (originFilters.length > 0) {
-      return filteredSpecies().filter((item) =>
-        originFilters.includes(item.origin.name.toLowerCase())
-      );
+      return filteredSpecies().filter((item) => originFilters.includes(item.origin.name.toLowerCase()));
     } else {
       return filteredSpecies();
     }
@@ -367,10 +384,74 @@ function handleError() {
   document.forms.mailboxlayer.insertBefore(errorMessage, formInput);
 }
 
+// GSAP
+
+const experimentsSixth = document.querySelector(".experiments-sixth");
+
+new Waypoint({
+  element: experimentsSixth,
+  offset: "50%",
+  handler: runOnce(displayCard),
+});
+
+function displayCard() {
+  const sixthCard = document.querySelector(".experiments-sixth .card");
+
+  sixthCard.classList.remove("hidden");
+  gsap.timeline().add(firstTl()).add(secondTl()).add(thirdTl());
+
+  function firstTl() {
+    const tl = gsap.timeline({ defaults: { duration: 0.7, ease: Back.easeOut.config(2), opacity: 0 } });
+
+    tl.from(".experiments-sixth .card", { scale: 0.2, delay: "0.2" });
+    tl.from(".experiments-sixth .card .image", { scaleY: 0, transformOrigin: "top" });
+    tl.from(".experiments-sixth .card .icon", { scale: 0.2, transformOrigin: "center", delay: "-0.7" });
+    tl.from(".experiments-sixth .card .blip1", { scaleX: 0 });
+    tl.from(".experiments-sixth .card .blip2", { scaleX: 0, delay: "-0.2" });
+    tl.from(".experiments-sixth .card .blip3", { scaleX: 0, delay: "-0.3" });
+    tl.from(".experiments-sixth .card .blip4", { scaleX: 0, delay: "-0.5" });
+    tl.from(".experiments-sixth .card .blip5", { scaleX: 0, delay: "-0.7" });
+    tl.then(removeTransform);
+
+    return tl;
+  }
+
+  function secondTl() {
+    const tl = gsap.timeline({ defaults: { duration: 0.4 } });
+
+    tl.to(".experiments-sixth .card .background", { scaleX: 0, transformOrigin: "right" });
+    tl.to(".experiments-sixth .card span", { opacity: 1, delay: "-0.2" });
+
+    return tl;
+  }
+
+  function thirdTl() {
+    const tl = gsap.timeline();
+
+    tl.to(".experiments-sixth .card .blip4, .experiments-sixth .card .blip5", {
+      scale: 1.1,
+      repeat: -1,
+      yoyoEase: "bounce.out",
+    });
+
+    return tl;
+  }
+
+  function removeTransform() {
+    sixthCard.style.removeProperty("transform");
+  }
+}
+
 // Parallax Effect
 
 const card = document.querySelector(".experiments-last .card");
-let mouseLeave;
+const mouseLeave = gsap.to(card, {
+  rotationX: 0,
+  rotationY: 0,
+  duration: 2.5,
+  ease: "elastic",
+  paused: true,
+});
 
 if (hover) {
   card.addEventListener("mousemove", transformCard);
@@ -382,20 +463,13 @@ function transformCard(event) {
   const eventX = event.clientX - container.getBoundingClientRect().left;
   const eventY = event.clientY - container.getBoundingClientRect().top;
   const xAxis = (container.offsetWidth / 2 - eventX) / 10;
-  const yAxis = (container.offsetHeight / 2 - eventY) / 10;
+  const yAxis = -(container.offsetHeight / 2 - eventY) / 10;
 
-  if (mouseLeave) {
-    mouseLeave.pause();
-  }
-
-  card.style.transform = `perspective(750px) rotateX(${yAxis}deg) rotateY(${xAxis}deg)`;
+  mouseLeave.pause();
+  gsap.to(card, { rotationX: yAxis, rotationY: xAxis, duration: 0 });
 }
 
 function resetCard() {
-  mouseLeave = anime({
-    targets: card,
-    rotateX: 0,
-    rotateY: 0,
-    easing: "spring(1, 100, 10, 0)",
-  });
+  mouseLeave.invalidate();
+  mouseLeave.restart();
 }

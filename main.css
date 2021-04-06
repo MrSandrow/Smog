@@ -17,19 +17,19 @@ html {
   --bg: white;
   --accent: black;
   --gradient: var(--accent);
-  --experiments: linear-gradient(90deg, #ffc700, #f7c13a);
+  --experiments: linear-gradient(160deg, #e7e7e7, #c4c4c4);
 }
 html[data-theme=light] {
   --bg: white;
   --accent: black;
   --gradient: var(--accent);
-  --experiments: linear-gradient(90deg, #ffc700, #f7c13a);
+  --experiments: linear-gradient(160deg, #e7e7e7, #c4c4c4);
 }
 html[data-theme=dark] {
   --bg: black;
   --accent: white;
   --gradient: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%);
-  --experiments: linear-gradient(90deg, #2680f8, #006cae);
+  --experiments: linear-gradient(160deg, #2e2e2e, #1b1b1b);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -37,7 +37,7 @@ html[data-theme=dark] {
     --bg: black;
     --accent: white;
     --gradient: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%);
-    --experiments: linear-gradient(90deg, #2680f8, #006cae);
+    --experiments: linear-gradient(160deg, #2e2e2e, #1b1b1b);
   }
 }
 @media (min-width: 600px) {
@@ -541,9 +541,6 @@ svg {
   z-index: 1;
   grid-template-rows: auto 1fr;
 }
-.experiments-first nav {
-  color: white;
-}
 .experiments-first .container {
   width: 100vw;
   height: 100%;
@@ -555,7 +552,6 @@ svg {
 .experiments-first h2 {
   position: absolute;
   font-size: 1.5rem;
-  color: white;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -707,12 +703,13 @@ svg {
 
 .experiments-fourth {
   position: relative;
-  background: var(--experiments);
+  background: var(--bg);
 }
 .experiments-fourth .container {
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
   font-weight: bold;
 }
 
@@ -736,9 +733,95 @@ svg {
   margin-top: 2rem;
 }
 
+.experiments-sixth {
+  position: relative;
+  background: var(--bg);
+}
+.experiments-sixth .container {
+  display: flex;
+}
+.experiments-sixth .card {
+  display: grid;
+  grid-template-rows: 40% 1fr;
+  width: 16rem;
+  height: 19.5rem;
+  margin: auto;
+  background: #525252;
+  border-radius: 0.25rem;
+  overflow: hidden;
+}
+.experiments-sixth .image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background: #6c6c6c;
+}
+.experiments-sixth .icon::before {
+  content: "";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 500;
+  font-size: 2.45rem;
+  color: #595959;
+}
+.experiments-sixth .text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2.45rem 1.75rem 1.55rem;
+}
+.experiments-sixth .blip1 {
+  width: 4.25rem;
+  height: 0.9rem;
+  background: #04a2e4;
+  border-radius: 1rem;
+}
+.experiments-sixth .blip2 {
+  display: flex;
+  width: 10.25rem;
+  height: 0.9rem;
+  margin-bottom: 0.6rem;
+}
+.experiments-sixth .blip3 {
+  display: flex;
+  width: 6.9rem;
+  height: 0.9rem;
+}
+.experiments-sixth .background {
+  width: 100%;
+  height: 100%;
+  background: #7b7b7b;
+  border-radius: 1rem;
+  z-index: 1;
+}
+.experiments-sixth span {
+  position: absolute;
+  padding: 0 0.5rem;
+  font-size: 0.75rem;
+  opacity: 0;
+  z-index: 0;
+}
+.experiments-sixth .last {
+  display: flex;
+  justify-content: flex-end;
+}
+.experiments-sixth .blip4 {
+  width: 2.3rem;
+  height: 0.9rem;
+  background: #7b7b7b;
+  border-radius: 1rem;
+  margin-right: 0.8rem;
+}
+.experiments-sixth .blip5 {
+  width: 2.3rem;
+  height: 0.9rem;
+  background: white;
+  border-radius: 1rem;
+}
+
 .experiments-last {
   position: relative;
-  background: var(--experiments);
+  background: var(--bg);
   grid-template-rows: 1fr auto;
 }
 .experiments-last .container {
@@ -756,6 +839,7 @@ svg {
   font-size: 1.5rem;
   padding: 1.5rem;
   margin: auto;
+  transform: perspective(750px);
   transform-style: preserve-3d;
 }
 .experiments-last .card:hover .circle {
@@ -769,8 +853,8 @@ svg {
 }
 .experiments-last .sneaker {
   position: relative;
-  width: 20rem;
-  height: 20rem;
+  width: 13rem;
+  height: 13rem;
   margin-bottom: 1rem;
 }
 .experiments-last .circle {
@@ -788,13 +872,9 @@ svg {
 .experiments-last .title {
   transition: all 0.5s;
 }
-.experiments-last footer {
-  color: white;
-}
 
 @media (hover: hover) {
-  .experiments-first,
-.experiments-second {
+  .experiments-hybrid .fixed {
     position: fixed;
   }
 }
@@ -808,9 +888,13 @@ svg {
     justify-content: flex-start;
   }
 }
-@media (max-width: 992px) {
+@media (min-width: 992px) {
+  .experiments-sixth .card {
+    transform: scale(1.25);
+  }
+
   .experiments-last .sneaker {
-    width: 13rem;
-    height: 13rem;
+    width: 20rem;
+    height: 20rem;
   }
 }

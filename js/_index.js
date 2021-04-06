@@ -155,28 +155,24 @@ function slider(e) {
 // Clicks Counter
 
 const counter = document.querySelector(".counter");
-counter.addEventListener("click", count);
-
+const thirdSpan = document.querySelector(".index-third span");
 let number = 0;
 
-function count() {
-  const span = document.querySelector(".index-third span");
+const animateSpan = gsap.timeline({ paused: true });
+animateSpan.to(thirdSpan, { y: "-1.5rem", duration: 0 });
+animateSpan.to(thirdSpan, { y: 0, duration: 1.5, ease: "elastic" });
 
-  span.style.transform = "translateY(-1.5rem)";
+counter.addEventListener("click", count);
+
+function count() {
+  animateSpan.restart();
   number = number + 1;
 
   if (number === 1) {
-    span.innerText = `${number} Clic`;
+    thirdSpan.innerText = `${number} Clic`;
   } else {
-    span.innerText = `${number} Clics`;
+    thirdSpan.innerText = `${number} Clics`;
   }
-
-  anime({
-    targets: span,
-    translateY: 0,
-    duration: 1500,
-    easing: "easeOutElastic",
-  });
 }
 
 // Counter Up
@@ -292,9 +288,7 @@ function displayResult() {
   const result = document.querySelector(".index-sixth .result");
   const fail = document.querySelector(".index-sixth .fail");
   const searched = searchBar.value.toLowerCase();
-  const filteredCharacters = characters.filter((item) =>
-    item.name.toLowerCase().includes(searched)
-  );
+  const filteredCharacters = characters.filter((item) => item.name.toLowerCase().includes(searched));
 
   if (searchBar.value.length > 0 && filteredCharacters.length > 0) {
     fail.classList.add("hidden");
