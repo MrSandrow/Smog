@@ -1,3 +1,5 @@
-Utiliser Barba JS
 Animer un Objet en 3D avec Three JS
-Projets Avancés - https://thesmartcoder.dev/9-awesome-projects-you-can-build-with-vanilla-javascript/ & Site Builder
+Permettre de faire un dessin (choisir la couleur du stylo)
+Ajouter un Drag & Drop
+Ajouter une AI de reconnaissance d'images
+Permettre d'upload une image, ajouter du texte sur l'image et la télécharger

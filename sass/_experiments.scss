@@ -327,6 +327,14 @@
   }
 }
 
+.experiments-seventh {
+  .container {
+    background: var(--experiments);
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+}
+
 .experiments-last {
   position: relative;
   background: var(--bg);

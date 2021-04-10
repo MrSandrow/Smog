@@ -15,7 +15,7 @@ function runOnce(fn, context) {
 // Hybrid Section
 
 if (hover) {
-  window.addEventListener("load", slideSection);
+  slideSection();
   window.addEventListener("scroll", slideSection);
   window.addEventListener("resize", slideSection);
 }
@@ -30,15 +30,15 @@ function slideSection() {
   const ratio = Math.min(1, scrolledValue / viewportHeight);
   const translated = ratio * viewportWidth;
 
-  if (ratio === 1) {
-    experimentsFirst.classList.remove("fixed");
-    experimentsSecond.classList.remove("fixed");
-  } else {
+  if (ratio < 1) {
     experimentsFirst.classList.add("fixed");
     experimentsSecond.classList.add("fixed");
+  } else {
+    experimentsFirst.classList.remove("fixed");
+    experimentsSecond.classList.remove("fixed");
   }
 
-  experimentsFirst.style.transform = `translateX(${translated}px)`;
+  gsap.to(experimentsFirst, { x: translated, duration: 0 });
 }
 
 // Fireworks
@@ -440,6 +440,76 @@ function displayCard() {
   function removeTransform() {
     sixthCard.style.removeProperty("transform");
   }
+}
+
+// Three JS
+
+import * as THREE from "https://unpkg.com/three@0.127.0/build/three.module.js";
+import { OrbitControls } from "https://unpkg.com/three@0.127.0/examples/jsm/controls/OrbitControls.js";
+
+const seventhContainer = document.querySelector(".experiments-seventh .container");
+const scene = new THREE.Scene();
+const renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: "high-performance", alpha: true });
+const camera = new THREE.PerspectiveCamera(75, seventhContainer.offsetWidth / seventhContainer.offsetHeight, 0.01, 100);
+const geometry = new THREE.TorusGeometry(0.5, 0.15, 30, 100);
+const material = new THREE.MeshMatcapMaterial({ matcap: applyTexture() });
+const mesh = new THREE.Mesh(geometry, material);
+const controls = new OrbitControls(camera, renderer.domElement);
+
+setRendererSize();
+addScene();
+animate();
+
+window.addEventListener("resize", setRendererSize);
+
+new Waypoint({
+  element: seventhContainer,
+  offset: "20%",
+  handler: runOnce(transformMesh),
+});
+
+function applyTexture() {
+  const matcaps = ["orange", "red", "blue", "green", "dark", "grey", "white"];
+
+  if (localStorage.matcap) {
+    const removed = matcaps.indexOf(localStorage.matcap);
+    matcaps.splice(removed, 1);
+  }
+
+  const index = Math.round(Math.random() * (matcaps.length - 1));
+  const texture = new THREE.TextureLoader().load(`img/texture-${matcaps[index]}.jpg`);
+
+  localStorage.setItem("matcap", matcaps[index]);
+  return texture;
+}
+
+function setRendererSize() {
+  renderer.setSize(seventhContainer.offsetWidth, seventhContainer.offsetHeight);
+  camera.aspect = seventhContainer.offsetWidth / seventhContainer.offsetHeight;
+  camera.updateProjectionMatrix();
+}
+
+function addScene() {
+  scene.add(mesh);
+
+  mesh.scale.z = 1.5;
+  camera.position.set(0, 0, 2);
+
+  seventhContainer.appendChild(renderer.domElement);
+}
+
+function animate() {
+  requestAnimationFrame(animate);
+  renderer.render(scene, camera);
+}
+
+function transformMesh() {
+  const tl = gsap.timeline({ repeat: -1 });
+  const angle = -180 * (Math.PI / 180);
+
+  tl.to(mesh.scale, { z: 0.5, duration: 0.5, ease: "power1" });
+  tl.to(mesh.scale, { z: 1.5, duration: 2, ease: "elastic" });
+  tl.to(mesh.rotation, { y: angle, duration: 3, delay: -1, ease: "power2" });
 }
 
 // Parallax Effect
