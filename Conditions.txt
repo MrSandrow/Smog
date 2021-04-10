@@ -1,4 +1,4 @@
-Ajouter une AI de reconnaissance d'images - https://www.clarifai.com/ & https://www.ibm.com/fr-fr/cloud/watson-visual-recognition/pricing
 Permettre d'upload une image, ajouter du texte sur l'image et la télécharger
+Ajouter une AI de reconnaissance d'images - https://www.clarifai.com/ & https://www.ibm.com/fr-fr/cloud/watson-visual-recognition/pricing
 Permettre de faire un dessin (choisir la couleur du stylo)
 Ajouter un Drag & Drop
