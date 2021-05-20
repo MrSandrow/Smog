@@ -1,4 +1,11 @@
+Créer une App de Sondages (Création d'un compte avec un dashboard qui permet de créer, partager des sondages et voir leurs réponses) - Typeform
+Créer un Mini Clone de Twitter / Instagram / Spotify / YouTube / Messenger
+Créer une App de Cloud (Permettre d'uploader et gérer des fichiers avec un Drap & Drop, Fournir un lien de partage pour chaque fichier)
 Permettre d'upload une image, ajouter du texte sur l'image et la télécharger
+Créer une App d'Analytics (Création d'un compte avec un dashboard qui fournit un lien à ajouter sur son site et qui affiche le nombre de visiteurs) - Google Analytics
 Ajouter une AI de reconnaissance d'images - https://www.clarifai.com/ & https://www.ibm.com/fr-fr/cloud/watson-visual-recognition/pricing
+Créer une App Pomodoro
 Permettre de faire un dessin (choisir la couleur du stylo)
-Ajouter un Drag & Drop
+Utiliser Webpack
+Utiliser Puppeteer
+Utiliser Jest
